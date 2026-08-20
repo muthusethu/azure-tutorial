@@ -1,0 +1,36 @@
+# Local / OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.pfx
+credentials.json
+
+# Azure / Terraform local state (when labs grow)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Cursor / agent local
+.cursor/
+canvases/
+
+# Personal planning PDF (keep local; not part of public series)
+100_Day_Azure_DevOps_Plan.pdf
