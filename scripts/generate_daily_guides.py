@@ -180,7 +180,7 @@ az devops project list -o table""",
         "Azure Test Plans Basics",
         [
             "Manual test cases, test plans vs suites, exploratory testing",
-            "When freelancers actually use Test Plans vs automated tests in CI",
+            "When teams actually use Test Plans vs automated tests in CI",
             "Docs: https://learn.microsoft.com/azure/devops/test/overview",
         ],
         [
@@ -272,7 +272,7 @@ git push -u origin feature/day11-notes""",
         "Branching Strategies",
         [
             "Git Flow vs GitHub Flow vs trunk-based development",
-            "When freelancers should recommend trunk-based + short PRs",
+            "When teams should recommend trunk-based + short PRs",
             "Article: https://trunkbaseddevelopment.com/",
         ],
         [
@@ -520,7 +520,7 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ### Posting tips
 
 - Publish from your **personal** account, outside work hours (morning IST works well).
-- No employer name, no client details, no "DM me for freelance".
+- No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
 
 ## Done checklist
@@ -553,7 +553,7 @@ def phase_for(day: int) -> str:
         (61, 70, "7 - Security, Compliance & Governance"),
         (71, 80, "8 - Monitoring & Observability"),
         (81, 90, "9 - Advanced & Enterprise"),
-        (91, 100, "10 - Portfolio & Freelance Launch"),
+        (91, 100, "10 - Portfolio & Public Launch"),
     ]
     for a, b, n in names:
         if a <= day <= b:
@@ -1266,8 +1266,8 @@ steps:
 # Q: Secret in a PR - what do you do?
 # Q: Pipeline red on Friday 5pm - what's your playbook?""",
      "Interviews are pipelines for your career - rehearse the happy path and the failure path",
-     "Freelance platform profiles"),
-    (98, "26 Nov 2026", "Freelance Platform Profiles",
+     "Professional profile setup"),
+    (98, "26 Nov 2026", "Professional Profile Setup",
      ["Toptal/Braintrust/Upwork - only after policy check"],
      ["Read employer moonlighting policy BEFORE creating paid profiles", "Draft profile offline; activate only if allowed"],
      """# Checklist
@@ -1323,7 +1323,7 @@ def main():
         "",
         "One document per day: **learn ? lab ? code ? LinkedIn post ? checklist**.",
         "",
-        "LinkedIn tone: educational + entertaining. No freelance CTAs. Personal accounts only.",
+        "LinkedIn tone: educational + entertaining. No sales CTAs. Personal accounts only.",
         "",
         "| Day | Date | Topic | Guide |",
         "|-----|------|-------|-------|",

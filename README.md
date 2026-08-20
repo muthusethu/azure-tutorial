@@ -2,7 +2,7 @@
 
 Personal learning-in-public series: **one Azure / DevOps topic per day**, with a short lab and a downloadable PDF handout (architecture + step-by-step).
 
-> Educational content only. Personal labs on a personal Azure subscription. Views are my own. Not affiliated with any employer. Not a course product and not a freelance pitch.
+> Educational content only. Personal labs on a personal Azure subscription. Views are my own. Not affiliated with any employer. Not a course product and not a sales pitch.
 
 **LinkedIn series:** `#100DaysOfAzureDevOps`  
 **Hashtags (every post):** `#100DaysOfAzureDevOps` `#Azure` `#DevOps` `#CloudComputing` `#LearningInPublic`

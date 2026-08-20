@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Date** | 25 Nov 2026 |
-| **Phase** | 10 - Portfolio & Freelance Launch |
+| **Phase** | 10 - Portfolio & Public Launch |
 | **Time box** | 60-90 minutes |
 | **Series** | #100DaysOfAzureDevOps |
 
@@ -39,7 +39,7 @@ Today's topic: **Mock Interview Prep**.
 
 I am learning in public for 100 days - mistakes included, sales pitches not included.
 
-Tomorrow: Freelance platform profiles.
+Tomorrow: Professional profile setup.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
@@ -47,7 +47,7 @@ Tomorrow: Freelance platform profiles.
 ### Posting tips
 
 - Publish from your **personal** account, outside work hours (morning IST works well).
-- No employer name, no client details, no "DM me for freelance".
+- No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
 
 ## Done checklist
@@ -61,7 +61,7 @@ Tomorrow: Freelance platform profiles.
 
 ## Tomorrow
 
-**Freelance platform profiles**
+**Professional profile setup**
 
 ---
 

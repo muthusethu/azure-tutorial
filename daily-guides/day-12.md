@@ -14,7 +14,7 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## Learn (20-30 min)
 
 - Git Flow vs GitHub Flow vs trunk-based development
-- When freelancers should recommend trunk-based + short PRs
+- When teams should recommend trunk-based + short PRs
 - Article: https://trunkbaseddevelopment.com/
 
 ## Hands-on lab (20-30 min)
@@ -52,7 +52,7 @@ Tomorrow: Azure Repos setup.
 ### Posting tips
 
 - Publish from your **personal** account, outside work hours (morning IST works well).
-- No employer name, no client details, no "DM me for freelance".
+- No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
 
 ## Done checklist

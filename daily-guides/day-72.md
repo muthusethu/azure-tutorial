@@ -48,7 +48,7 @@ Tomorrow: Application Insights.
 ### Posting tips
 
 - Publish from your **personal** account, outside work hours (morning IST works well).
-- No employer name, no client details, no "DM me for freelance".
+- No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
 
 ## Done checklist

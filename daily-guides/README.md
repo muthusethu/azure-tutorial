@@ -8,7 +8,7 @@ Use this exact set on every post:
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 
-LinkedIn tone: educational + entertaining. No freelance CTAs. Personal accounts only.
+LinkedIn tone: educational + entertaining. No sales CTAs. Personal accounts only.
 
 ## Daily LinkedIn package
 
@@ -122,7 +122,7 @@ Handouts are generated with `scripts/generate_handout_pdfs.py`. Day 1 is ready; 
 | 95 | 23 Nov 2026 | Personal Site / Blog for Case Studies | [day-95.md](./day-95.md) |
 | 96 | 24 Nov 2026 | AZ-400 Certification Review | [day-96.md](./day-96.md) |
 | 97 | 25 Nov 2026 | Mock Interview Prep | [day-97.md](./day-97.md) |
-| 98 | 26 Nov 2026 | Freelance Platform Profiles | [day-98.md](./day-98.md) |
+| 98 | 26 Nov 2026 | Professional Profile Setup | [day-98.md](./day-98.md) |
 | 99 | 27 Nov 2026 | Outreach Templates & Pricing | [day-99.md](./day-99.md) |
 | 100 | 28 Nov 2026 | Launch Day + Next 100 Days | [day-100.md](./day-100.md) |
 
