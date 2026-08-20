@@ -92,14 +92,16 @@ For each day:
 
 1. Write / update `daily-guides/day-NN.md` (post text + lab).
 2. Generate or place `handout.pdf` in `days/day-NN-.../`.
-3. Push to this repo.
-4. On LinkedIn: upload the PDF as a **document**, paste the post, use the standard hashtags.
-5. Optional link in the post:
+3. Copy platform variants from `publish/day-NN/` (X, Dev.to, Reddit, etc.).
+4. Push to this repo.
+5. On LinkedIn: upload the PDF as a **document**, paste the post, use the standard hashtags.
+6. Optional link in the post:
 
 ```text
 Handout + lab notes: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-01-cloud-fundamentals
 ```
 
+Cross-post guide: [`publish/README.md`](./publish/README.md)
 ---
 
 ## Disclaimer
