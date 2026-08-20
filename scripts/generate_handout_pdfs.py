@@ -21,7 +21,9 @@ from reportlab.platypus import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+# Scratch output (gitignored). Published PDFs live under days/day-NN-*/handout.pdf
 OUT = ROOT / "daily-guides" / "handouts"
+DAYS = ROOT / "days"
 
 # Brand-ish flat palette (no purple gradients)
 NAVY = colors.HexColor("#0F2744")
@@ -410,6 +412,12 @@ def main(days=None):
         fn = HANDOUTS[d]
         out = OUT / f"day-{d:02d}-handout.pdf"
         fn(out)
+        # Publish Day 1 into the public days/ folder when present
+        if d == 1:
+            pub = DAYS / "day-01-cloud-fundamentals" / "handout.pdf"
+            if pub.parent.exists():
+                pub.write_bytes(out.read_bytes())
+                print("Also wrote", pub)
 
 
 if __name__ == "__main__":

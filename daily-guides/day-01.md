@@ -85,7 +85,7 @@ https://github.com/muthusethu/azure-tutorial/tree/main/days/day-01-cloud-fundame
 
 Attach this document on LinkedIn (document / PDF upload):
 
-- [`handouts/day-01-handout.pdf`](./handouts/day-01-handout.pdf)
+- [`../days/day-01-cloud-fundamentals/handout.pdf`](../days/day-01-cloud-fundamentals/handout.pdf)
 
 It includes:
 1. High-level architecture (IaaS/PaaS/SaaS shared responsibility)

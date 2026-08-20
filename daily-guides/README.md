@@ -15,13 +15,13 @@ LinkedIn tone: educational + entertaining. No sales CTAs. Personal accounts only
 For each day, share **both**:
 
 1. The post text from `day-XX.md`
-2. The PDF handout from `handouts/day-XX-handout.pdf` (architecture + step-by-step lab)
+2. The PDF handout from `../days/day-XX-*/handout.pdf` (architecture + step-by-step lab)
 
 **Consistent hashtags (every post):**
 
 `#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic`
 
-Handouts are generated with `scripts/generate_handout_pdfs.py`. Day 1 is ready; more days will be added the same way.
+Handouts are generated with `scripts/generate_handout_pdfs.py` and published under `days/` (not under this folder).
 
 | Day | Date | Topic | Guide |
 |-----|------|-------|-------|

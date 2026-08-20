@@ -13,9 +13,10 @@ Personal learning-in-public series: **one Azure / DevOps topic per day**, with a
 
 | Path | Purpose |
 |------|---------|
-| [`days/`](./days) | One folder per day — guide + PDF handout |
+| [`days/`](./days) | One folder per day — guide + PDF handout (share these) |
 | [`daily-guides/`](./daily-guides) | Full markdown guides (learn, lab, LinkedIn draft, checklist) |
 | [`scripts/`](./scripts) | Helpers to generate guides / PDFs (optional for readers) |
+| [`docs/`](./docs) | Repo policy notes |
 
 You do **not** need to clone this repo to follow along. Open the day folder, read the guide, download the PDF.
 
@@ -38,11 +39,10 @@ azure-tutorial/
 │   └── ...
 ├── daily-guides/
 │   ├── README.md
-│   ├── day-01.md ... day-100.md       ← full daily playbooks
-│   └── handouts/                      ← generated PDF copies
+│   └── day-01.md ... day-100.md       ← full daily playbooks
+├── docs/
 └── scripts/                           ← generators (maintainers)
 ```
-
 **Naming rule for each day folder**
 
 ```text

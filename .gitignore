@@ -32,5 +32,8 @@ crash.log
 .cursor/
 canvases/
 
-# Personal planning PDF (keep local; not part of public series)
+# Personal planning PDF (local only — not published)
 100_Day_Azure_DevOps_Plan.pdf
+
+# Generator scratch copies (canonical PDFs live under days/day-NN-*/handout.pdf)
+daily-guides/handouts/
