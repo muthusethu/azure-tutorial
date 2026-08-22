@@ -7,7 +7,7 @@
 | Platform | File | Priority |
 |----------|------|----------|
 | LinkedIn | [`../../daily-guides/day-02.md`](../../daily-guides/day-02.md) | P0 |
-| X + Threads | [`02-x-threads.md`](./02-x-threads.md) | P0 |
+| X + Threads | [`02-x-threads.md`](./02-x-threads.md) | **Paused** (X account read-only) |
 | Dev.to / Hashnode | optional later | P2 |
 
 Fill [`LINKS.md`](./LINKS.md) after posting.

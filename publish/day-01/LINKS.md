@@ -5,7 +5,7 @@ Fill these in after you post (helps later “previously” links).
 | Platform | URL | Posted? |
 |----------|-----|---------|
 | LinkedIn | https://www.linkedin.com/feed/update/urn:li:activity:7496445864429821952/ | yes |
-| X / Twitter (thread root) | https://x.com/ItsCloudhub_Tec/status/2090577041305559445 | yes |
+| X / Twitter (thread root) | https://x.com/ItsCloudhub_Tec/status/2090577041305559445 | yes (account later read-only) |
 | Threads | | |
 | Dev.to | | |
 | Hashnode | | |

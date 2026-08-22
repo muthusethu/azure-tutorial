@@ -4,7 +4,18 @@ Canonical source (always link back here):
 
 https://github.com/muthusethu/azure-tutorial
 
-LinkedIn remains the daily home base. Other platforms amplify the same lesson — do **not** invent a second series voice.
+**LinkedIn** remains the daily home base. **GitHub** is the canonical lab + PDF source. Other platforms amplify the same lesson — do **not** invent a second series voice.
+
+## Platform status
+
+| Platform | Status | Notes |
+|----------|--------|--------|
+| LinkedIn | **Active** | Daily post + PDF |
+| GitHub | **Active** | `days/day-NN-*/` |
+| X (Twitter) | **Paused** | `@ItsCloudhub_Tec` permanently read-only (appeal submitted / pending). Do **not** create a new X account to continue the series. Do not plan daily X threads until reinstated. |
+| Threads | Optional later | Can reuse old X drafts if desired; not required |
+| Dev.to / Hashnode | Optional 2–3× week | Set canonical URL → GitHub day folder |
+| Medium / Reddit / IG / YouTube | Optional | Lower priority while LinkedIn streak runs |
 
 ## Rules (every platform)
 
@@ -12,38 +23,31 @@ LinkedIn remains the daily home base. Other platforms amplify the same lesson �
 - Personal learning series — views are your own
 - Link GitHub day folder (or article canonical URL) when the platform allows links
 - Same hashtag set **only on LinkedIn**: `#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic`
-- X / Threads: **2–3 hashtags max**
 - Reddit: **zero hashtags**, zero “follow me”
+- If X returns: post slowly, avoid link-heavy first tweets, no burst threads on day one
 
 ## Suggested cadence (do not burn out)
 
 | When | Platforms |
 |------|-----------|
 | Daily ~10am | **LinkedIn** (+ PDF document) |
-| Same day or evening | **X** thread + **Threads** (same thread text) |
-| 2–3× per week | **Dev.to** or **Hashnode** (longer article; alternate) |
-| 1× per week | **Medium** (week recap or best day expanded) |
-| Only when the post is genuinely useful standalone | **Reddit** (r/AZURE, r/devops) — pure content |
-| Optional later | Instagram carousel, YouTube Short, Facebook groups |
-
-**Day 1:** publish LinkedIn + X/Threads. Add Dev.to within 24h. Skip Instagram/YouTube until weekend if energy is low.
+| Same week (optional) | **Dev.to** *or* **Hashnode** |
+| 1× per week (optional) | **Medium** week recap |
+| Only when standalone-useful | **Reddit** (r/AZURE, r/devops) — pure content |
+| Paused | **X** |
+| Optional later | Threads, Instagram, YouTube, Facebook groups |
 
 ## Folder layout
 
 ```text
 publish/
-  README.md                 ← this file
-  day-01/
-    01-linkedin.md          ← already in daily-guides; pointer only
-    02-x-threads.md         ← X + Threads thread
-    03-devto-hashnode.md    ← article markdown
-    04-medium.md            ← longer narrative
-    05-reddit.md            ← anti-promo tone
-    06-facebook.md
-    07-instagram-carousel.md
-    08-youtube-shorts.md
+  README.md
+  day-01/ … day-NN/
+    02-x-threads.md     ← kept for archive / if X is reinstated; not required daily
+    LINKS.md
+    …
 ```
 
 ## After you publish
 
-Paste URLs into `publish/day-01/LINKS.md` so you can reuse them in later posts (“earlier I covered…”).
+Paste URLs into that day’s `LINKS.md` (LinkedIn + GitHub at minimum).
