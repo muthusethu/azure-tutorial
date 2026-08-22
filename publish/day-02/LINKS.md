@@ -2,8 +2,8 @@
 
 | Platform | URL | Posted? |
 |----------|-----|---------|
-| LinkedIn | | |
+| LinkedIn | https://www.linkedin.com/feed/update/urn:li:activity:7496987476876652544/ | yes |
 | X / Twitter (thread root) | | |
 | Threads | | |
 | Dev.to | | |
-| GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-02-portal-cli-powershell | ready |
+| GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-02-portal-cli-powershell | yes |
