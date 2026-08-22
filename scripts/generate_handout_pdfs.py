@@ -399,25 +399,160 @@ def build_day01(path: Path):
     print("Wrote", path)
 
 
+def build_day02(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 2 — Portal vs CLI vs PowerShell | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(2, "Azure Portal, CLI & PowerShell Basics"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 2 Handout — When to click vs when to script", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>Portal</b> — best for exploration and visual confirmation",
+        "<b>Azure CLI (az)</b> — best for repeatable, pipeline-friendly commands",
+        "<b>PowerShell</b> — best when you need objects and Windows-centric automation",
+        "<b>Naming</b> — rg-day02-lab beats New Resource Group (1)",
+    ]))
+
+    story.append(Paragraph("High-level architecture — choose your interface", s["h1"]))
+    rows = [
+        ["Job", "Portal", "Azure CLI", "PowerShell"],
+        ["First time seeing a service", "Best", "OK", "OK"],
+        ["Same task twice this week", "Avoid", "Best", "Best"],
+        ["Put it in a pipeline later", "No", "Best", "Good"],
+        ["Need structured objects", "Limited", "Text/JSON", "Best"],
+        ["Windows estate / AD-heavy", "OK", "Good", "Best"],
+    ]
+    story.append(section_box("Decision table — pick the tool by the job", rows,
+                             col_widths=[50 * mm, 40 * mm, 45 * mm, 45 * mm]))
+
+    story.append(Spacer(1, 6))
+    flow = [
+        ["Step", "What happens"],
+        ["1. You", "Decide the change (create RG, list resources, …)"],
+        ["2. Portal / CLI / PowerShell", "Your interface — clicks or commands"],
+        ["3. Azure Resource Manager", "Control plane that accepts the request (Day 3)"],
+        ["4. Azure resource providers", "Actually create/update the resource"],
+    ]
+    story.append(section_box("Architecture — all three tools talk to the same plane", flow,
+                             col_widths=[55 * mm, 125 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Explore once in Portal &nbsp;·&nbsp; Second time use CLI &nbsp;·&nbsp; "
+        "Forever after, script it</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=10, leading=13,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "Use a <b>personal</b> Microsoft account and personal Azure subscription only.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Install Azure CLI: <b>https://aka.ms/installazurecliwindows</b>",
+        "Run <b>az login</b> and select your personal subscription.",
+        "Create resource group: <b>az group create --name rg-day02-lab --location centralindia</b>",
+        "Optionally create one RG in the Portal to feel the click cost.",
+        "List with <b>az group list --output table</b>, then delete lab RGs.",
+    ]))
+
+    story.append(Paragraph("Commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='8'>"
+        "az login<br/>"
+        "az account set --subscription \"&lt;name-or-id&gt;\"<br/>"
+        "az group create --name rg-day02-lab --location centralindia<br/>"
+        "az group show --name rg-day02-lab --output jsonc<br/>"
+        "az group list --output table<br/>"
+        "az group delete --name rg-day02-lab --yes --no-wait"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain Portal vs CLI vs PowerShell in one line each",
+        "az login works on my personal machine",
+        "I created (and cleaned up) rg-day02-lab",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 3", s["h2"]))
+    story.append(Paragraph(
+        "Azure Resource Manager (ARM) — the control plane behind every click and command.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
+    2: build_day02,
 }
 
 
 def main(days=None):
     OUT.mkdir(parents=True, exist_ok=True)
     days = days or sorted(HANDOUTS.keys())
+    publish_map = {
+        1: DAYS / "day-01-cloud-fundamentals" / "handout.pdf",
+        2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
+    }
     for d in days:
         fn = HANDOUTS[d]
         out = OUT / f"day-{d:02d}-handout.pdf"
         fn(out)
-        # Publish Day 1 into the public days/ folder when present
-        if d == 1:
-            pub = DAYS / "day-01-cloud-fundamentals" / "handout.pdf"
-            if pub.parent.exists():
-                pub.write_bytes(out.read_bytes())
-                print("Also wrote", pub)
+        pub = publish_map.get(d)
+        if pub is not None:
+            pub.parent.mkdir(parents=True, exist_ok=True)
+            pub.write_bytes(out.read_bytes())
+            print("Also wrote", pub)
 
 
 if __name__ == "__main__":

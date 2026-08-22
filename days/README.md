@@ -10,5 +10,6 @@ Each folder contains:
 | Day | Topic | Folder |
 |----:|--------|--------|
 | 01 | Cloud Computing & Azure Fundamentals | [day-01-cloud-fundamentals](./day-01-cloud-fundamentals) |
+| 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./day-02-portal-cli-powershell) |
 
-Coming next: Day 02 — Portal, CLI & PowerShell.
+Coming next: Day 03 — Azure Resource Manager (ARM) basics.

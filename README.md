@@ -72,6 +72,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | Day | Topic | Folder | Handout |
 |-----|--------|--------|---------|
 | 01 | Cloud Computing & Azure Fundamentals | [day-01-cloud-fundamentals](./days/day-01-cloud-fundamentals) | [PDF](./days/day-01-cloud-fundamentals/handout.pdf) |
+| 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./days/day-02-portal-cli-powershell) | [PDF](./days/day-02-portal-cli-powershell/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
