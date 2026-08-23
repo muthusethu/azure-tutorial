@@ -11,5 +11,6 @@ Each folder contains:
 |----:|--------|--------|
 | 01 | Cloud Computing & Azure Fundamentals | [day-01-cloud-fundamentals](./day-01-cloud-fundamentals) |
 | 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./day-02-portal-cli-powershell) |
+| 03 | Azure Resource Manager (ARM) Basics | [day-03-arm-basics](./day-03-arm-basics) |
 
-Coming next: Day 03 — Azure Resource Manager (ARM) basics.
+Coming next: Day 04 — DevOps principles & culture.

@@ -530,10 +530,150 @@ def build_day02(path: Path):
     print("Wrote", path)
 
 
+def build_day03(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 3 — ARM Basics | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(3, "Azure Resource Manager (ARM) Basics"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 3 Handout — Control plane, tags & locks", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>ARM</b> is the control plane behind Portal, CLI, and PowerShell",
+        "<b>Hierarchy</b> — management group → subscription → resource group → resource",
+        "<b>Tags</b> — sticky notes for cost and ownership",
+        "<b>Locks</b> — duct tape so prod is harder to delete by accident",
+    ]))
+
+    story.append(Paragraph("High-level architecture", s["h1"]))
+    flow = [
+        ["Layer", "What it does"],
+        ["You (Portal / CLI / PowerShell)", "Express the change you want"],
+        ["Azure Resource Manager (ARM)", "Auth, validate, orchestrate the request"],
+        ["Resource providers", "Create/update the real resource (Storage, Web, …)"],
+        ["Resource", "The thing that exists and (often) costs money"],
+    ]
+    story.append(section_box("Architecture A — request path", flow,
+                             col_widths=[70 * mm, 110 * mm]))
+
+    story.append(Spacer(1, 6))
+    hier = [
+        ["Level", "Metaphor", "Why it matters"],
+        ["Management group", "Company / folder of folders", "Policy at scale"],
+        ["Subscription", "Billing boundary", "Where invoices land"],
+        ["Resource group", "Project box", "Lifecycle + delete scope"],
+        ["Resource", "The actual thing", "VM, storage, web app, …"],
+    ]
+    story.append(section_box("Architecture B — scope hierarchy", hier,
+                             col_widths=[40 * mm, 55 * mm, 85 * mm]))
+
+    story.append(Spacer(1, 6))
+    tools = [
+        ["Tool", "Job"],
+        ["Tags", "Label owner / project / env for cost and cleanup"],
+        ["CanNotDelete lock", "Block delete until lock is removed"],
+        ["ReadOnly lock", "Block most changes (stricter)"],
+    ]
+    story.append(section_box("Architecture C — tags vs locks", tools,
+                             col_widths=[50 * mm, 130 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Portal/CLI = how you talk &nbsp;·&nbsp; ARM = who enforces rules &nbsp;·&nbsp; "
+        "Tags = sticky notes &nbsp;·&nbsp; Locks = duct tape</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "Personal subscription only. Delete the lab RG when finished.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create <b>rg-day03-lab</b> with tags Project=100Days, Owner=personal, Env=lab",
+        "Add a <b>CanNotDelete</b> lock on the resource group",
+        "Try <b>az group delete</b> — expect failure while locked",
+        "Delete the lock, then delete the resource group",
+    ]))
+
+    story.append(Paragraph("Commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "az group create -n rg-day03-lab -l centralindia "
+        "--tags Project=100Days Owner=personal Env=lab<br/>"
+        "az lock create --name cannot-delete --lock-type CanNotDelete "
+        "--resource-group rg-day03-lab<br/>"
+        "az lock delete --name cannot-delete --resource-group rg-day03-lab<br/>"
+        "az group delete -n rg-day03-lab --yes --no-wait"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain ARM in one sentence",
+        "I applied tags and a CanNotDelete lock",
+        "I cleaned up rg-day03-lab",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 4", s["h2"]))
+    story.append(Paragraph(
+        "DevOps principles & culture — CALMS and DORA without the buzzword fog.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
     2: build_day02,
+    3: build_day03,
 }
 
 
@@ -543,6 +683,7 @@ def main(days=None):
     publish_map = {
         1: DAYS / "day-01-cloud-fundamentals" / "handout.pdf",
         2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
+        3: DAYS / "day-03-arm-basics" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
