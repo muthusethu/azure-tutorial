@@ -2,7 +2,7 @@
 
 Personal learning-in-public series: **one Azure / DevOps topic per day**, with a short lab and a downloadable PDF handout (architecture + step-by-step).
 
-**Parallel track:** [#ProductionGradeAzure](./publish/production-grade/) — production issues, fixes, and best practices every **3rd series day** (33 posts). **Two separate LinkedIn posts** on those days; the daily lesson plan is unchanged.
+**Parallel track:** [#ProductionGradeAzure](./publish/production-grade/) — senior engineer posts every **3–4 days** (title + production story). Independent of the daily lesson. Example style: *Green pipeline. Red production. Why “Succeeded” is not enough.*
 
 > Educational content only. Personal labs on a personal Azure subscription. Views are my own. Not affiliated with any employer. Not a course product and not a sales pitch.
 

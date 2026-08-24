@@ -4,44 +4,100 @@
 
 | | |
 |---|---|
-| **Cadence** | Every 3rd series day: Day 4, 7, 10, … 100 (**33 posts**) |
-| **Same calendar** | Runs in parallel until the 100-day plan ends |
-| **Posts per field day** | **Two** LinkedIn updates: (1) daily lesson, (2) this production note |
-| **Voice** | ~10 years production — issue, what broke, fix, best practice |
-| **Hashtags** | `#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic` |
+| **Cadence** | Every **3–4 days** while the 100-day plan runs (flexible) |
+| **Style model** | Title + hook + patterns + controls — like Note 1 |
+| **Voice** | ~10 years DevOps engineer |
+| **Rule** | Topic must **not** be that day’s 100-day lesson |
 
-**Before you post:** rewrite with your real incident (anonymized). No employer, client, or internal URLs.
+**Format:** engaging title → story → patterns → what you change → closing line → hashtags.  
+No “note N of 33.” No series countdown in the body.
 
-**Reminder:** run `python scripts/production_reminder.py` each morning.
-
-Schedule + checkboxes: [REMINDERS.md](./REMINDERS.md)
+Schedule: [REMINDERS.md](./REMINDERS.md) · Track rules: [README.md](./README.md)
 
 ---
 
-## Note 1 — Day 4 (24 Aug 2026)
+## Note 1 — 24 Aug 2026
 
-**Title:** The sticker said DevOps. DORA said otherwise.
+**Title:** Green pipeline. Red production. Why “Succeeded” is not enough.  
+**Topic:** Pipeline success is not production health  
+**Status:** Posted — https://www.linkedin.com/feed/update/urn:li:activity:7497701160330633216/
 
 ```
-Production note 1 of 33 — #ProductionGradeAzure
+Green pipeline. Red production. Why “Succeeded” is not enough.
 
-The sticker said DevOps. DORA said otherwise.
+The pipeline was green.
+The release was “successful.”
+Support tickets started within twelve minutes.
 
-I have sat in rooms where the slide said “DevOps transformation”
-and the only metric anyone tracked was ticket count.
+That gap — CI/CD success versus production health — is where a lot of real DevOps work lives.
 
-When a release failed, the first question was “who deployed?”
-not “how did this pass the pipeline?” and not “how long until users are fine?”
+What usually happened
 
-That is Culture failing, then Measurement never existing.
+The build compiled.
+Unit tests passed.
+The artifact was pushed.
+The App Service / VM / container took the new bits.
+The job status flipped to Succeeded.
 
-The teams that got better did three boring things:
-they deployed smaller, they measured restore time, and they stopped
-treating the person on the keyboard as the root cause.
+None of those steps prove a user can complete a login, place an order, or hit the API that matters.
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+A green pipeline means your delivery system did what you asked.
+It does not mean the product is healthy.
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+Patterns I keep seeing after a decade in delivery
+
+1. Health endpoint that always returns 200
+• /health only checks process up, not dependency up
+• Database, cache, or downstream API can be down while the probe is green
+
+2. Config that never ran in CI
+• Connection strings, feature flags, and slot settings applied only at deploy time
+• Test suite never exercised the production configuration path
+
+3. Rebuild per environment
+• Staging ran build A
+• Production rebuilt from the same commit and got a different dependency tree
+• You did not promote an artifact — you rolled dice twice
+
+4. No post-deploy smoke
+• Traffic switched immediately
+• First real validation was a customer
+
+5. Rollback exists only in a runbook
+• Nobody timed it
+• Nobody owns who clicks it
+• At 2am the “plan” is tribal knowledge
+
+What I put after every production deploy
+
+A short, automated smoke path — not a full regression:
+
+• Hit the real URL (or internal gateway), not only localhost on the agent
+• Authenticate with a synthetic account if the product needs auth
+• Exercise one write and one read on the critical path
+• Verify one dependency (DB ping, queue depth, or cache)
+• Fail the release job if any check fails — do not only log a warning
+
+Then decide rollback or forward-fix with a clock, not a debate.
+
+Engineering rules that reduce this class of incident
+
+• Promote the same immutable artifact: build once, deploy many
+• Separate “pipeline succeeded” from “service accepted traffic”
+• Make /health (or readiness) fail when critical dependencies fail
+• Keep smoke checks in the pipeline or release gate, not in chat
+• Practice rollback in non-prod until the time is known
+
+One sentence I use with teams
+
+If your definition of done for a release stops at “job status = Succeeded,”
+you are measuring the conveyor belt — not the product.
+
+Green build. Red users. That is a signal that validation ended too early.
+
+Personal views from production delivery work. No employer or client details.
+
+#DevOps #Azure #CICD #SRE #CloudComputing #ProductionEngineering #Automation
 ```
 
 ---

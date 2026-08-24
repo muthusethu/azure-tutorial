@@ -1,50 +1,55 @@
 # Production Grade Azure
 
-**Separate LinkedIn track** — runs on the **same calendar** as [#100DaysOfAzureDevOps](../../README.md) but does **not** change the daily lesson posts.
+**Separate LinkedIn track** from [#100DaysOfAzureDevOps](../../README.md). The daily lesson plan stays untouched.
 
-## What this is
+## Two tracks
 
-| | Daily lesson | This track |
+| | Daily lesson | Extra post |
 |---|--------------|------------|
-| **Series** | `#100DaysOfAzureDevOps` | `#ProductionGradeAzure` |
-| **Cadence** | Every day (100 posts) | Every **3rd series day** (33 posts) |
-| **Content** | Learn + lab + PDF handout | Production issue → what broke → fix → best practice |
-| **Voice** | Learning in public | ~10 years in production (anonymized) |
-| **LinkedIn** | **One post per day** | **Second post** on field-note days only |
+| **Focus** | `#100DaysOfAzureDevOps` learn + lab + PDF | Senior engineer production stories |
+| **Cadence** | **Every day** | **Every 3–4 days** (flexible) |
+| **Style** | Series day post | Title + hook + patterns + what you change |
+| **Example** | Day 4 CALMS/DORA | *Green pipeline. Red production. Why “Succeeded” is not enough.* |
 
-**Field-note days:** 4, 7, 10, 13, … 100.
+Do **not** merge the two posts. Do **not** reuse that day’s 100-day topic for the extra post.
 
-## Two posts on field-note days
+## Style for every extra post
 
-| Post | When (IST) | Source |
-|------|------------|--------|
-| **1 — Daily lesson** | ~10:00 | `daily-guides/day-NN.md` (+ PDF in `days/` when ready) |
-| **2 — Production note** | ~17:00–19:00 | [`notes.md`](./notes.md) |
+1. **Title** (strong one-liner — first line or document title)
+2. Short hook (what broke / what looked fine)
+3. What usually happened (technical)
+4. Patterns you recognize after years in the seat
+5. What you change / enforce
+6. One sharp closing line
+7. Hashtags — prefer: `#DevOps #Azure #CICD #SRE #CloudComputing #ProductionEngineering`  
+   (optional: `#ProductionGradeAzure` — do **not** lead with `#100DaysOfAzureDevOps`)
 
-Do **not** merge them into one post.
+Voice: ~10 years DevOps — engaging, technical, no meme tone, no “note N of 33.”
 
-## Hashtags (production track only)
+## When to post
 
-`#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic`
+Rough guide while the 100-day plan runs (21 Aug – 28 Nov 2026):
 
-Do **not** use `#100DaysOfAzureDevOps` on production posts (keeps the tracks distinct).
+| Extra post | Target window | Status |
+|------------|---------------|--------|
+| 1 | 24 Aug 2026 | Draft ready — [notes.md Note 1](./notes.md) |
+| 2 | ~27–28 Aug | TBD |
+| 3 | ~31 Aug – 1 Sep | TBD |
+| … | every 3–4 days | Continue until plan ends |
 
-## Before you post
-
-- Rewrite every draft with **your** real incident (composite/anonymized is fine).
-- No employer name, client name, internal URLs, or live secrets.
-- After posting, paste URLs into [`LINKS.md`](./LINKS.md).
+Exact day can shift. Priority is **quality + distinct topic**, not a rigid Day 4/7/10 lock.
 
 ## Reminders
 
-1. **Each morning:** `python scripts/production_reminder.py`
-2. **Checklist calendar:** [`REMINDERS.md`](./REMINDERS.md)
-3. **On field-note days:** yellow reminder block at the bottom of that day’s `daily-guides/day-NN.md`
+1. Morning: `python scripts/production_reminder.py` (still useful on scheduled days)
+2. Checklist: [`REMINDERS.md`](./REMINDERS.md)
+3. Drafts: [`notes.md`](./notes.md)
+4. URLs: [`LINKS.md`](./LINKS.md)
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| [`notes.md`](./notes.md) | Copy-paste LinkedIn text — notes 1–33 |
-| [`REMINDERS.md`](./REMINDERS.md) | Dates + checkboxes |
+| [`notes.md`](./notes.md) | Copy-paste drafts |
+| [`REMINDERS.md`](./REMINDERS.md) | Calendar + checkboxes |
 | [`LINKS.md`](./LINKS.md) | Published LinkedIn URLs |

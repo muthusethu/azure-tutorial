@@ -10,7 +10,7 @@ Use this exact set on every post:
 
 LinkedIn tone: educational + entertaining. No sales CTAs. Personal accounts only.
 
-**Production track (separate posts):** On days 4, 7, 10, … 100, publish a **second** LinkedIn post from [`../publish/production-grade/`](../publish/production-grade/). Reminder block is injected in those daily guides. Run `python scripts/production_reminder.py` each morning.
+**Extra posts (every 3–4 days):** Independent senior-engineer LinkedIn posts — see [`../publish/production-grade/`](../publish/production-grade/). Style model: *Green pipeline. Red production…* Not the same topic as that day’s lesson.
 
 ## Daily LinkedIn package
 
