@@ -51,6 +51,22 @@ Tomorrow: DevSecOps shift-left.
 - No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
 
+## Reminder — 2nd LinkedIn post (production track)
+
+**Today you publish TWO separate LinkedIn posts.** The daily lesson above is post 1 only.
+
+| | Post 1 — #100DaysOfAzureDevOps | Post 2 — #ProductionGradeAzure |
+|---|-------------------------------|----------------------------------|
+| **When** | ~10:00 IST | ~17:00–19:00 IST (after some engagement on post 1) |
+| **Copy** | This file — LinkedIn section | [`publish/production-grade/notes.md`](../publish/production-grade/notes.md) — Note 22 |
+| **Attach** | Day PDF when ready | None (story post) |
+
+- [ ] Post 1 — daily lesson (+ PDF)
+- [ ] Post 2 — production note 22 of 33 (rewrite with your real experience)
+- [ ] Record URLs in [`publish/production-grade/LINKS.md`](../publish/production-grade/LINKS.md)
+
+Run: `python scripts/production_reminder.py`
+
 ## Done checklist
 
 - [ ] Learned the topic (docs or short video)

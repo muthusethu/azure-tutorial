@@ -13,4 +13,4 @@ Each folder contains:
 | 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./day-02-portal-cli-powershell) |
 | 03 | Azure Resource Manager (ARM) Basics | [day-03-arm-basics](./day-03-arm-basics) |
 
-Coming next: Day 04 — DevOps principles & culture.
+Coming next: Day 04 — DevOps principles & culture (**two LinkedIn posts** today: daily lesson + [production note 1](../publish/production-grade/notes.md)).

@@ -2,10 +2,14 @@
 
 Personal learning-in-public series: **one Azure / DevOps topic per day**, with a short lab and a downloadable PDF handout (architecture + step-by-step).
 
+**Parallel track:** [#ProductionGradeAzure](./publish/production-grade/) — production issues, fixes, and best practices every **3rd series day** (33 posts). **Two separate LinkedIn posts** on those days; the daily lesson plan is unchanged.
+
 > Educational content only. Personal labs on a personal Azure subscription. Views are my own. Not affiliated with any employer. Not a course product and not a sales pitch.
 
 **LinkedIn series:** `#100DaysOfAzureDevOps`  
-**Hashtags (every post):** `#100DaysOfAzureDevOps` `#Azure` `#DevOps` `#CloudComputing` `#LearningInPublic`
+**Hashtags (daily posts):** `#100DaysOfAzureDevOps` `#Azure` `#DevOps` `#CloudComputing` `#LearningInPublic`
+
+**Production track (separate posts):** `#ProductionGradeAzure` — see [`publish/production-grade/`](./publish/production-grade/)
 
 ---
 
@@ -16,6 +20,7 @@ Personal learning-in-public series: **one Azure / DevOps topic per day**, with a
 | [`days/`](./days) | One folder per day — guide + PDF handout (share these) |
 | [`daily-guides/`](./daily-guides) | Full markdown guides (learn, lab, LinkedIn draft, checklist) |
 | [`scripts/`](./scripts) | Helpers to generate guides / PDFs (optional for readers) |
+| [`publish/production-grade/`](./publish/production-grade/) | Separate production track (every 3rd day, 2nd LinkedIn post) |
 | [`docs/`](./docs) | Repo policy notes |
 
 You do **not** need to clone this repo to follow along. Open the day folder, read the guide, download the PDF.

@@ -6,6 +6,8 @@ https://github.com/muthusethu/azure-tutorial
 
 **LinkedIn** remains the daily home base. **GitHub** is the canonical lab + PDF source. Other platforms amplify the same lesson — do **not** invent a second series voice.
 
+**Separate track:** [#ProductionGradeAzure](./production-grade/) — every 3rd series day (4, 7, 10, … 100), publish a **second LinkedIn post** (production issues / fixes). Do **not** merge into the daily lesson. Morning reminder: `python scripts/production_reminder.py`.
+
 ## Platform status
 
 | Platform | Status | Notes |
@@ -30,7 +32,8 @@ https://github.com/muthusethu/azure-tutorial
 
 | When | Platforms |
 |------|-----------|
-| Daily ~10am | **LinkedIn** (+ PDF document) |
+| Daily ~10am | **LinkedIn** post 1 — #100DaysOfAzureDevOps (+ PDF document) |
+| Every 3rd series day ~5–7pm | **LinkedIn** post 2 — [#ProductionGradeAzure](./production-grade/notes.md) (separate update) |
 | Same week (optional) | **Dev.to** *or* **Hashnode** |
 | 1× per week (optional) | **Medium** week recap |
 | Only when standalone-useful | **Reddit** (r/AZURE, r/devops) — pure content |

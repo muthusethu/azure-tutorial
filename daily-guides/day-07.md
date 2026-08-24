@@ -35,14 +35,22 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 
 ## LinkedIn post (copy-paste)
 
+**Post 1 of 2 today.** Production story is a **separate** post — [Note 2](../publish/production-grade/notes.md).
+
 ```
 Day 7 of #100DaysOfAzureDevOps
 
-Boards without WIP limits are sticky-note chaos with better fonts - limit work in progress or the board owns you
+Azure Boards is not a wall of tickets.
+It is a map of flow — or a museum of work that never finished.
 
-Today's topic: **Azure Boards Deep Dive**.
+Epic → Feature → Story → Task is useful.
+A board with 40 items in Doing is a confession.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+WIP limits feel rude until production teaches you:
+context-switching is how bugs hide.
+
+Lab today: Epic for the 100-day journey, stories for Phase 1,
+one item moved To Do → Doing → Done, plus a “not done” query.
 
 Tomorrow: Azure Test Plans basics.
 
@@ -54,6 +62,22 @@ Tomorrow: Azure Test Plans basics.
 - Publish from your **personal** account, outside work hours (morning IST works well).
 - No employer name, no client details, no hiring CTAs.
 - After posting: leave 5-10 real comments on other Azure/DevOps posts.
+
+## Reminder — 2nd LinkedIn post (production track)
+
+**Today you publish TWO separate LinkedIn posts.** The daily lesson above is post 1 only.
+
+| | Post 1 — #100DaysOfAzureDevOps | Post 2 — #ProductionGradeAzure |
+|---|-------------------------------|----------------------------------|
+| **When** | ~10:00 IST | ~17:00–19:00 IST (after some engagement on post 1) |
+| **Copy** | This file — LinkedIn section | [`publish/production-grade/notes.md`](../publish/production-grade/notes.md) — Note 2 |
+| **Attach** | Day PDF when ready | None (story post) |
+
+- [ ] Post 1 — daily lesson (+ PDF)
+- [ ] Post 2 — production note 2 of 33 (rewrite with your real experience)
+- [ ] Record URLs in [`publish/production-grade/LINKS.md`](../publish/production-grade/LINKS.md)
+
+Run: `python scripts/production_reminder.py`
 
 ## Done checklist
 
