@@ -669,11 +669,143 @@ def build_day03(path: Path):
     print("Wrote", path)
 
 
+def build_day04(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 4 — DevOps Principles & Culture | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(4, "DevOps Principles & Culture"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 4 Handout — CALMS + DORA without the buzzword fog", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>DevOps</b> is habits + outcomes — not a job title or a laptop sticker",
+        "<b>CALMS</b> — Culture, Automation, Lean, Measurement, Sharing",
+        "<b>DORA</b> — four metrics that expose theatre",
+        "Agile and DevOps <b>complement</b> each other; they do not replace each other",
+    ]))
+
+    story.append(Paragraph("High-level architecture — CALMS", s["h1"]))
+    calms = [
+        ["Letter", "Means", "Red flag if missing"],
+        ["Culture", "Blame process, not people", "Who deployed? is the first question"],
+        ["Automation", "Script what you repeat", "Click-ops at midnight"],
+        ["Lean", "Small batches, less WIP", "Big-bang Friday releases"],
+        ["Measurement", "Numbers beat vibes", "Only metric is ticket count"],
+        ["Sharing", "Runbooks + postmortems", "Only one person knows how"],
+    ]
+    story.append(section_box("Architecture A — CALMS scorecard", calms,
+                             col_widths=[28 * mm, 55 * mm, 97 * mm]))
+
+    story.append(Spacer(1, 6))
+    dora = [
+        ["DORA metric", "Question it answers", "Why it matters"],
+        ["Deployment frequency", "How often do we ship?", "Smaller changes, faster feedback"],
+        ["Lead time for changes", "Commit → production how long?", "Friction in the path to users"],
+        ["Change failure rate", "How often do releases hurt?", "Quality of your delivery system"],
+        ["Time to restore", "How fast do we recover?", "Resilience when (not if) it breaks"],
+    ]
+    story.append(section_box("Architecture B — DORA four keys", dora,
+                             col_widths=[45 * mm, 60 * mm, 75 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>CALMS = what good feels like &nbsp;·&nbsp; DORA = how you prove it &nbsp;·&nbsp; "
+        "Tools without habits = theatre</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min) — no Azure spend", s["h1"]))
+    story.append(Paragraph(
+        "Concepts only today. Be honest. Nobody grades this but future-you.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Score yourself (or your last team) <b>1–5</b> on each CALMS letter",
+        "Circle the weakest letter — that is your next habit to build",
+        "Pick <b>one</b> DORA metric you can measure on a personal lab later "
+        "(even deploys-per-week to a throwaway App Service)",
+        "Write three sentences: what “good” looks like for that metric in six months",
+    ]))
+
+    story.append(Paragraph("Scorecard template", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='9'>"
+        "Culture:     _ / 5<br/>"
+        "Automation:  _ / 5<br/>"
+        "Lean:        _ / 5<br/>"
+        "Measurement: _ / 5<br/>"
+        "Sharing:     _ / 5<br/><br/>"
+        "DORA metric I will track: _______________________"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain CALMS without reading a slide",
+        "I can name the four DORA metrics",
+        "I filled a 1–5 scorecard and picked one metric to track",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 5", s["h2"]))
+    story.append(Paragraph(
+        "Azure DevOps Services overview — Boards, Repos, Pipelines, Test Plans, Artifacts.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
     2: build_day02,
     3: build_day03,
+    4: build_day04,
 }
 
 
@@ -684,6 +816,7 @@ def main(days=None):
         1: DAYS / "day-01-cloud-fundamentals" / "handout.pdf",
         2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
         3: DAYS / "day-03-arm-basics" / "handout.pdf",
+        4: DAYS / "day-04-devops-principles" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

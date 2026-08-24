@@ -46,32 +46,65 @@ This is **post 1 of 2 today**. Do not paste the production story here — that i
 ```
 Day 4 of #100DaysOfAzureDevOps
 
-DevOps is not a job title with a fancy laptop sticker.
+Yesterday: ARM — the head office behind every Azure click.
+
+Today: the word everyone puts on their laptop sticker.
+
+DevOps.
+
+DevOps is not a job title.
+It is whether your team can change software without a fire drill.
 
 CALMS is the checklist people skip:
-Culture. Automation. Lean. Measurement. Sharing.
+
+• Culture — blame the process, not the person on the keyboard
+• Automation — if you do it twice, script it
+• Lean — smaller batches, less WIP, less “big bang Friday”
+• Measurement — numbers beat vibes
+• Sharing — runbooks and postmortems beat tribal knowledge
 
 If any one letter is fake, the rest is theatre.
 
-DORA is how you catch the theatre:
-• How often do you ship?
-• How long from commit to production?
-• How often does a release hurt users?
-• How fast do you recover?
+DORA is how you catch the theatre — four questions:
 
-You can own Azure Pipelines, run stand-ups, and still score low on DORA.
+• How often do you ship? (deployment frequency)
+• How long from commit to production? (lead time)
+• How often does a release hurt users? (change failure rate)
+• How fast do you recover? (time to restore)
+
+You can own Azure Pipelines, run stand-ups, freeze every Friday —
+and still score low on DORA.
+
 Tools do not raise DORA. Habits do.
 
-Lab today: scored my team (honestly) on CALMS and picked one DORA metric
-I can actually measure on a personal project — not vibes, a number.
+Lab today: scored myself honestly on CALMS (1–5 each letter)
+and picked one DORA metric I can actually measure on a personal project —
+not vibes. A number.
 
 One-liner:
-Culture ships the change. Measurement proves it. Automation scales it.
 
-Tomorrow: Azure DevOps Services — Boards, Repos, Pipelines, Test Plans, Artifacts.
+CALMS = what good feels like.
+DORA = how you prove it.
+A sticker = optional.
+
+Tomorrow: Azure DevOps Services —
+Boards, Repos, Pipelines, Test Plans, Artifacts — five hubs, one roof.
+
+(Document attached: Day 4 CALMS + DORA handout PDF)
+
+Lab notes + PDF also here:
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-04-devops-principles
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### Attach with the post (PDF handout)
+
+Attach this document on LinkedIn (document / PDF upload):
+
+- [`../days/day-04-devops-principles/handout.pdf`](../days/day-04-devops-principles/handout.pdf)
+
+**How to post on LinkedIn:** Start a post → **document** icon → upload `handout.pdf` → paste the text above → title e.g. `Day 4 — DevOps Principles (CALMS + DORA)`.
 
 ### Posting tips
 

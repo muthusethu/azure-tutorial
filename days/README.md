@@ -12,5 +12,6 @@ Each folder contains:
 | 01 | Cloud Computing & Azure Fundamentals | [day-01-cloud-fundamentals](./day-01-cloud-fundamentals) |
 | 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./day-02-portal-cli-powershell) |
 | 03 | Azure Resource Manager (ARM) Basics | [day-03-arm-basics](./day-03-arm-basics) |
+| 04 | DevOps Principles & Culture | [day-04-devops-principles](./day-04-devops-principles) |
 
-Coming next: Day 04 — DevOps principles & culture (**two LinkedIn posts** today: daily lesson + [production note 1](../publish/production-grade/notes.md)).
+Coming next: Day 05 — Azure DevOps Services overview.
