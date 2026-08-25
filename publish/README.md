@@ -54,3 +54,5 @@ publish/
 ## After you publish
 
 Paste URLs into that day’s `LINKS.md` (LinkedIn + GitHub at minimum).
+
+**GitHub links in LinkedIn posts:** use Bitly short links. Index: [`BITLY.md`](./BITLY.md). Create new ones with `python scripts/bitly_shorten.py "<github-day-url>" "Day NN title"` (token in local `.env`).

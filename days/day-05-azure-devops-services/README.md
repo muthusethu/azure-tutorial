@@ -49,9 +49,10 @@ Post draft: [`../../daily-guides/day-05.md`](../../daily-guides/day-05.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://github.com/muthusethu/azure-tutorial/tree/main/days/day-05-azure-devops-services
+https://bit.ly/4giLVv7
 ```
 
+(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-05-azure-devops-services)
 ## Next
 
 **Day 06** — Setting up an Azure DevOps organization.

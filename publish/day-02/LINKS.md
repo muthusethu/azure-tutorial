@@ -7,3 +7,4 @@
 | Threads | | |
 | Dev.to | | |
 | GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-02-portal-cli-powershell | yes |
+| GitHub (Bitly) | https://bit.ly/3SqFgG2 | yes |

@@ -15,6 +15,7 @@ Fill these in after you post (helps later “previously” links).
 | Instagram | | |
 | YouTube | | |
 | GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-01-cloud-fundamentals | yes |
+| GitHub (Bitly) | https://bit.ly/4gQhXP9 | yes |
 
 ## X thread note
 

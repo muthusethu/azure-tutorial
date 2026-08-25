@@ -74,7 +74,7 @@ Tomorrow: Setting up an Azure DevOps organization in a clean, repeatable way.
 (Document attached: Day 5 Azure DevOps Services handout PDF)
 
 Lab notes + PDF also here:
-https://github.com/muthusethu/azure-tutorial/tree/main/days/day-05-azure-devops-services
+https://bit.ly/4giLVv7
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
