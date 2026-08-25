@@ -800,12 +800,144 @@ def build_day04(path: Path):
     print("Wrote", path)
 
 
+def build_day05(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 5 — Azure DevOps Services Overview | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(5, "Azure DevOps Services Overview"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 5 Handout — Boards, Repos, Pipelines, Tests, Artifacts", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>Boards</b> for planning and tracking work",
+        "<b>Repos</b> for source control and PR reviews",
+        "<b>Pipelines</b> for CI/CD automation",
+        "<b>Test Plans</b> for manual and exploratory test cases",
+        "<b>Artifacts</b> for package feeds and dependency sharing",
+    ]))
+
+    story.append(Paragraph("High-level architecture — service map", s["h1"]))
+    flow = [
+        ["Step", "Service", "Outcome"],
+        ["1", "Boards", "Work item planned and prioritized"],
+        ["2", "Repos", "Code committed and reviewed"],
+        ["3", "Pipelines", "Build/test/deploy executed"],
+        ["4", "Test Plans", "Manual or exploratory validation captured"],
+        ["5", "Artifacts", "Packages published and versioned"],
+    ]
+    story.append(section_box("Architecture A — idea to delivery", flow,
+                             col_widths=[18 * mm, 52 * mm, 110 * mm]))
+
+    story.append(Spacer(1, 6))
+    compare = [
+        ["Service", "Best used for", "Signal of healthy usage"],
+        ["Boards", "Backlog, sprint planning, traceability", "Stories map to commits and releases"],
+        ["Repos", "Branch strategy and code reviews", "PR workflow with clear history"],
+        ["Pipelines", "Repeatable CI/CD", "Same pipeline runs for every change"],
+        ["Test Plans", "Structured manual testing", "Pass/fail tied to work items"],
+        ["Artifacts", "Reusable package feeds", "Versioned dependencies, no ad-hoc binaries"],
+    ]
+    story.append(section_box("Architecture B — each hub's role", compare,
+                             col_widths=[30 * mm, 70 * mm, 80 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Boards plan &nbsp;·&nbsp; Repos store &nbsp;·&nbsp; Pipelines ship &nbsp;·&nbsp; "
+        "Test Plans validate &nbsp;·&nbsp; Artifacts distribute</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "Create and explore one personal Azure DevOps project end-to-end. No production data.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create personal org at <b>https://dev.azure.com</b>",
+        "Create project <b>day05-overview</b> (Agile, private)",
+        "Create one User Story in Boards",
+        "Initialize repo with README in Repos",
+        "Open New Pipeline wizard and select your repo (no run required)",
+        "Open Test Plans and Artifacts hubs once to understand layout",
+    ]))
+
+    story.append(Paragraph("Quick reference", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='8'>"
+        "Portal: https://dev.azure.com/&lt;your-org&gt;<br/>"
+        "Project: https://dev.azure.com/&lt;your-org&gt;/day05-overview<br/>"
+        "Hubs: Boards | Repos | Pipelines | Test Plans | Artifacts"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain what each of the five hubs does",
+        "I created a project and touched each service once",
+        "I can describe the flow from work item to deployment",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 6", s["h2"]))
+    story.append(Paragraph(
+        "Setting up an Azure DevOps organization with clean defaults and access boundaries.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
     2: build_day02,
     3: build_day03,
     4: build_day04,
+    5: build_day05,
 }
 
 
@@ -817,6 +949,7 @@ def main(days=None):
         2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
         3: DAYS / "day-03-arm-basics" / "handout.pdf",
         4: DAYS / "day-04-devops-principles" / "handout.pdf",
+        5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

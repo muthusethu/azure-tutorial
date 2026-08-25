@@ -80,6 +80,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 02 | Azure Portal, CLI & PowerShell | [day-02-portal-cli-powershell](./days/day-02-portal-cli-powershell) | [PDF](./days/day-02-portal-cli-powershell/handout.pdf) |
 | 03 | Azure Resource Manager (ARM) Basics | [day-03-arm-basics](./days/day-03-arm-basics) | [PDF](./days/day-03-arm-basics/handout.pdf) |
 | 04 | DevOps Principles & Culture | [day-04-devops-principles](./days/day-04-devops-principles) | [PDF](./days/day-04-devops-principles/handout.pdf) |
+| 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./days/day-05-azure-devops-services) | [PDF](./days/day-05-azure-devops-services/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
