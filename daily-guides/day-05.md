@@ -85,7 +85,11 @@ Attach this document on LinkedIn (document / PDF upload):
 
 - [`../days/day-05-azure-devops-services/handout.pdf`](../days/day-05-azure-devops-services/handout.pdf)
 
-**How to post on LinkedIn:** Start a post -> **document** icon -> upload `handout.pdf` -> paste the text above -> title e.g. `Day 5 — Azure DevOps Services Overview`.
+### How to post
+
+1. LinkedIn → **document** → upload `days/day-05-azure-devops-services/handout.pdf`
+2. Paste the text above (press **Enter** between sections so line breaks stay visible)
+3. **Document title:** `Day 5 — Azure DevOps Services Overview` (max 58 chars on LinkedIn)
 
 ### Posting tips
 
