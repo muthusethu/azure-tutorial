@@ -14,5 +14,6 @@ Each folder contains:
 | 03 | Azure Resource Manager (ARM) Basics | [day-03-arm-basics](./day-03-arm-basics) |
 | 04 | DevOps Principles & Culture | [day-04-devops-principles](./day-04-devops-principles) |
 | 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./day-05-azure-devops-services) |
+| 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./day-06-azure-devops-org) |
 
-Coming next: Day 06 — Setting up an Azure DevOps organization.
+Coming next: Day 07 — Azure Boards deep dive.

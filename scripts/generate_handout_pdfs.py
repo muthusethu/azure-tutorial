@@ -931,6 +931,137 @@ def build_day05(path: Path):
     print("Wrote", path)
 
 
+def build_day06(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 6 — Azure DevOps Org Setup | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(6, "Setting Up an Azure DevOps Organization"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 6 Handout — Org, project, process & permissions", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>Organization</b> — tenancy, users, collection-level settings",
+        "<b>Project</b> — container for Boards, Repos, Pipelines, Test Plans, Artifacts",
+        "<b>Process template</b> — Agile / Scrum / Basic / CMMI shapes work items",
+        "<b>Permissions</b> — Collection Admin vs Project Admin vs Contributor",
+        "<b>Personal-only rule</b> — no work accounts, no employer data",
+    ]))
+
+    story.append(Paragraph("High-level architecture", s["h1"]))
+    hier = [
+        ["Layer", "What it controls", "Lab choice"],
+        ["Organization", "Who can sign in; org-wide settings", "Personal Microsoft account only"],
+        ["Project", "Where hubs and repos live", "azure-100-labs (private)"],
+        ["Process", "Work item types and states", "Agile for this series"],
+        ["Permissions", "What each identity can change", "Minimal Collection Admins"],
+    ]
+    story.append(section_box("Architecture A — org stack", hier,
+                             col_widths=[35 * mm, 70 * mm, 75 * mm]))
+
+    story.append(Spacer(1, 6))
+    roles = [
+        ["Role", "Typical power", "Use carefully"],
+        ["Project Collection Administrators", "Org-wide: users, policies, all projects", "Keep this list tiny"],
+        ["Project Administrators", "One project: settings, repos, pipelines", "Fine for lab owners"],
+        ["Contributors", "Create work items, push (with policies), run pipelines", "Default for team members"],
+        ["Readers", "View only", "Useful for stakeholders later"],
+    ]
+    story.append(section_box("Architecture B — permission bands", roles,
+                             col_widths=[55 * mm, 65 * mm, 60 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Org = tenancy and access &nbsp;·&nbsp; Project = where work lives &nbsp;·&nbsp; "
+        "Keep both personal and clean</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "Personal Microsoft account only. Do not invite work users.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Open <b>https://dev.azure.com/&lt;your-org&gt;</b> (create org if needed)",
+        "Org settings → Overview: note name and owner",
+        "Org settings → Users / Permissions: confirm personal-only access",
+        "Create project <b>azure-100-labs</b> (Agile process, private)",
+        "Set project description: Personal 100DaysOfAzureDevOps labs — views are my own",
+        "Optional: configure Azure DevOps CLI defaults for org + project",
+    ]))
+
+    story.append(Paragraph("Commands (optional)", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "az extension add --name azure-devops<br/>"
+        "az devops configure --defaults "
+        "organization=https://dev.azure.com/&lt;your-org&gt; project=azure-100-labs<br/>"
+        "az devops project list -o table<br/>"
+        "az devops project show --project azure-100-labs -o table"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain organization vs project",
+        "azure-100-labs exists and is private",
+        "No work accounts were invited",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 7", s["h2"]))
+    story.append(Paragraph(
+        "Azure Boards deep dive — Epics, Features, Stories, and honest WIP.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -938,6 +1069,7 @@ HANDOUTS = {
     3: build_day03,
     4: build_day04,
     5: build_day05,
+    6: build_day06,
 }
 
 
@@ -950,6 +1082,7 @@ def main(days=None):
         3: DAYS / "day-03-arm-basics" / "handout.pdf",
         4: DAYS / "day-04-devops-principles" / "handout.pdf",
         5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
+        6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
