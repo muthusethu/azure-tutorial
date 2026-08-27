@@ -15,5 +15,6 @@ Each folder contains:
 | 04 | DevOps Principles & Culture | [day-04-devops-principles](./day-04-devops-principles) |
 | 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./day-05-azure-devops-services) |
 | 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./day-06-azure-devops-org) |
+| 07 | Azure Boards Deep Dive | [day-07-azure-boards](./day-07-azure-boards) |
 
-Coming next: Day 07 — Azure Boards deep dive.
+Coming next: Day 08 — Azure Test Plans basics.

@@ -82,6 +82,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 04 | DevOps Principles & Culture | [day-04-devops-principles](./days/day-04-devops-principles) | [PDF](./days/day-04-devops-principles/handout.pdf) |
 | 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./days/day-05-azure-devops-services) | [PDF](./days/day-05-azure-devops-services/handout.pdf) |
 | 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./days/day-06-azure-devops-org) | [PDF](./days/day-06-azure-devops-org/handout.pdf) |
+| 07 | Azure Boards Deep Dive | [day-07-azure-boards](./days/day-07-azure-boards) | [PDF](./days/day-07-azure-boards/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 

@@ -1,0 +1,7 @@
+# Day 7 — published links
+
+| Platform | URL | Posted? |
+|----------|-----|---------|
+| LinkedIn |  |  |
+| GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-07-azure-boards | yes |
+| GitHub (Bitly) | https://bit.ly/45RGZXX | yes |

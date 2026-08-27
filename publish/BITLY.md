@@ -10,6 +10,7 @@ Use these in LinkedIn posts instead of the long GitHub URL.
 | 4 | https://bit.ly/45MtYyY | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-04-devops-principles |
 | 5 | https://bit.ly/4giLVv7 | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-05-azure-devops-services |
 | 6 | https://bit.ly/4ivofF7 | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-06-azure-devops-org |
+| 7 | https://bit.ly/45RGZXX | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-07-azure-boards |
 
 **Going forward:** after each new `days/day-NN-*/` folder is on `main`, run:
 

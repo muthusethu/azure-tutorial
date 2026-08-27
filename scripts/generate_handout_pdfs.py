@@ -1062,6 +1062,134 @@ def build_day06(path: Path):
     print("Wrote", path)
 
 
+def build_day07(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 7 — Azure Boards Deep Dive | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(7, "Azure Boards Deep Dive"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 7 Handout — Hierarchy, backlog, board & queries", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    story.append(Paragraph("What you will understand today", s["h1"]))
+    story.append(bullets([
+        "<b>Epic → Feature → Story → Task/Bug</b> — planning hierarchy",
+        "<b>Backlog</b> — prioritized list of work",
+        "<b>Board</b> — visual flow (To Do, Doing, Done)",
+        "<b>Queries</b> — saved filters (e.g. open stories)",
+        "<b>WIP</b> — limit work in Doing so flow stays honest",
+    ]))
+
+    story.append(Paragraph("High-level architecture", s["h1"]))
+    hier = [
+        ["Level", "Example (this series)", "Finish when"],
+        ["Epic", "100 Days Learning", "Series complete"],
+        ["Feature", "Phase 1 Foundations", "Phase recap done"],
+        ["User Story", "Day 8 — Test Plans lab", "Lab + post done"],
+        ["Task", "Create test plan, add 2 cases", "Checklist ticked"],
+    ]
+    story.append(section_box("Architecture A — work item hierarchy", hier,
+                             col_widths=[28 * mm, 72 * mm, 80 * mm]))
+
+    story.append(Spacer(1, 6))
+    board = [
+        ["Column", "Meaning", "Warning sign"],
+        ["New / To Do", "Accepted, not started", "Huge backlog, no grooming"],
+        ["Active / Doing", "In progress now", "20+ items — WIP explosion"],
+        ["Resolved / Done", "Finished", "Done without demo or review"],
+    ]
+    story.append(section_box("Architecture B — board columns", board,
+                             col_widths=[35 * mm, 70 * mm, 75 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Backlog = might do &nbsp;·&nbsp; Board = doing now &nbsp;·&nbsp; "
+        "Query = forgot to close</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "Project: <b>azure-100-labs</b> (from Day 6). Personal org only.",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Boards → create Epic <b>100 Days Learning</b>",
+        "Add Feature <b>Phase 1 Foundations</b> under the Epic",
+        "Add 3 User Stories (e.g. Days 8–10 topics)",
+        "Open Board → move one story To Do → Doing → Done",
+        "Queries → new query: Type = User Story AND State <> Done",
+    ]))
+
+    story.append(Paragraph("Example story titles", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='8'>"
+        "• Explore Azure Test Plans<br/>"
+        "• Create Azure Artifacts feed<br/>"
+        "• Stand up end-to-end mini project"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain Epic → Feature → Story in one sentence each",
+        "Hierarchy exists in azure-100-labs",
+        "One story moved to Done on the board",
+        "Open-stories query created",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 8", s["h2"]))
+    story.append(Paragraph(
+        "Azure Test Plans basics — structured testing beyond “we clicked around.”",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1070,6 +1198,7 @@ HANDOUTS = {
     4: build_day04,
     5: build_day05,
     6: build_day06,
+    7: build_day07,
 }
 
 
@@ -1083,6 +1212,7 @@ def main(days=None):
         4: DAYS / "day-04-devops-principles" / "handout.pdf",
         5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
         6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
+        7: DAYS / "day-07-azure-boards" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
