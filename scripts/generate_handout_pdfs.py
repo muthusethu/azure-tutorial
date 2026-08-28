@@ -1190,6 +1190,128 @@ def build_day07(path: Path):
     print("Wrote", path)
 
 
+def build_day08(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 8 — Azure Test Plans Basics | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(8, "Azure Test Plans Basics"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 8 Handout — Test plans, suites, test cases & traceability", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    hier = [
+        ["Level", "What it represents", "Example / Usage"],
+        ["Test Plan", "Top-level milestone, release, or sprint test container", "Phase 1 Smoke Tests"],
+        ["Test Suite", "Logical grouping of test cases (Static, Requirement, Query)", "Portal & CLI Baseline"],
+        ["Test Case", "Step-by-step action + expected outcome (reproducible)", "TC01: Verify Azure login"],
+        ["Test Run", "Execution record capturing Pass, Fail, Blocked, and attachments", "Run via Web Test Runner"],
+    ]
+    story.append(section_box("Architecture A — test plans hierarchy", hier,
+                             col_widths=[32 * mm, 78 * mm, 70 * mm]))
+
+    story.append(Spacer(1, 6))
+    comp = [
+        ["Testing track", "Where it runs", "Best suited for"],
+        ["Automated CI Tests", "Build pipeline (az pipelines / runners)", "Unit tests, linting, regression, fast feedback"],
+        ["Manual & Exploratory", "Azure Test Plans + Web Test Runner", "UAT, UI flows, exploratory edge cases, acceptance"],
+        ["Traceability loop", "User Story ↔ Test Case ↔ Run ↔ Bug", "Full visibility from backlog requirement to defect"],
+    ]
+    story.append(section_box("Architecture B — automated CI vs test plans traceability", comp,
+                             col_widths=[40 * mm, 70 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Automated tests verify what you expected &nbsp;·&nbsp; "
+        "Test Plans track what humans must prove &nbsp;·&nbsp; "
+        "Traceability links both to the board</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In <b>azure-100-labs</b> (enable Test Plans basic/trial access if prompted):",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Open <b>Test Plans</b> → create Test Plan <b>Phase 1 Smoke Tests</b>",
+        "Add a Static Suite named <b>Portal & CLI Baseline</b>",
+        "Add Test Case: <b>TC01 — Verify Azure login & personal directory</b>",
+        "Add Test Case: <b>TC02 — Verify resource group creation via CLI</b>",
+        "Define step-by-step <i>Action</i> and <i>Expected result</i> for each test case",
+        "Click <b>Run for web application</b>, step through, and mark results (Pass / Blocked)",
+        "Link a test case to a User Story on Azure Boards to verify the traceability chain",
+    ]))
+
+    story.append(Paragraph("Test case steps example", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "TC01 Step 1: Run 'az account show -o table' &nbsp;→ Expected: Shows personal sub/tenant ID<br/>"
+        "TC01 Step 2: Open portal.azure.com &nbsp;→ Expected: Correct personal directory shown<br/>"
+        "TC02 Step 1: Run 'az group create -n rg-lab-smoke -l centralindia' &nbsp;→ Expected: Succeeded<br/>"
+        "TC02 Step 2: Run 'az group delete -n rg-lab-smoke --yes --no-wait' &nbsp;→ Expected: Exit 0"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain Test Plan vs Suite vs Case vs Run",
+        "Test Plan and 2 Test Cases created in azure-100-labs",
+        "Executed a test run in the Web Runner",
+        "Test case linked to a User Story on Boards",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 9", s["h2"]))
+    story.append(Paragraph(
+        "Azure Artifacts — package management feeds, upstream sources, and dependency hygiene.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1199,6 +1321,7 @@ HANDOUTS = {
     5: build_day05,
     6: build_day06,
     7: build_day07,
+    8: build_day08,
 }
 
 
@@ -1213,6 +1336,7 @@ def main(days=None):
         5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
         6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
         7: DAYS / "day-07-azure-boards" / "handout.pdf",
+        8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

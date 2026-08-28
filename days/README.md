@@ -16,5 +16,6 @@ Each folder contains:
 | 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./day-05-azure-devops-services) |
 | 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./day-06-azure-devops-org) |
 | 07 | Azure Boards Deep Dive | [day-07-azure-boards](./day-07-azure-boards) |
+| 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./day-08-azure-test-plans) |
 
-Coming next: Day 08 — Azure Test Plans basics.
+Coming next: Day 09 — Azure Artifacts.

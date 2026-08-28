@@ -83,6 +83,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 05 | Azure DevOps Services Overview | [day-05-azure-devops-services](./days/day-05-azure-devops-services) | [PDF](./days/day-05-azure-devops-services/handout.pdf) |
 | 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./days/day-06-azure-devops-org) | [PDF](./days/day-06-azure-devops-org/handout.pdf) |
 | 07 | Azure Boards Deep Dive | [day-07-azure-boards](./days/day-07-azure-boards) | [PDF](./days/day-07-azure-boards/handout.pdf) |
+| 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./days/day-08-azure-test-plans) | [PDF](./days/day-08-azure-test-plans/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
