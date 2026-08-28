@@ -11,7 +11,7 @@ Style model: **Green pipeline. Red production. Why “Succeeded” is not enough
 | # | Target window | Title | Posted? |
 |--:|---------------|-------|:-------:|
 | 1 | 24 Aug 2026 | Green pipeline. Red production. Why “Succeeded” is not enough. | [x] |
-| 2 | ~27–28 Aug 2026 | (draft when ready) | [ ] |
+| 2 | 28 Aug 2026 | Connection pooling & the autoscaling trap: Why compute scale-out can kill your database. | [x] |
 | 3 | ~31 Aug – 1 Sep 2026 | (draft when ready) | [ ] |
 | 4 | ~3–4 Sep 2026 | (draft when ready) | [ ] |
 

@@ -102,30 +102,48 @@ Personal views from production delivery work. No employer or client details.
 
 ---
 
-## Note 2 — Day 7 (27 Aug 2026)
+## Note 2 — 28 Aug 2026
 
-**Title:** The board that lied for two sprints
+**Title:** Connection pooling & the autoscaling trap: Why compute scale-out can kill your database.  
+**Topic:** Compute autoscaling vs database connection ceilings  
+**Status:** Posted — https://lnkd.in/p/gNvctge5
 
 ```
-Production note 2 of 33 — #ProductionGradeAzure
+Connection pooling & the autoscaling trap: Why compute scale-out can kill your database.
 
-The board that lied for two sprints
+The traffic spike hit.
+Autoscaling kicked in smoothly from 4 instances to 32.
 
-I have watched a board stay “green” for two sprints
-because everything important was in a side channel:
-a chat ping, a “quick call,” a production hotfix with no work item.
+Within three minutes, response latency jumped from 45ms to 18s, followed by 504 timeouts.
 
-Stand-up reported status. Production reported reality.
+Compute CPU was sitting at 22%.
+The database was in complete cardiac arrest.
 
-The fix was not a prettier board. It was:
-one work item per production change, WIP limited in Doing,
-and “if it is not on the board, it did not happen.”
+What actually happened
 
-People hated it for a week. Incidents got easier to explain after that.
+Stateless compute is easy to scale. Stateful backends are not.
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+Every app replica spun up with default settings: Max Pool Size = 100.
+• 4 instances = max 400 connections.
+• 32 instances = potential 3,200 connections.
+The DB max limit was 1,200.
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+As new pods initialized, they flooded the DB with TCP handshakes and connection allocations. The database spent 100% CPU managing connection overhead—leaving zero cycles to run queries.
+
+Compute scaled out to solve load, and created a self-inflicted DoS against its own data layer.
+
+Engineering controls that prevent this:
+
+• Calculate pool size: Set Max Pool Size = (Max DB Connections * 0.70) / Max Replicas.
+• Separate probes: Liveness checks process only; do not run DB queries on frequent health checks.
+• Add a proxy layer: Use PgBouncer or Azure DB Proxy to keep static pools to the engine.
+• Add circuit breakers: Fail fast with cached responses instead of launching retry storms.
+• Gradual scaling: Scale out in controlled steps rather than 4x jumps.
+
+One rule from 10 years in the seat:
+Autoscaling compute without bounding downstream connection limits is not elasticity. It is an amplification attack against your database.
+
+#DevOps #Azure #CloudArchitecture #SRE #Database #Kubernetes #ProductionEngineering
 ```
 
 ---
