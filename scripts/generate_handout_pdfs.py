@@ -1312,6 +1312,129 @@ def build_day08(path: Path):
     print("Wrote", path)
 
 
+def build_day09(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 9 — Azure Artifacts | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(9, "Azure Artifacts"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 9 Handout — Feeds, upstream caching & package promotion", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    hier = [
+        ["Artifacts Component", "What it provides", "Typical use case"],
+        ["Feed", "Organizational or project-scoped package registry", "Internal shared libraries & utilities"],
+        ["Upstream Sources", "Proxy + cache for public registries (nuget, npm)", "Build resilience when public registries fail"],
+        ["Feed Views", "Promotion channels (@local, @prerelease, @release)", "Release gating without re-tagging versions"],
+        ["Retention Policy", "Auto-clean rules for older package versions", "Storage cost control and decluttering"],
+    ]
+    story.append(section_box("Architecture A — artifacts building blocks", hier,
+                             col_widths=[40 * mm, 70 * mm, 70 * mm]))
+
+    story.append(Spacer(1, 6))
+    comp = [
+        ["Package Ecosystem", "Config File", "Auth / Publish Tool"],
+        ["npm / Node.js", ".npmrc (registry + always-auth)", "vsts-npm-auth / npm publish"],
+        ["NuGet / .NET", "nuget.config (packageSources)", "dotnet nuget push / Azure DevOps task"],
+        ["Python (pip/twine)", "pip.ini / .pypirc", "twine upload --repository-url"],
+        ["Universal Packages", "Pipeline Task / az artifacts", "az artifacts universal publish"],
+    ]
+    story.append(section_box("Architecture B — supported ecosystems & client setup", comp,
+                             col_widths=[40 * mm, 70 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Pipelines cook the software &nbsp;·&nbsp; "
+        "Artifacts is the pantry &nbsp;·&nbsp; "
+        "Upstream caching ensures you never starve when public repos blip</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In <b>azure-100-labs</b> (Azure Artifacts is included for up to 2GB free storage):",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Navigate to <b>Artifacts</b> hub in your project",
+        "Click <b>Create Feed</b> → Name: <b>day09-packages</b>",
+        "Set visibility to <b>Project: azure-100-labs</b> (project-scoped)",
+        "Check <b>Include packages from common public sources</b> (nuget.org, npmjs)",
+        "Open <b>Feed settings</b> → inspect default views: <b>@local</b>, <b>@prerelease</b>, <b>@release</b>",
+        "Click <b>Connect to feed</b> → select npm / NuGet → review the auth config snippet",
+        "Save the feed URL in your notes — you will consume it in Phase 3 CI/CD pipelines",
+    ]))
+
+    story.append(Paragraph("Client config snippet example", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "# .npmrc<br/>"
+        "registry=https://pkgs.dev.azure.com/&lt;your-org&gt;/azure-100-labs/_packaging/day09-packages/npm/registry/<br/>"
+        "always-auth=true<br/>"
+        "# Auth CLI helper: npx vsts-npm-auth -config .npmrc"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain Feeds vs Upstream Sources vs Views",
+        "Feed day09-packages created in azure-100-labs",
+        "Upstream sources enabled for public packages",
+        "Client config snippet (.npmrc / nuget.config) saved",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 10", s["h2"]))
+    story.append(Paragraph(
+        "Phase 1 Capstone Mini Project & Recap — tying Boards, Repos, Test Plans, and Artifacts together.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1322,6 +1445,7 @@ HANDOUTS = {
     6: build_day06,
     7: build_day07,
     8: build_day08,
+    9: build_day09,
 }
 
 
@@ -1337,6 +1461,7 @@ def main(days=None):
         6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
         7: DAYS / "day-07-azure-boards" / "handout.pdf",
         8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
+        9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

@@ -17,5 +17,6 @@ Each folder contains:
 | 06 | Setting Up an Azure DevOps Org | [day-06-azure-devops-org](./day-06-azure-devops-org) |
 | 07 | Azure Boards Deep Dive | [day-07-azure-boards](./day-07-azure-boards) |
 | 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./day-08-azure-test-plans) |
+| 09 | Azure Artifacts | [day-09-azure-artifacts](./day-09-azure-artifacts) |
 
-Coming next: Day 09 — Azure Artifacts.
+Coming next: Day 10 — Phase 1 Capstone Mini Project & Recap.
