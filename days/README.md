@@ -18,5 +18,6 @@ Each folder contains:
 | 07 | Azure Boards Deep Dive | [day-07-azure-boards](./day-07-azure-boards) |
 | 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./day-08-azure-test-plans) |
 | 09 | Azure Artifacts | [day-09-azure-artifacts](./day-09-azure-artifacts) |
+| 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./day-10-phase-1-recap) |
 
-Coming next: Day 10 — Phase 1 Capstone Mini Project & Recap.
+Coming next: Day 11 — Git Foundations for DevOps Engineers (Phase 2 Begins).

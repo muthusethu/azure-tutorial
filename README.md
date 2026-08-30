@@ -85,6 +85,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 07 | Azure Boards Deep Dive | [day-07-azure-boards](./days/day-07-azure-boards) | [PDF](./days/day-07-azure-boards/handout.pdf) |
 | 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./days/day-08-azure-test-plans) | [PDF](./days/day-08-azure-test-plans/handout.pdf) |
 | 09 | Azure Artifacts | [day-09-azure-artifacts](./days/day-09-azure-artifacts) | [PDF](./days/day-09-azure-artifacts/handout.pdf) |
+| 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./days/day-10-phase-1-recap) | [PDF](./days/day-10-phase-1-recap/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 

@@ -1435,6 +1435,128 @@ def build_day09(path: Path):
     print("Wrote", path)
 
 
+def build_day10(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 10 — Phase 1 Capstone & Architecture Recap | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(10, "Phase 1 Capstone & Recap"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 10 Handout — Azure & DevOps Foundations Capstone", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    matrix = [
+        ["Phase 1 Track", "Days & Key Concepts", "Core Deliverable / Proof"],
+        ["Azure Foundations", "Days 1–3: Cloud models, CLI/PWSH, ARM & Locks", "Resource hierarchy, Tags & Budget alerts"],
+        ["DevOps Culture", "Day 4: CALMS principles, DORA metrics", "Flow & Deployment Frequency mindset"],
+        ["Azure DevOps Hubs", "Days 5–9: Boards, Repos, Test Plans, Artifacts", "Project azure-100-labs, WIP limits, Feeds"],
+        ["Phase 1 Capstone", "Day 10: End-to-end integration & Dashboards", "Phase 1 Command Center overview live"],
+    ]
+    story.append(section_box("Architecture A — Phase 1 foundations master matrix", matrix,
+                             col_widths=[38 * mm, 74 * mm, 68 * mm]))
+
+    story.append(Spacer(1, 6))
+    hubs = [
+        ["Azure DevOps Hub", "Role in azure-100-labs", "Phase 2 & 3 Evolution"],
+        ["Boards", "Epics, Features, User Stories with WIP limits", "Work item linking to branches & PRs"],
+        ["Repos", "Git repository initialized with README.md", "Branch policies, PR gates, merge strategies"],
+        ["Test Plans", "Phase 1 Smoke Tests plan with manual test cases", "Automated test integration via CI pipelines"],
+        ["Artifacts", "day09-packages feed with upstream sources", "Publishing & consuming build packages"],
+        ["Dashboards", "Phase 1 Command Center with query charts", "Pipeline health, DORA & sprint telemetry"],
+    ]
+    story.append(section_box("Architecture B — end-to-end hub integration", hubs,
+                             col_widths=[32 * mm, 78 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Foundations are not the boring part of DevOps &nbsp;·&nbsp; "
+        "They are the guardrails that keep future CI/CD pipelines from automating chaos</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In <b>azure-100-labs</b> (verify all Phase 1 foundations before Phase 2):",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Verify <b>Boards</b>: confirm Epic, Feature, and User Stories exist with WIP limits",
+        "Verify <b>Repos</b>: clone locally, commit README.md, and push to main",
+        "Verify <b>Test Plans</b>: confirm Smoke Test plan is linked to a User Story",
+        "Verify <b>Artifacts</b>: confirm day09-packages feed has upstream sources active",
+        "Navigate to <b>Overview → Dashboards</b> → create <b>Phase 1 Command Center</b>",
+        "Add widgets: Query Tile (Open stories), Work item chart, and Project Markdown",
+        "Run Azure CLI cost audit: confirm zero orphan lab resource groups remain active",
+    ]))
+
+    story.append(Paragraph("Bootstrap & governance commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "git clone https://dev.azure.com/&lt;org&gt;/azure-100-labs/_git/azure-100-labs<br/>"
+        "git commit -m 'docs: bootstrap Phase 1 lab repo' && git push origin main<br/>"
+        "az group list --query \"[?starts_with(name, 'rg-lab-')].name\" -o table"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Completed Phase 1 (Days 1–10) foundations",
+        "All 5 hubs active & verified in azure-100-labs",
+        "Phase 1 Command Center dashboard created",
+        "Azure subscription clean of unwanted lab resources",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 11 (Phase 2 Begins)", s["h2"]))
+    story.append(Paragraph(
+        "Git Foundations for DevOps Engineers — commits, branches, internals, and clean hygiene.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1446,6 +1568,7 @@ HANDOUTS = {
     7: build_day07,
     8: build_day08,
     9: build_day09,
+    10: build_day10,
 }
 
 
@@ -1462,6 +1585,7 @@ def main(days=None):
         7: DAYS / "day-07-azure-boards" / "handout.pdf",
         8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
         9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
+        10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

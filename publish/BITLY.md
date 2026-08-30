@@ -13,6 +13,7 @@ Use these in LinkedIn posts instead of the long GitHub URL.
 | 7 | https://bit.ly/45RGZXX | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-07-azure-boards |
 | 8 | https://bit.ly/4zHsGD3 | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-08-azure-test-plans |
 | 9 | https://bit.ly/4xDxqIc | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-09-azure-artifacts |
+| 10 | https://bit.ly/4gDGA05 | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-10-phase-1-recap |
 
 **Going forward:** after each new `days/day-NN-*/` folder is on `main`, run:
 
