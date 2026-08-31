@@ -19,5 +19,6 @@ Each folder contains:
 | 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./day-08-azure-test-plans) |
 | 09 | Azure Artifacts | [day-09-azure-artifacts](./day-09-azure-artifacts) |
 | 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./day-10-phase-1-recap) |
+| 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./day-11-git-fundamentals) |
 
-Coming next: Day 11 — Git Foundations for DevOps Engineers (Phase 2 Begins).
+Coming next: Day 12 — Branching Strategies (Trunk-Based vs GitFlow & Release Branches).

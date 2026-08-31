@@ -1557,6 +1557,129 @@ def build_day10(path: Path):
     print("Wrote", path)
 
 
+def build_day11(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 11 — Git Fundamentals for DevOps Engineers | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(11, "Git Fundamentals for DevOps"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 11 Handout — 4 Git areas, object models & commit DAG", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    areas = [
+        ["Area", "Location / State", "Purpose in DevOps Workflow"],
+        ["Working Tree", "Filesystem directory", "Unstaged edits, live code changes"],
+        ["Staging Area (Index)", ".git/index", "Curated snapshot boundary for atomic commits"],
+        ["Local Repo", ".git/objects (DAG)", "Committed, immutable history points with SHA-1s"],
+        ["Remote Repo", "Azure Repos", "Shared upstream collaboration hub triggering CI runs"],
+    ]
+    story.append(section_box("Architecture A — the 4 areas of git", areas,
+                             col_widths=[38 * mm, 62 * mm, 80 * mm]))
+
+    story.append(Spacer(1, 6))
+    objects = [
+        ["Git Primitive", "Internal Structure", "Why it matters in CI/CD"],
+        ["Blob", "Compressed file contents hashed by SHA", "Deduplication across commits & branches"],
+        ["Tree", "List of SHA pointers to blobs and subtrees", "Captures exact directory structure snapshots"],
+        ["Commit", "Root tree SHA + Author + Committer + Parent SHA", "Creates immutable, traceable history graph"],
+        ["Branch / Ref", "41-byte text pointer in .git/refs/heads/", "Cheap, instant isolation for feature branches"],
+    ]
+    story.append(section_box("Architecture B — git object model & graph (DAG)", objects,
+                             col_widths=[32 * mm, 78 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Git doesn't store file diffs — it stores snapshot DAGs &nbsp;·&nbsp; "
+        "Treat your commit history like production code, not a scratchpad</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In your local clone of <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Verify status and branch: <b>git status</b> and <b>git branch</b>",
+        "Create & switch to feature branch: <b>git switch -c feature/day11-git-notes</b>",
+        "Create notes file: <b>notes/day-11-git-model.md</b> with 4-areas summary",
+        "Stage file explicitly: <b>git add notes/day-11-git-model.md</b>",
+        "Commit with clear intent: <b>git commit -m 'docs: add Day 11 git mental model'</b>",
+        "Inspect commit graph: <b>git log --oneline --graph --decorate -n 5</b>",
+        "Push to remote with upstream tracking: <b>git push -u origin feature/day11-git-notes</b>",
+    ]))
+
+    story.append(Paragraph("Core Git CLI commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "git switch -c feature/day11-git-notes<br/>"
+        "git add notes/day-11-git-model.md<br/>"
+        "git commit -m 'docs: add Day 11 git notes'<br/>"
+        "git push -u origin feature/day11-git-notes<br/>"
+        "git log --oneline --graph --decorate -n 5"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain the 4 Git areas and Blob/Tree/Commit objects",
+        "Created and switched branches using git switch",
+        "Created an atomic commit and inspected the graph",
+        "Pushed feature branch to Azure Repos with -u tracking",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 12", s["h2"]))
+    story.append(Paragraph(
+        "Branching Strategies for CI/CD — Trunk-based development vs GitFlow & Release branches.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1569,6 +1692,7 @@ HANDOUTS = {
     8: build_day08,
     9: build_day09,
     10: build_day10,
+    11: build_day11,
 }
 
 
@@ -1586,6 +1710,7 @@ def main(days=None):
         8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
         9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
         10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
+        11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

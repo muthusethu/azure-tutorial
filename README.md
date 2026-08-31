@@ -86,6 +86,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 08 | Azure Test Plans Basics | [day-08-azure-test-plans](./days/day-08-azure-test-plans) | [PDF](./days/day-08-azure-test-plans/handout.pdf) |
 | 09 | Azure Artifacts | [day-09-azure-artifacts](./days/day-09-azure-artifacts) | [PDF](./days/day-09-azure-artifacts/handout.pdf) |
 | 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./days/day-10-phase-1-recap) | [PDF](./days/day-10-phase-1-recap/handout.pdf) |
+| 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./days/day-11-git-fundamentals) | [PDF](./days/day-11-git-fundamentals/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
