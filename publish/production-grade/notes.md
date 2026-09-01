@@ -148,31 +148,61 @@ Autoscaling compute without bounding downstream connection limits is not elastic
 
 ---
 
-## Note 3 — Day 10 (30 Aug 2026)
+## Note 3 — 1 Sep 2026
 
-**Title:** Foundations we skipped until production billed us
+**Title:** The Cold-Start Storm: Why fetching secrets from Key Vault on startup took down our cluster.  
+**Topic:** Key Vault rate limits during AKS rolling deployments  
+**Status:** Posted — https://lnkd.in/p/g3bFxVCY
 
 ```
-Production note 3 of 33 — #ProductionGradeAzure
+The Cold-Start Storm: Why fetching secrets from Key Vault on startup took down our cluster.
 
-Foundations we skipped until production billed us
+We rolled a routine patch to an AKS cluster running 60 microservices.
+Rolling restart started smoothly.
 
-Early in my career I treated “we will tag resources later”
-and “we will document the subscription layout later”
-as free decisions.
+Two minutes in, half the new pods were stuck in `CrashLoopBackOff`.
+The existing pods were dying as Kubernetes cycled them.
+Within five minutes, the entire ingress was returning 503 Service Unavailable.
 
-Later is when Finance asks why three teams share one bill,
-and nobody can delete a resource group because nobody owns it.
+Application code had zero bugs.
+The database was healthy.
+Azure Key Vault had started aggressively HTTP 429 throttling every single container.
 
-ARM tags, management groups, and a budget alert are not exam trivia.
-They are how you still have a job after the first surprise bill.
+What actually happened
 
-Next phase: Git and Azure Repos — where history is a feature
-until someone rewrites it.
+Every microservice was configured to connect directly to Azure Key Vault on startup to fetch DB connection strings, API keys, and certificates.
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+In steady-state production:
+Pods start occasionally. Key Vault handles a few requests per second with ease.
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+During a rolling deployment:
+150+ pods initialized within a 45-second window.
+Each pod requested 12 secrets sequentially.
+That generated nearly 2,000 API requests to Key Vault in under a minute.
+
+Azure Key Vault has strict transaction limits per vault (e.g., 2,000 ops/10s across an entire subscription tier).
+The vault hit its rate limit and returned `429 Too Many Requests`.
+Apps lacked exponential backoff on startup, failed their initialization checks, and immediately terminated.
+Kubernetes saw dead pods and immediately restarted them—multiplying the request storm tenfold.
+
+Engineering controls that eliminate this failure mode:
+
+• Never fetch raw secrets on boot in runtime code:
+Use the Azure Key Vault Provider for Secrets Store CSI Driver. Secrets are mounted directly as in-memory volumes or synced to Kubernetes Secrets. Pods read local files with zero HTTP calls to Key Vault.
+
+• Implement local in-memory caching:
+If services must query Key Vault via SDK, cache secrets with a TTL (e.g., 1–4 hours). Never fetch secrets per incoming request or on every internal dependency health check.
+
+• Exponential backoff + Jitter on bootstrap:
+Configure Azure SDK retry policies with randomized jitter so 50 pods don't retry failed requests at the exact same millisecond.
+
+• Separate Key Vaults per workload:
+Never share a single Key Vault between critical customer-facing APIs and heavy batch workers. Fault domains must remain isolated.
+
+One rule I keep repeating in production:
+Cloud services have rate limits. If your deployment architecture creates a synchronized surge against a shared API gate, you have built a self-inflicted DoS into your release process.
+
+#DevOps #Azure #Kubernetes #CloudArchitecture #SRE #SystemDesign #Security #ProductionEngineering
 ```
 
 ---

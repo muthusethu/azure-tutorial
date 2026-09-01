@@ -12,7 +12,7 @@ Style model: **Green pipeline. Red production. Why “Succeeded” is not enough
 |--:|---------------|-------|:-------:|
 | 1 | 24 Aug 2026 | Green pipeline. Red production. Why “Succeeded” is not enough. | [x] |
 | 2 | 28 Aug 2026 | Connection pooling & the autoscaling trap: Why compute scale-out can kill your database. | [x] |
-| 3 | ~31 Aug – 1 Sep 2026 | (draft when ready) | [ ] |
+| 3 | 1 Sep 2026 | The Cold-Start Storm: Why fetching secrets from Key Vault on startup took down our cluster. | [x] |
 | 4 | ~3–4 Sep 2026 | (draft when ready) | [ ] |
 
 Windows can slide. Say “extra post” when you want the next draft.
