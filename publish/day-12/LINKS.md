@@ -1,0 +1,7 @@
+# Day 12 — published links
+
+| Platform | URL | Posted? |
+|----------|-----|---------|
+| LinkedIn |  |  |
+| GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-12-branching-strategies | yes |
+| GitHub (Bitly) | https://bit.ly/46xX1GJ |  |

@@ -20,5 +20,6 @@ Each folder contains:
 | 09 | Azure Artifacts | [day-09-azure-artifacts](./day-09-azure-artifacts) |
 | 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./day-10-phase-1-recap) |
 | 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./day-11-git-fundamentals) |
+| 12 | Branching Strategies for CI/CD | [day-12-branching-strategies](./day-12-branching-strategies) |
 
-Coming next: Day 12 — Branching Strategies (Trunk-Based vs GitFlow & Release Branches).
+Coming next: Day 13 — Azure Repos Setup (remotes, permissions, repo hygiene).

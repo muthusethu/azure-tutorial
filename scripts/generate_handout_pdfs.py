@@ -1680,6 +1680,129 @@ def build_day11(path: Path):
     print("Wrote", path)
 
 
+def build_day12(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 12 — Branching Strategies for CI/CD | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(12, "Branching Strategies for CI/CD"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 12 Handout — GitFlow vs GitHub Flow vs Trunk-Based", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    models = [
+        ["Model", "Branch Structure", "Best For", "Main Risk"],
+        ["GitFlow", "main + develop + feature/release/hotfix", "Scheduled releases, multi-version prod", "Late integration, merge debt"],
+        ["GitHub Flow", "main + short feature/*", "Continuous delivery, one prod line", "main must stay deployable"],
+        ["Trunk-Based", "main (+ branches &lt; 1 day)", "High velocity, mature CI/CD", "Needs feature flags + discipline"],
+    ]
+    story.append(section_box("Architecture A — branching model comparison", models,
+                             col_widths=[28 * mm, 52 * mm, 52 * mm, 48 * mm]))
+
+    story.append(Spacer(1, 6))
+    rules = [
+        ["Decision Factor", "GitFlow Signal", "Trunk-Based Signal"],
+        ["Release cadence", "Fixed schedule (monthly/quarterly)", "Deploy multiple times per day"],
+        ["Prod versions", "2+ versions supported simultaneously", "Single production line"],
+        ["Team size", "Large, role-separated (dev/QA/release)", "Small, full-stack ownership"],
+        ["CI maturity", "Can tolerate longer integration windows", "Requires fast, reliable automated tests"],
+    ]
+    story.append(section_box("Architecture B — how to choose a model", rules,
+                             col_widths=[45 * mm, 67 * mm, 68 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Branching strategy is a delivery decision &nbsp;·&nbsp; "
+        "Pick complexity that matches how often you actually ship</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In your local clone of <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create branch: <b>git switch -c feature/day12-branching-adr</b>",
+        "Create ADR: <b>docs/branching-strategy.md</b>",
+        "Document decision: <b>GitHub Flow</b> — protected main, feature/* &lt; 2 days",
+        "Specify: PR required, squash merge, no develop/release branches",
+        "Commit: <b>git commit -m 'docs: add branching strategy ADR'</b>",
+        "Push: <b>git push -u origin feature/day12-branching-adr</b>",
+        "Open Pull Request in Azure Repos",
+    ]))
+
+    story.append(Paragraph("ADR skeleton", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "# Branching Strategy — azure-100-labs<br/>"
+        "# Decision: GitHub Flow (trunk-based lite)<br/>"
+        "# - main: protected, always deployable<br/>"
+        "# - feature/*: short-lived (&lt; 2 days)<br/>"
+        "# - PR required; squash merge<br/>"
+        "# - No develop, release/, or hotfix/ branches"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can compare GitFlow, GitHub Flow, and Trunk-Based",
+        "ADR docs/branching-strategy.md created in azure-100-labs",
+        "Feature branch pushed with ADR commit",
+        "PR opened (or ready to open) in Azure Repos",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 13", s["h2"]))
+    story.append(Paragraph(
+        "Azure Repos setup — remotes, permissions, and repository hygiene.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1693,6 +1816,7 @@ HANDOUTS = {
     9: build_day09,
     10: build_day10,
     11: build_day11,
+    12: build_day12,
 }
 
 
@@ -1711,6 +1835,7 @@ def main(days=None):
         9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
         10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
         11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
+        12: DAYS / "day-12-branching-strategies" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
