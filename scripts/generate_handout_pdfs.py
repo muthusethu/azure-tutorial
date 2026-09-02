@@ -1803,6 +1803,132 @@ def build_day12(path: Path):
     print("Wrote", path)
 
 
+def build_day13(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 13 — Azure Repos Setup & Hygiene | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(13, "Azure Repos Setup & Hygiene"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 13 Handout — Layout, gitignore, remotes & permissions", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    layout = [
+        ["Folder", "Purpose", "Phase"],
+        ["/src", "Application source code", "Phase 2+"],
+        ["/docs", "ADRs, architecture notes, runbooks", "Phase 2 (today)"],
+        ["/pipelines", "CI/CD YAML pipeline definitions", "Phase 3"],
+        ["/infra", "IaC templates (ARM, Bicep, Terraform)", "Phase 4+"],
+        ["/notes", "Daily learning notes from series", "Ongoing"],
+    ]
+    story.append(section_box("Architecture A — standard repo folder layout", layout,
+                             col_widths=[28 * mm, 92 * mm, 60 * mm]))
+
+    story.append(Spacer(1, 6))
+    hygiene = [
+        ["Hygiene Item", "What to configure", "Why it matters"],
+        ["Default branch", "main (single deployable line)", "Clear PR target and pipeline trigger"],
+        [".gitignore", "node_modules, .env, dist/, IDE folders", "Secrets and artifacts stay out of history"],
+        ["Remote URL", "HTTPS or SSH — verify git remote -v", "Consistent clone/push across machines"],
+        ["Permissions", "Readers / Contributors / Admins", "Least privilege; branch policies on Day 19"],
+        ["Feature branches", "Push feature/* not direct to main", "Prepares for PR workflow (Day 14)"],
+    ]
+    story.append(section_box("Architecture B — repo hygiene checklist", hygiene,
+                             col_widths=[38 * mm, 72 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Repo structure is infrastructure &nbsp;·&nbsp; "
+        "Set it up like you mean to maintain it</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In <b>azure-100-labs</b> (Azure Repos):",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Verify default branch = <b>main</b> in Project settings → Repositories",
+        "Create branch: <b>git switch -c feature/day13-repo-setup</b>",
+        "Create folders: <b>src/</b>, <b>docs/</b>, <b>pipelines/</b>, <b>infra/</b>",
+        "Add <b>.gitignore</b> (node_modules, .env, dist/, IDE files)",
+        "Add <b>docs/repo-structure.md</b> describing each folder",
+        "Commit: <b>git commit -m 'chore: standardize repo layout and gitignore'</b>",
+        "Push: <b>git push -u origin feature/day13-repo-setup</b>",
+        "Review repo permissions: Contributors vs Readers",
+    ]))
+
+    story.append(Paragraph(".gitignore essentials", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "node_modules/<br/>"
+        "dist/ build/<br/>"
+        ".env .env.*<br/>"
+        "*.log .DS_Store<br/>"
+        ".vscode/ __pycache__/"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Default branch verified as main",
+        "Standard folder layout committed",
+        ".gitignore blocks secrets and build artifacts",
+        "Feature branch pushed; remote verified",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 14", s["h2"]))
+    story.append(Paragraph(
+        "Pull requests & code review — the human gate before merge.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1817,6 +1943,7 @@ HANDOUTS = {
     10: build_day10,
     11: build_day11,
     12: build_day12,
+    13: build_day13,
 }
 
 
@@ -1836,6 +1963,7 @@ def main(days=None):
         10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
         11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
         12: DAYS / "day-12-branching-strategies" / "handout.pdf",
+        13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

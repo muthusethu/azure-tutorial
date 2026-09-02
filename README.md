@@ -88,6 +88,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./days/day-10-phase-1-recap) | [PDF](./days/day-10-phase-1-recap/handout.pdf) |
 | 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./days/day-11-git-fundamentals) | [PDF](./days/day-11-git-fundamentals/handout.pdf) |
 | 12 | Branching Strategies for CI/CD | [day-12-branching-strategies](./days/day-12-branching-strategies) | [PDF](./days/day-12-branching-strategies/handout.pdf) |
+| 13 | Azure Repos Setup & Repository Hygiene | [day-13-azure-repos-setup](./days/day-13-azure-repos-setup) | [PDF](./days/day-13-azure-repos-setup/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 

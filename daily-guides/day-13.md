@@ -1,89 +1,168 @@
-# Day 13 - Azure Repos Setup
+# Day 13 — Azure Repos Setup & Repository Hygiene
 
 | | |
 |---|---|
-| **Date** | 02 Sep 2026 |
-| **Phase** | 2 - Azure Repos & Git Mastery |
-| **Time box** | 60-90 minutes |
+| **Date** | 2 Sep 2026 |
+| **Phase** | 2 — Azure Repos & Git Mastery |
+| **Time box** | 60–90 minutes |
 | **Series** | #100DaysOfAzureDevOps |
 
 ## Goal
 
-Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer a working lab over perfect notes.
+Configure `azure-100-labs` as a production-ready Azure Repos repository: default branch, standard folder layout, `.gitignore`, remote configuration, and basic permission awareness. Publish Day 13 on LinkedIn with the PDF handout.
 
-## Learn (20-30 min)
+## Learn (20–30 min)
 
-- Repo creation, default branch, folder structure standards
-- Repo policies overview (deep dive day 19)
+- Azure Repos vs GitHub: same Git protocol, integrated with Boards, Pipelines, and PR policies
+- Default branch naming (`main`), repo settings, and clone URLs (HTTPS vs SSH)
+- Standard monorepo layout: `/src`, `/docs`, `/pipelines`, `/infra` — why structure beats chaos
+- `.gitignore` essentials: never commit secrets, build artifacts, or local IDE noise
+- Permissions overview: Readers, Contributors, Project Admins (branch policies deep dive on Day 19)
+- Docs: [Create a new Git repo in Azure Repos](https://learn.microsoft.com/azure/devops/repos/git/create-new-repo) · [Ignore files](https://learn.microsoft.com/azure/devops/repos/git/ignore-files)
 
-## Hands-on lab (20-30 min)
+## Hands-on lab (20–30 min)
 
-1. Set default branch to `main`
-2. Create folders: `/src`, `/docs`, `/pipelines`, `/infra`
-3. Add `.gitignore` for your language (dotnet/node/python)
+1. In Azure DevOps → **Repos** → **Project settings** → verify default branch is `main`
+2. Locally in your `azure-100-labs` clone:
+   ```bash
+   git switch main
+   git pull
+   git switch -c feature/day13-repo-setup
+   ```
+3. Create standard folder structure:
+   ```bash
+   mkdir -p src docs pipelines infra notes
+   touch src/.gitkeep docs/.gitkeep pipelines/.gitkeep infra/.gitkeep
+   ```
+4. Add a `.gitignore` (Node + general DevOps lab example):
+   ```bash
+   # Create .gitignore — see Commands section below
+   ```
+5. Add a short `docs/repo-structure.md` explaining each folder's purpose
+6. Commit and push:
+   ```bash
+   git add .
+   git commit -m "chore: standardize repo layout and gitignore"
+   git push -u origin feature/day13-repo-setup
+   ```
+7. In Azure Repos → **Project settings** → **Repositories** → confirm repo permissions (Contributors can push to feature branches; `main` protection comes on Day 19)
 
 ## Commands / code
 
 ```bash
-# .gitignore (Node example)
+# .gitignore (Node + general lab)
 node_modules/
 dist/
+build/
 .env
+.env.*
 *.log
 .DS_Store
+.vscode/
+__pycache__/
+*.pyc
+bin/
+obj/
+
+# docs/repo-structure.md skeleton
+# /src      — application source code
+# /docs     — ADRs, guides, architecture notes
+# /pipelines — YAML pipeline definitions (Phase 3)
+# /infra    — IaC templates (Phase 4+)
+# /notes    — daily learning notes from #100DaysOfAzureDevOps
+
+# Verify remote
+git remote -v
+git branch -a
 ```
 
 ## LinkedIn post (copy-paste)
 
+**Important:** After pasting into LinkedIn, press Enter between sections so line breaks stay visible.
+
 ```
 Day 13 of #100DaysOfAzureDevOps
 
-A messy repo root is a messy brain - /src /docs /pipelines /infra saves future-you from archaeology
+Yesterday: branching strategies — GitFlow vs GitHub Flow vs Trunk-Based.
+Today: how do you set up Azure Repos so the repo stays clean six months from now?
 
-Today's topic: **Azure Repos Setup**.
+A messy repo root is not a personality trait.
+It is a tax on every future PR, pipeline, and onboarding session.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Azure Repos is Git under the hood — but it lives inside your DevOps project, wired to Boards, Pipelines, and branch policies.
 
-Tomorrow: Pull requests & code review.
+Setup decisions that pay off early:
 
-#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
+1. Default branch = main
+One production line. Clear default for clones, PRs, and pipeline triggers.
+
+2. Standard folder layout
+• /src — application code
+• /docs — ADRs, architecture, runbooks
+• /pipelines — CI/CD YAML (Phase 3)
+• /infra — IaC templates (Phase 4+)
+
+Future you should not grep the repo wondering where things live.
+
+3. .gitignore on day one
+Never commit node_modules/, .env, build artifacts, or IDE folders.
+Secrets in git history do not un-commit themselves.
+
+4. Remote hygiene
+Know your clone URL (HTTPS or SSH), verify `git remote -v`, and push feature branches — not direct commits to main.
+
+5. Permissions awareness
+Readers view. Contributors push (with policies). Admins change settings.
+Least privilege applies to repos too.
+
+Lab today in azure-100-labs:
+Standardized folder layout, added .gitignore, documented repo structure, and pushed feature/day13-repo-setup to Azure Repos.
+
+One-liner:
+Repo structure is infrastructure.
+Set it up like you mean to maintain it.
+
+Tomorrow: Pull requests & code review — the human gate before merge.
+
+(Document attached: Day 13 Azure Repos Setup handout PDF)
+
+Lab notes + PDF also here:
+https://bit.ly/4xyn8cz
+
+#100DaysOfAzureDevOps #Azure #DevOps #Git #AzureRepos #CloudComputing #LearningInPublic
 ```
+
+### Attach with the post (PDF handout)
+
+Attach this document on LinkedIn (document / PDF upload):
+
+- [`../days/day-13-azure-repos-setup/handout.pdf`](../days/day-13-azure-repos-setup/handout.pdf)
+
+### How to post
+
+1. LinkedIn → **document** → upload `days/day-13-azure-repos-setup/handout.pdf`
+2. Paste the text above (press **Enter** between sections so line breaks stay visible)
+3. **Document title:** `Day 13 — Azure Repos Setup & Hygiene` (max 58 chars on LinkedIn)
 
 ### Posting tips
 
 - Publish from your **personal** account, outside work hours (morning IST works well).
 - No employer name, no client details, no hiring CTAs.
-- After posting: leave 5-10 real comments on other Azure/DevOps posts.
-
-## Reminder — 2nd LinkedIn post (production track)
-
-**Today you publish TWO separate LinkedIn posts.** The daily lesson above is post 1 only.
-
-| | Post 1 — #100DaysOfAzureDevOps | Post 2 — #ProductionGradeAzure |
-|---|-------------------------------|----------------------------------|
-| **When** | ~10:00 IST | ~17:00–19:00 IST (after some engagement on post 1) |
-| **Copy** | This file — LinkedIn section | [`publish/production-grade/notes.md`](../publish/production-grade/notes.md) — Note 4 |
-| **Attach** | Day PDF when ready | None (story post) |
-
-- [ ] Post 1 — daily lesson (+ PDF)
-- [ ] Post 2 — production note 4 of 33 (rewrite with your real experience)
-- [ ] Record URLs in [`publish/production-grade/LINKS.md`](../publish/production-grade/LINKS.md)
-
-Run: `python scripts/production_reminder.py`
+- After posting: leave 5–10 real comments on other Azure/DevOps posts.
 
 ## Done checklist
 
-- [ ] Learned the topic (docs or short video)
-- [ ] Completed the lab steps
-- [ ] Ran / saved the commands or code
-- [ ] Published LinkedIn post
-- [ ] Engaged with 5-10 community comments
-- [ ] Deleted spare Azure resources if any (cost control)
+- [ ] Verified default branch is `main` in Azure Repos
+- [ ] Created `/src`, `/docs`, `/pipelines`, `/infra` folder structure
+- [ ] Added `.gitignore` and `docs/repo-structure.md`
+- [ ] Pushed `feature/day13-repo-setup` to Azure Repos
+- [ ] Published LinkedIn post with PDF handout
+- [ ] Engaged with 5–10 community comments
 
 ## Tomorrow
 
-**Pull requests & code review**
+**Day 14 — Pull Requests & Code Review**
 
 ---
 
-*Personal learning guide - views are your own. Not legal advice. Keep labs on personal subscriptions and personal time.*
+*Personal learning guide — views are your own. Not legal advice. Keep labs on personal subscriptions and personal time.*

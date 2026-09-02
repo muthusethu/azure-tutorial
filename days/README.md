@@ -21,5 +21,6 @@ Each folder contains:
 | 10 | Phase 1 Capstone Mini Project & Recap | [day-10-phase-1-recap](./day-10-phase-1-recap) |
 | 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./day-11-git-fundamentals) |
 | 12 | Branching Strategies for CI/CD | [day-12-branching-strategies](./day-12-branching-strategies) |
+| 13 | Azure Repos Setup & Repository Hygiene | [day-13-azure-repos-setup](./day-13-azure-repos-setup) |
 
-Coming next: Day 13 — Azure Repos Setup (remotes, permissions, repo hygiene).
+Coming next: Day 14 — Pull Requests & Code Review.
