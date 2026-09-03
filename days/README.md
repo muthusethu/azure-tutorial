@@ -22,5 +22,6 @@ Each folder contains:
 | 11 | Git Fundamentals for DevOps Engineers | [day-11-git-fundamentals](./day-11-git-fundamentals) |
 | 12 | Branching Strategies for CI/CD | [day-12-branching-strategies](./day-12-branching-strategies) |
 | 13 | Azure Repos Setup & Repository Hygiene | [day-13-azure-repos-setup](./day-13-azure-repos-setup) |
+| 14 | Pull Requests & Code Review | [day-14-pull-requests](./day-14-pull-requests) |
 
-Coming next: Day 14 — Pull Requests & Code Review.
+Coming next: Day 15 — Advanced Git (rebase, squash, history hygiene).

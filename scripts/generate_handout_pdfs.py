@@ -1929,6 +1929,135 @@ def build_day13(path: Path):
     print("Wrote", path)
 
 
+def build_day14(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 14 — Pull Requests & Code Review | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(14, "Pull Requests & Code Review"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 14 Handout — PR templates, work items & review etiquette", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    anatomy = [
+        ["PR Element", "What it captures", "Good practice"],
+        ["Title", "One-line change summary", "Avoid 'fix' / 'update' — say what changed"],
+        ["Description", "What / Why / How verified", "Use a template so fields are never blank"],
+        ["Work item link", "Boards ↔ Repos traceability", "Link User Story or Task (AB#123)"],
+        ["Files review", "Diff of every changed file", "Self-review before assigning reviewers"],
+        ["Reviewers", "Human gate before merge", "Ask for risk & clarity feedback, not rubber stamps"],
+    ]
+    story.append(section_box("Architecture A — pull request anatomy", anatomy,
+                             col_widths=[35 * mm, 65 * mm, 80 * mm]))
+
+    story.append(Spacer(1, 6))
+    etiquette = [
+        ["Role", "Do this", "Avoid this"],
+        ["Author", "Fill template; self-review Files tab", "Empty description; surprise reviewers"],
+        ["Reviewer", "Ask about edge cases and risk", "Personal comments; nitpick without context"],
+        ["Team", "Approve when merge-ready", "Approve out of politeness"],
+        ["Process", "Link work items; keep PRs small", "Mega-PRs that take a day to read"],
+    ]
+    story.append(section_box("Architecture B — review etiquette that scales", etiquette,
+                             col_widths=[32 * mm, 74 * mm, 74 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>A PR is a contract between the author and the team &nbsp;·&nbsp; "
+        "If the contract is empty, do not expect a safe merge</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In your local clone of <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create branch: <b>git switch -c feature/day14-pr-template</b>",
+        "Create folder: <b>.azuredevops/</b>",
+        "Add <b>pull_request_template.md</b> with What / Why / Test plan / Risk",
+        "Commit: <b>git commit -m 'chore: add pull request template'</b>",
+        "Push: <b>git push -u origin feature/day14-pr-template</b>",
+        "Open PR in Azure Repos: feature → main; fill template; link a work item",
+        "Self-review the Files tab before inviting reviewers",
+    ]))
+
+    story.append(Paragraph("PR template skeleton", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "## What<br/>"
+        "-<br/>"
+        "## Why<br/>"
+        "-<br/>"
+        "## Test plan<br/>"
+        "- [ ] Local build / sanity check<br/>"
+        "- [ ] Linked work item<br/>"
+        "- [ ] No secrets in the diff<br/>"
+        "## Risk<br/>"
+        "- Low / Med / High"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "PR template committed under .azuredevops/",
+        "PR opened with filled description",
+        "Work item linked from Boards",
+        "Self-review completed on Files tab",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 15", s["h2"]))
+    story.append(Paragraph(
+        "Advanced Git — rebase, squash, and history hygiene for clean CI/CD.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -1944,6 +2073,7 @@ HANDOUTS = {
     11: build_day11,
     12: build_day12,
     13: build_day13,
+    14: build_day14,
 }
 
 
@@ -1964,6 +2094,7 @@ def main(days=None):
         11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
         12: DAYS / "day-12-branching-strategies" / "handout.pdf",
         13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
+        14: DAYS / "day-14-pull-requests" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
