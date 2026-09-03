@@ -2,6 +2,6 @@
 
 | Platform | URL | Posted? |
 |----------|-----|---------|
-| LinkedIn |  |  |
+| LinkedIn | https://lnkd.in/p/edJejvDj | yes |
 | GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-14-pull-requests | yes |
-| GitHub (Bitly) | https://bit.ly/3TcZSlk |  |
+| GitHub (Bitly) | https://bit.ly/3TcZSlk | yes |
