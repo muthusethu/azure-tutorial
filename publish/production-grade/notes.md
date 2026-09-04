@@ -207,30 +207,56 @@ Cloud services have rate limits. If your deployment architecture creates a synch
 
 ---
 
-## Note 4 — Day 13 (02 Sep 2026)
+## Note 4 — 3 Sep 2026
 
-**Title:** Default branch with no protection
+**Title:** The pipeline variable that was a secret for two years  
+**Topic:** Plaintext secrets in Azure DevOps variable groups and debug logs  
+**Status:** Posted — https://lnkd.in/p/ghVRPyxN
 
 ```
-Production note 4 of 33 — #ProductionGradeAzure
+The pipeline variable that was a secret for two years.
 
-Default branch with no protection
+It started as a temporary workaround.
+Connection string in a Library variable group.
+Not marked as secret.
+"Just for this sprint."
 
-I have inherited a default branch with:
-no reviewers, no build validation, force push allowed.
+Two years later it was still there.
+Anyone who could edit the pipeline — or open a failed job with system.debug=true — had seen it.
+Some had left the company. The value had not rotated.
 
-Someone pushed a “quick fix” on Friday.
-Monday we were bisecting through commits named `wip` and `fix2`.
+What actually happened
 
-Branch policies are not bureaucracy.
-They are how you stop 2am from becoming archaeology.
+Azure DevOps variable groups are convenient.
+They are not Key Vault.
 
-Minimum I now treat as non-negotiable on `main`:
-PR required, build must pass, no force push, no deletion.
+When a variable is not typed as secret:
+• It can appear in job logs
+• It can appear in REST API responses for users with permission
+• It survives every pipeline YAML review because "the secret is not in git"
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+Debug mode makes it worse.
+`system.debug=true` expands environment dumps.
+A failed agent job becomes a credential dump with a green "Download logs" button.
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+The incident was not a sophisticated breach.
+It was a weekend of rotation:
+database passwords, service principal secrets, and a git history search for anything that looked similar.
+
+Engineering controls that close this class of failure
+
+• If it can open a database or call an API as a privileged identity, it is a secret — not a variable.
+• Mark secrets as secret in variable groups, or better: link the group to Azure Key Vault.
+• Prefer Key Vault references / Key Vault tasks over pasted connection strings.
+• Ban `system.debug=true` on production pipelines except under break-glass procedure.
+• Rotate on a calendar, not on an incident.
+• Audit who can edit Library groups and who can download pipeline logs.
+
+One rule I keep repeating in production:
+A secret that lives in a plain pipeline variable is not "temporary configuration."
+It is a shared password with an audit trail you will regret reading.
+
+#DevOps #Azure #AzureDevOps #CICD #Security #SRE #CloudComputing #ProductionEngineering
 ```
 
 ---
