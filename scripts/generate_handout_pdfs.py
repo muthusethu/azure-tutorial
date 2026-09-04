@@ -2058,6 +2058,130 @@ def build_day14(path: Path):
     print("Wrote", path)
 
 
+def build_day15(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 15 — Advanced Git: Rebase & Squash | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(15, "Advanced Git: Rebase & Squash"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 15 Handout — Merge, rebase, squash & history hygiene", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    ops = [
+        ["Operation", "Effect on history", "Best used for"],
+        ["Merge", "Keeps topology + merge commit", "Preserve exact integration story"],
+        ["Rebase", "Rewrites SHAs; linear history", "Update feature branch onto latest main"],
+        ["Squash", "Many commits → one commit", "Ship one coherent change via PR"],
+        ["Cherry-pick", "Copies a single commit SHA", "Hotfix onto another branch line"],
+    ]
+    story.append(section_box("Architecture A — history operations compared", ops,
+                             col_widths=[32 * mm, 70 * mm, 78 * mm]))
+
+    story.append(Spacer(1, 6))
+    safety = [
+        ["Rule", "Do this", "Never do this"],
+        ["Shared branches", "Merge into main via PR", "Rebase / rewrite published main"],
+        ["Feature branches", "Rebase onto origin/main before PR", "Leave stale base with surprise conflicts"],
+        ["Force push", "git push --force-with-lease", "Blind git push --force"],
+        ["Conflicts", "Resolve + test, then continue", "Abort and force-merge without reading"],
+        ["PR to main", "Squash or atomic commits", "Dump 30 WIP commits onto main"],
+    ]
+    story.append(section_box("Architecture B — history hygiene for CI/CD", safety,
+                             col_widths=[38 * mm, 72 * mm, 70 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Rebase rewrites history &nbsp;·&nbsp; Merge preserves the plot &nbsp;·&nbsp; "
+        "Choose based on whether teammates already depend on that timeline</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In your local clone of <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create branch: <b>git switch -c feature/day15-rebase-lab</b>",
+        "Make 2–3 small commits (notes / docs)",
+        "Fetch and rebase: <b>git fetch origin && git rebase origin/main</b>",
+        "If conflicts: fix → <b>git add</b> → <b>git rebase --continue</b>",
+        "Push safely: <b>git push --force-with-lease</b>",
+        "Open PR; prefer squash merge for WIP cleanup",
+        "Document choice in <b>docs/merge-strategy.md</b>",
+    ]))
+
+    story.append(Paragraph("Core commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "git fetch origin<br/>"
+        "git rebase origin/main<br/>"
+        "git rebase --abort   # if needed<br/>"
+        "git push --force-with-lease<br/>"
+        "git cherry-pick &lt;sha&gt;"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain merge vs rebase vs squash",
+        "Feature branch rebased onto origin/main",
+        "Used --force-with-lease (not blind --force)",
+        "Merge strategy notes documented",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 16", s["h2"]))
+    story.append(Paragraph(
+        "Git hooks & pre-commit — local gates before the server gates.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2074,6 +2198,7 @@ HANDOUTS = {
     12: build_day12,
     13: build_day13,
     14: build_day14,
+    15: build_day15,
 }
 
 
@@ -2095,6 +2220,7 @@ def main(days=None):
         12: DAYS / "day-12-branching-strategies" / "handout.pdf",
         13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
         14: DAYS / "day-14-pull-requests" / "handout.pdf",
+        15: DAYS / "day-15-advanced-git" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

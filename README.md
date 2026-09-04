@@ -90,6 +90,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 12 | Branching Strategies for CI/CD | [day-12-branching-strategies](./days/day-12-branching-strategies) | [PDF](./days/day-12-branching-strategies/handout.pdf) |
 | 13 | Azure Repos Setup & Repository Hygiene | [day-13-azure-repos-setup](./days/day-13-azure-repos-setup) | [PDF](./days/day-13-azure-repos-setup/handout.pdf) |
 | 14 | Pull Requests & Code Review | [day-14-pull-requests](./days/day-14-pull-requests) | [PDF](./days/day-14-pull-requests/handout.pdf) |
+| 15 | Advanced Git (Rebase, Squash & History Hygiene) | [day-15-advanced-git](./days/day-15-advanced-git) | [PDF](./days/day-15-advanced-git/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
