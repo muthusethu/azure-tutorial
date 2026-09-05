@@ -2,6 +2,6 @@
 
 | Platform | URL | Posted? |
 |----------|-----|---------|
-| LinkedIn |  |  |
+| LinkedIn | https://lnkd.in/p/gH_jvsRv | yes |
 | GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-16-git-hooks | yes |
-| GitHub (Bitly) | https://bit.ly/4gCudTt |  |
+| GitHub (Bitly) | https://bit.ly/4gCudTt | yes |
