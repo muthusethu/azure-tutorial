@@ -2182,6 +2182,127 @@ def build_day15(path: Path):
     print("Wrote", path)
 
 
+def build_day16(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 16 — Git Hooks & Pre-commit Checks | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(16, "Git Hooks & Pre-commit Checks"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 16 Handout — Local hooks vs server policy gates", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    layers = [
+        ["Layer", "Where it runs", "Bypassable?", "Role"],
+        ["Local hooks", ".git/hooks/", "Yes (--no-verify)", "Fast developer feedback"],
+        ["pre-commit framework", "Shared repo config", "Yes if not installed", "Team consistency"],
+        ["Branch policies / PR CI", "Azure Repos server", "No if enforced", "Real quality lock"],
+    ]
+    story.append(section_box("Architecture A — three layers of commit quality", layers,
+                             col_widths=[42 * mm, 48 * mm, 42 * mm, 48 * mm]))
+
+    story.append(Spacer(1, 6))
+    hooks = [
+        ["Hook", "When it fires", "Typical check"],
+        ["pre-commit", "Before snapshot is written", "Lint, format, block secrets"],
+        ["commit-msg", "After message is entered", "Conventional Commits pattern"],
+        ["pre-push", "Before objects leave the machine", "Tests / branch name rules"],
+    ]
+    story.append(section_box("Architecture B — common client-side hooks", hooks,
+                             col_widths=[35 * mm, 70 * mm, 75 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Local hooks are courtesy &nbsp;·&nbsp; "
+        "Branch policy is the lock</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In your local clone of <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create branch: <b>git switch -c feature/day16-commit-hook</b>",
+        "Add <b>scripts/git-hooks/commit-msg</b> (Conventional Commits regex)",
+        "Document install steps in <b>docs/git-hooks.md</b>",
+        "Copy hook into <b>.git/hooks/commit-msg</b>",
+        "Prove bad message fails; good message passes",
+        "Commit hook script + docs; push; open PR",
+        "Note: real enforcement still needs Azure Repos branch policies (Day 19)",
+    ]))
+
+    story.append(Paragraph("commit-msg check (lab)", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "#!/bin/sh<br/>"
+        "msg=$(head -n1 \"$1\")<br/>"
+        "echo \"$msg\" | grep -qE '^(feat|fix|docs|chore|refactor|test|ci)(\\(.*\\))?: .+' || {<br/>"
+        "&nbsp;&nbsp;echo \"Use: feat: short description\"; exit 1<br/>"
+        "}"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain local hooks vs server branch policies",
+        "commit-msg hook script committed under scripts/git-hooks/",
+        "Bad commit message rejected locally",
+        "Understood --no-verify is not a production control",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 17", s["h2"]))
+    story.append(Paragraph(
+        "Fork workflows & permissions — who can push what, and why least privilege matters.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2199,6 +2320,7 @@ HANDOUTS = {
     13: build_day13,
     14: build_day14,
     15: build_day15,
+    16: build_day16,
 }
 
 
@@ -2221,6 +2343,7 @@ def main(days=None):
         13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
         14: DAYS / "day-14-pull-requests" / "handout.pdf",
         15: DAYS / "day-15-advanced-git" / "handout.pdf",
+        16: DAYS / "day-16-git-hooks" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

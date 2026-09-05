@@ -24,5 +24,6 @@ Each folder contains:
 | 13 | Azure Repos Setup & Repository Hygiene | [day-13-azure-repos-setup](./day-13-azure-repos-setup) |
 | 14 | Pull Requests & Code Review | [day-14-pull-requests](./day-14-pull-requests) |
 | 15 | Advanced Git (Rebase, Squash & History Hygiene) | [day-15-advanced-git](./day-15-advanced-git) |
+| 16 | Git Hooks & Pre-commit Checks | [day-16-git-hooks](./day-16-git-hooks) |
 
-Coming next: Day 16 — Git Hooks & Pre-commit.
+Coming next: Day 17 — Fork Workflows & Permissions.
