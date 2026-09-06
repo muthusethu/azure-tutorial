@@ -25,5 +25,6 @@ Each folder contains:
 | 14 | Pull Requests & Code Review | [day-14-pull-requests](./day-14-pull-requests) |
 | 15 | Advanced Git (Rebase, Squash & History Hygiene) | [day-15-advanced-git](./day-15-advanced-git) |
 | 16 | Git Hooks & Pre-commit Checks | [day-16-git-hooks](./day-16-git-hooks) |
+| 17 | Fork Workflows & Repo Permissions | [day-17-fork-permissions](./day-17-fork-permissions) |
 
-Coming next: Day 17 — Fork Workflows & Permissions.
+Coming next: Day 18 — Migrating Repos to Azure Repos.

@@ -2303,6 +2303,124 @@ def build_day16(path: Path):
     print("Wrote", path)
 
 
+def build_day17(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 17 — Fork Workflows & Permissions | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(17, "Fork Workflows & Permissions"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 17 Handout — Shared repo vs forks & least privilege", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    models = [
+        ["Model", "How contribution works", "Best for"],
+        ["Shared repo", "Feature branches + PRs in one Azure Repos project", "Internal teams with shared ownership"],
+        ["Fork workflow", "Work in fork → PR back to upstream", "OSS, vendors, external collaborators"],
+    ]
+    story.append(section_box("Architecture A — contribution models", models,
+                             col_widths=[35 * mm, 85 * mm, 60 * mm]))
+
+    story.append(Spacer(1, 6))
+    roles = [
+        ["Role", "Typical power", "Danger if over-granted"],
+        ["Readers", "View code and PRs", "Low — usually safe default"],
+        ["Contributors", "Push branches, create PRs", "Force push / bypass policies"],
+        ["Project Admins", "Repo settings + security", "Wide-open permissions drift"],
+    ]
+    story.append(section_box("Architecture B — Azure Repos permission bands", roles,
+                             col_widths=[35 * mm, 70 * mm, 75 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Access is a production control &nbsp;·&nbsp; "
+        "If everyone is Admin, nobody is protected</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In <b>azure-100-labs</b> (Azure Repos):",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Open <b>Project settings → Repositories → Security</b>",
+        "Review Readers / Contributors / Project Admins permissions",
+        "Confirm Contributors: Contribute allowed; Force push denied for main",
+        "Create branch: <b>git switch -c feature/day17-repo-permissions</b>",
+        "Add <b>docs/repo-permissions.md</b> ADR (shared-repo vs fork + baseline table)",
+        "Commit, push, and open a Pull Request",
+    ]))
+
+    story.append(Paragraph("Permissions to treat as incident-class", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "• Force push (especially on main)<br/>"
+        "• Bypass policies when completing pull requests<br/>"
+        "• Delete repository<br/>"
+        "• Manage permissions (who can change who)"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "I can explain fork vs shared-repo workflows",
+        "Reviewed Repository Security in Azure Repos",
+        "Permissions ADR documented in docs/repo-permissions.md",
+        "Force-push risk on main understood",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 18", s["h2"]))
+    story.append(Paragraph(
+        "Migrating repos to Azure Repos — moving history without losing trust.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2321,6 +2439,7 @@ HANDOUTS = {
     14: build_day14,
     15: build_day15,
     16: build_day16,
+    17: build_day17,
 }
 
 
@@ -2344,6 +2463,7 @@ def main(days=None):
         14: DAYS / "day-14-pull-requests" / "handout.pdf",
         15: DAYS / "day-15-advanced-git" / "handout.pdf",
         16: DAYS / "day-16-git-hooks" / "handout.pdf",
+        17: DAYS / "day-17-fork-permissions" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
