@@ -21,6 +21,7 @@ Use these in LinkedIn posts instead of the long GitHub URL.
 | 15 | https://bit.ly/4ykI3zU | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-15-advanced-git |
 | 16 | https://bit.ly/4gCudTt | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-16-git-hooks |
 | 17 | https://bit.ly/3UE039L | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-17-fork-permissions |
+| 18 | https://bit.ly/3UVLPkD | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-18-migrating-repos |
 
 **Going forward:** after each new `days/day-NN-*/` folder is on `main`, run:
 

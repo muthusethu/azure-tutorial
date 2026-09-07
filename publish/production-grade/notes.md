@@ -261,32 +261,46 @@ It is a shared password with an audit trail you will regret reading.
 
 ---
 
-## Note 5 — Day 16 (05 Sep 2026)
+## Note 5 — 7 Sep 2026
 
-**Title:** The hook everyone bypassed with --no-verify
+**Title:** Tag `latest` and a rollback that was not yesterday  
+**Topic:** Mutable container/image tags breaking incident rollback  
+**Status:** Draft ready — post today (separate from Day 18)
 
 ```
-Production note 5 of 33 — #ProductionGradeAzure
+Tag `latest` and a rollback that was not yesterday.
 
-The hook everyone bypassed with --no-verify
+Incident call. Consensus was clear: roll back.
 
-We had a beautiful pre-commit hook for secrets and format.
-The wiki said “always run it.”
+The runbook said: "Redeploy latest."
+CI had already overwritten `latest` with the broken build during the outage.
+We rolled back to the failure — with confidence.
 
-Production taught me the flag: `--no-verify`.
+What actually happened
 
-One engineer was late. One YAML file had a tab in the wrong place.
-The pipeline failed 40 minutes later on a hosted agent
-with a message nobody read because Slack was already on fire.
+`latest` is a nickname, not a version.
+In registries and artifact feeds, it is a moving pointer.
 
-Hooks that can be skipped will be skipped.
-Put the real gate on the server: PR build, secret scan, policy.
+During the incident:
+• Pipeline A pushed the bad image and retagged `latest`
+• Operators pulled `latest` thinking it meant "last known good"
+• The tag had moved. History had not.
 
-Local hooks are courtesy. Branch policy is the lock.
+You cannot roll back to a label that keeps walking forward.
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+Engineering controls that make rollback real
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+• Tag immutable digests or build IDs: git SHA, pipeline run ID, semver — not `latest`
+• Production deploy must pin an exact digest/version
+• Keep `latest` for humans/docs only — never as the production contract
+• Record the previously live version in the release notes / deployment job output
+• Practice rollback in non-prod until the time-to-restore is known
+
+One rule I keep repeating in production:
+If your rollback plan says "deploy latest," you do not have a rollback plan.
+You have a coin flip.
+
+#DevOps #Azure #CICD #Containers #SRE #CloudComputing #ProductionEngineering #AzureDevOps
 ```
 
 ---

@@ -93,6 +93,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 15 | Advanced Git (Rebase, Squash & History Hygiene) | [day-15-advanced-git](./days/day-15-advanced-git) | [PDF](./days/day-15-advanced-git/handout.pdf) |
 | 16 | Git Hooks & Pre-commit Checks | [day-16-git-hooks](./days/day-16-git-hooks) | [PDF](./days/day-16-git-hooks/handout.pdf) |
 | 17 | Fork Workflows & Repo Permissions | [day-17-fork-permissions](./days/day-17-fork-permissions) | [PDF](./days/day-17-fork-permissions/handout.pdf) |
+| 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./days/day-18-migrating-repos) | [PDF](./days/day-18-migrating-repos/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 

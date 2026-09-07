@@ -2421,6 +2421,125 @@ def build_day17(path: Path):
     print("Wrote", path)
 
 
+def build_day18(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 18 — Migrating Repos to Azure Repos | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(18, "Migrating Repos to Azure Repos"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 18 Handout — Import, mirror push & history verification", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    methods = [
+        ["Method", "How it works", "Best when"],
+        ["Import UI", "Azure Repos clones from a source Git URL", "Simple migrations, public or PAT-backed sources"],
+        ["Bare + mirror", "git clone --bare then git push --mirror", "You need every ref and full control"],
+    ]
+    story.append(section_box("Architecture A — migration methods", methods,
+                             col_widths=[35 * mm, 80 * mm, 65 * mm]))
+
+    story.append(Spacer(1, 6))
+    checklist = [
+        ["Category", "Migrates with Git", "Must reconfigure separately"],
+        ["History", "Commits, authors, dates", "—"],
+        ["Refs", "Branches and tags", "Default branch setting in Azure Repos"],
+        ["Automation", "—", "CI secrets, service connections, webhooks"],
+        ["Collaboration", "—", "PR discussions, host-specific apps"],
+        ["Security", "History may include old secrets", "Scan + rotate before widening access"],
+    ]
+    story.append(section_box("Architecture B — what moves vs what you rebuild", checklist,
+                             col_widths=[32 * mm, 70 * mm, 78 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Migration moves history &nbsp;·&nbsp; "
+        "Hygiene decides whether that history is an asset or a liability</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In project <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Create empty repo <b>imported-sample</b> (or use Import repository)",
+        "Import a small public GitHub repo <b>or</b> bare-clone + <b>git push --mirror</b>",
+        "Clone the Azure Repos copy locally",
+        "Verify: <b>git log --oneline -n 10</b>, branches, and tags",
+        "Confirm default branch is <b>main</b>",
+        "Write <b>docs/repo-migration-checklist.md</b> in azure-100-labs",
+    ]))
+
+    story.append(Paragraph("Mirror commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "git clone --bare https://github.com/&lt;user&gt;/&lt;repo&gt;.git<br/>"
+        "cd &lt;repo&gt;.git<br/>"
+        "git push --mirror https://dev.azure.com/&lt;org&gt;/azure-100-labs/_git/imported-sample"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "imported-sample exists in Azure Repos",
+        "Pre-migration commits visible in git log",
+        "Default branch verified as main",
+        "Migration checklist documented",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 19", s["h2"]))
+    story.append(Paragraph(
+        "Repo security — branch policies that protect main after the move.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2440,6 +2559,7 @@ HANDOUTS = {
     15: build_day15,
     16: build_day16,
     17: build_day17,
+    18: build_day18,
 }
 
 
@@ -2464,6 +2584,7 @@ def main(days=None):
         15: DAYS / "day-15-advanced-git" / "handout.pdf",
         16: DAYS / "day-16-git-hooks" / "handout.pdf",
         17: DAYS / "day-17-fork-permissions" / "handout.pdf",
+        18: DAYS / "day-18-migrating-repos" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]
