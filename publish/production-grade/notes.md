@@ -265,7 +265,7 @@ It is a shared password with an audit trail you will regret reading.
 
 **Title:** Tag `latest` and a rollback that was not yesterday  
 **Topic:** Mutable container/image tags breaking incident rollback  
-**Status:** Draft ready — post today (separate from Day 18)
+**Status:** Posted — https://lnkd.in/p/dpB6Fm4Q
 
 ```
 Tag `latest` and a rollback that was not yesterday.
