@@ -27,5 +27,6 @@ Each folder contains:
 | 16 | Git Hooks & Pre-commit Checks | [day-16-git-hooks](./day-16-git-hooks) |
 | 17 | Fork Workflows & Repo Permissions | [day-17-fork-permissions](./day-17-fork-permissions) |
 | 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./day-18-migrating-repos) |
+| 19 | Repo Security (Branch Policies) | [day-19-repo-security](./day-19-repo-security) |
 
-Coming next: Day 19 — Repo Security (branch policies & protections).
+Coming next: Day 20 — Phase 2 Mini Project & Recap.

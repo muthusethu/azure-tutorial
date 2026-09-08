@@ -2540,6 +2540,123 @@ def build_day18(path: Path):
     print("Wrote", path)
 
 
+def build_day19(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 19 — Repo Security (Branch Policies) | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(19, "Repo Security (Branch Policies)"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 19 Handout — Protect main with branch policies", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    controls = [
+        ["Control", "Answers", "Example"],
+        ["Repo permissions", "Who can access", "Readers / Contributors / Admins"],
+        ["Branch policies", "How main changes", "PR required, reviewers, work items, squash"],
+    ]
+    story.append(section_box("Architecture A — permissions vs policies", controls,
+                             col_widths=[40 * mm, 50 * mm, 90 * mm]))
+
+    story.append(Spacer(1, 6))
+    policies = [
+        ["Policy", "Lab baseline", "Why it matters"],
+        ["Minimum reviewers", "1 (solo OK)", "No silent merges to main"],
+        ["Linked work items", "Required", "Boards ↔ Repos audit trail"],
+        ["Limit merge types", "Squash only", "Matches Day 12 ADR / clean history"],
+        ["Build validation", "Optional now", "Floor: red builds do not merge"],
+        ["Bypass policies", "Break-glass only", "Useful in emergencies; poisonous as habit"],
+    ]
+    story.append(section_box("Architecture B — policies on main", policies,
+                             col_widths=[40 * mm, 40 * mm, 100 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Branch policies are not bureaucracy &nbsp;·&nbsp; "
+        "They are how you stop 2 AM from becoming archaeology</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In project <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Repos → Branches → <b>main</b> → Branch policies",
+        "Enable: min <b>1</b> reviewer, linked work items <b>Required</b>, squash-only merges",
+        "Prove the lock: attempt a direct commit/push to <b>main</b> (should fail)",
+        "Create <b>feature/day19-branch-policies</b>, open PR with linked work item, squash-merge",
+        "Write <b>docs/branch-policies.md</b> documenting the settings",
+    ]))
+
+    story.append(Paragraph("UI path", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='8'>"
+        "Repos → Branches → main → ··· → Branch policies<br/>"
+        "Baseline: reviewers=1 · work items=Required · merge=Squash"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Branch policies enabled on main",
+        "Direct push blocked (or documented if admin bypass applies)",
+        "PR path with linked work item + squash verified",
+        "docs/branch-policies.md written",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 20", s["h2"]))
+    story.append(Paragraph(
+        "Phase 2 mini project &amp; recap — Git mastery checkpoint.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2560,6 +2677,7 @@ HANDOUTS = {
     16: build_day16,
     17: build_day17,
     18: build_day18,
+    19: build_day19,
 }
 
 
@@ -2585,6 +2703,7 @@ def main(days=None):
         16: DAYS / "day-16-git-hooks" / "handout.pdf",
         17: DAYS / "day-17-fork-permissions" / "handout.pdf",
         18: DAYS / "day-18-migrating-repos" / "handout.pdf",
+        19: DAYS / "day-19-repo-security" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

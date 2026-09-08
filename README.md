@@ -94,6 +94,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 16 | Git Hooks & Pre-commit Checks | [day-16-git-hooks](./days/day-16-git-hooks) | [PDF](./days/day-16-git-hooks/handout.pdf) |
 | 17 | Fork Workflows & Repo Permissions | [day-17-fork-permissions](./days/day-17-fork-permissions) | [PDF](./days/day-17-fork-permissions/handout.pdf) |
 | 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./days/day-18-migrating-repos) | [PDF](./days/day-18-migrating-repos/handout.pdf) |
+| 19 | Repo Security (Branch Policies) | [day-19-repo-security](./days/day-19-repo-security) | [PDF](./days/day-19-repo-security/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 
