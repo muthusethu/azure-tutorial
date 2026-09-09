@@ -15,7 +15,7 @@ Style model: **Green pipeline. Red production. Why “Succeeded” is not enough
 | 3 | 1 Sep 2026 | The Cold-Start Storm: Why fetching secrets from Key Vault on startup took down our cluster. | [x] |
 | 4 | 3 Sep 2026 | The pipeline variable that was a secret for two years | [x] |
 | 5 | 7 Sep 2026 | Tag `latest` and a rollback that was not yesterday | [x] |
-| 6 | ~10–11 Sep 2026 | (draft when ready) | [ ] |
+| 6 | ~10 Sep 2026 | (draft when ready) | [ ] |
 
 Windows can slide. Say “extra post” when you want the next draft.
 

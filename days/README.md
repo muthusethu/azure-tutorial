@@ -28,5 +28,6 @@ Each folder contains:
 | 17 | Fork Workflows & Repo Permissions | [day-17-fork-permissions](./day-17-fork-permissions) |
 | 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./day-18-migrating-repos) |
 | 19 | Repo Security (Branch Policies) | [day-19-repo-security](./day-19-repo-security) |
+| 20 | Phase 2 Mini Project & Recap | [day-20-phase-2-recap](./day-20-phase-2-recap) |
 
-Coming next: Day 20 — Phase 2 Mini Project & Recap.
+Coming next: Day 21 — Intro to Azure Pipelines (Phase 3).

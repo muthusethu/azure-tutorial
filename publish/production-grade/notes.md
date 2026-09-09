@@ -305,13 +305,11 @@ You have a coin flip.
 
 ---
 
-## Note 6 — Day 19 (08 Sep 2026)
+## Note 6 — ~10 Sep 2026
 
 **Title:** A PAT in a screenshot and a weekend of rotation
 
 ```
-Production note 6 of 33 — #ProductionGradeAzure
-
 A PAT in a screenshot and a weekend of rotation
 
 A well-meaning screenshot in a ticket:

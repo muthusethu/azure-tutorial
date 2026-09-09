@@ -2657,6 +2657,127 @@ def build_day19(path: Path):
     print("Wrote", path)
 
 
+def build_day20(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 20 — Phase 2 Mini Project & Recap | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(20, "Phase 2 Mini Project & Recap"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 20 Handout — Git mastery checkpoint", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    map_rows = [
+        ["Days", "Theme", "Outcome"],
+        ["11–12", "Fundamentals & branching", "Daily Git loop + ADR"],
+        ["13–15", "Repos, PRs, history hygiene", "Reviewable changes"],
+        ["16–17", "Hooks, forks, permissions", "Local + access guardrails"],
+        ["18–19", "Migration & branch policies", "main is a contract"],
+        ["20", "Capstone", "Documented How we use Git here"],
+    ]
+    story.append(section_box("Architecture A — Phase 2 map (Days 11–20)", map_rows,
+                             col_widths=[28 * mm, 70 * mm, 82 * mm]))
+
+    story.append(Spacer(1, 6))
+    loop_rows = [
+        ["Step", "Action", "Policy check"],
+        ["1", "feature branch from main", "No direct push to main"],
+        ["2", "Commit + push", "Hooks may run locally"],
+        ["3", "Open PR + link work item", "Reviewers + work items"],
+        ["4", "Squash merge + delete branch", "Merge type limited"],
+    ]
+    story.append(section_box("Architecture B — capstone loop", loop_rows,
+                             col_widths=[22 * mm, 78 * mm, 80 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Git mastery is not memorizing flags &nbsp;·&nbsp; "
+        "It is making the safe path the easy path</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In project <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Confirm Day 19 policies still on <b>main</b>",
+        "Create <b>feature/day20-phase2-recap</b>",
+        "Add README section: <b>How we use Git here</b>",
+        "PR → linked work item → squash merge → delete branch",
+        "Write <b>docs/phase-2-recap.md</b>",
+    ]))
+
+    story.append(Paragraph("Capstone commands", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "git switch main &amp;&amp; git pull<br/>"
+        "git switch -c feature/day20-phase2-recap<br/>"
+        "# edit README.md — How we use Git here<br/>"
+        "git add README.md &amp;&amp; git commit -m \"docs: document how we use Git here\"<br/>"
+        "git push -u origin feature/day20-phase2-recap"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Happy-path PR completed under policies",
+        "README documents the Git workflow",
+        "docs/phase-2-recap.md written",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 21", s["h2"]))
+    story.append(Paragraph(
+        "Intro to Azure Pipelines — Phase 3 begins (CI/CD).",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2678,6 +2799,7 @@ HANDOUTS = {
     17: build_day17,
     18: build_day18,
     19: build_day19,
+    20: build_day20,
 }
 
 
@@ -2704,6 +2826,7 @@ def main(days=None):
         17: DAYS / "day-17-fork-permissions" / "handout.pdf",
         18: DAYS / "day-18-migrating-repos" / "handout.pdf",
         19: DAYS / "day-19-repo-security" / "handout.pdf",
+        20: DAYS / "day-20-phase-2-recap" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

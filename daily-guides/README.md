@@ -46,7 +46,7 @@ Handouts are generated with `scripts/generate_handout_pdfs.py` and published und
 | 17 | 06 Sep 2026 | Fork Workflows & Repo Permissions | [day-17.md](./day-17.md) |
 | 18 | 07 Sep 2026 | Migrating Repos to Azure Repos | [day-18.md](./day-18.md) |
 | 19 | 08 Sep 2026 | Repo Security | [day-19.md](./day-19.md) |
-| 20 | 09 Sep 2026 | Mini Project + Recap (Phase 2) | [day-20.md](./day-20.md) |
+| 20 | 09 Sep 2026 | Phase 2 Mini Project & Recap | [day-20.md](./day-20.md) |
 | 21 | 10 Sep 2026 | Intro to Azure Pipelines | [day-21.md](./day-21.md) |
 | 22 | 11 Sep 2026 | Microsoft-hosted vs Self-hosted Agents | [day-22.md](./day-22.md) |
 | 23 | 12 Sep 2026 | YAML Pipeline Basics | [day-23.md](./day-23.md) |
