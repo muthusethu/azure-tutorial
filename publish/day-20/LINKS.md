@@ -2,6 +2,6 @@
 
 | Platform | URL | Posted? |
 |----------|-----|---------|
-| LinkedIn |  |  |
+| LinkedIn | https://lnkd.in/p/dYZJNUwN | yes |
 | GitHub day folder | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-20-phase-2-recap | yes |
 | GitHub (Bitly) | https://bit.ly/4r4WN3m | yes |
