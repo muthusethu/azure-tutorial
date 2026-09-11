@@ -96,6 +96,7 @@ Create a budget alert on day 1. Delete unused resource groups when a lab is done
 | 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./days/day-18-migrating-repos) | [PDF](./days/day-18-migrating-repos/handout.pdf) |
 | 19 | Repo Security (Branch Policies) | [day-19-repo-security](./days/day-19-repo-security) | [PDF](./days/day-19-repo-security/handout.pdf) |
 | 20 | Phase 2 Mini Project & Recap | [day-20-phase-2-recap](./days/day-20-phase-2-recap) | [PDF](./days/day-20-phase-2-recap/handout.pdf) |
+| 21 | Intro to Azure Pipelines | [day-21-intro-pipelines](./days/day-21-intro-pipelines) | [PDF](./days/day-21-intro-pipelines/handout.pdf) |
 
 More days will appear here as the series continues (target: 100 days).
 

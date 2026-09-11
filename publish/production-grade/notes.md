@@ -305,28 +305,50 @@ You have a coin flip.
 
 ---
 
-## Note 6 — ~10 Sep 2026
+## Note 6 — 12 Sep 2026
 
-**Title:** A PAT in a screenshot and a weekend of rotation
+**Title:** A PAT in a screenshot and a weekend of rotation  
+**Topic:** Personal access tokens and “redacted” logs that were not  
+**Status:** Draft — post as a separate story (no PDF); topic ≠ Day 21 intro to pipelines
 
 ```
-A PAT in a screenshot and a weekend of rotation
+A PAT in a screenshot and a weekend of rotation.
 
 A well-meaning screenshot in a ticket:
-pipeline log + a redacted-looking connection string that was not redacted
-on the next page.
+pipeline log, plus a connection string that looked redacted
+until you scrolled to the next page.
 
-Then a PAT in a gist “just for the vendor,” expiry set to never.
+Then a PAT in a gist “just for the vendor.”
+Expiry: never.
 
-The weekend was not architecture. It was rotation:
-tokens, service connections, and a search through git history.
+The weekend was not architecture.
+It was rotation — tokens, service connections, and a search through git history
+for anything that looked like a password with a URL attached.
 
-After that I treat every PAT like a password,
-every log like it will be copied, and “never expires” as a bug.
+What actually happened
 
-Best practice: name the guardrail you would add so this class of failure cannot repeat quietly.
+A PAT is a password that can clone, push, and call APIs.
+Screenshots, ticket attachments, and “temporary” gists are copy-paste surfaces.
+Azure DevOps log redaction is helpful. It is not a security boundary.
+If a secret was printed before the secret-masking rule existed, the old run is still downloadable.
 
-#ProductionGradeAzure #Azure #DevOps #CloudComputing #LearningInPublic
+“Never expires” is not convenience.
+It is a credential with no planned funeral.
+
+Engineering controls that close this class of failure
+
+• Treat every PAT like a password: least privilege, short TTL, named owner
+• Ban PATs in gists, wikis, tickets, and Slack — use a secret store and a time-boxed share
+• Prefer Microsoft Entra ID / workload identities over long-lived PATs for automation
+• Secret-scan git history and rotate anything that ever appeared in a log or screenshot
+• Disable download of old runs that predate masking, or accept they are compromised
+• Org policy: maximum PAT lifetime, and alert on “never”
+
+One rule I keep repeating in production:
+If it can push to the repo or call the API, it is not a convenience token.
+It is a spare key. Spare keys get copied.
+
+#DevOps #Azure #AzureDevOps #Security #SRE #CloudComputing #ProductionEngineering
 ```
 
 ---

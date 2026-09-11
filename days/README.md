@@ -29,5 +29,6 @@ Each folder contains:
 | 18 | Migrating Repos to Azure Repos | [day-18-migrating-repos](./day-18-migrating-repos) |
 | 19 | Repo Security (Branch Policies) | [day-19-repo-security](./day-19-repo-security) |
 | 20 | Phase 2 Mini Project & Recap | [day-20-phase-2-recap](./day-20-phase-2-recap) |
+| 21 | Intro to Azure Pipelines | [day-21-intro-pipelines](./day-21-intro-pipelines) |
 
-Coming next: Day 21 — Intro to Azure Pipelines (Phase 3).
+Coming next: Day 22 — Microsoft-hosted vs Self-hosted Agents.

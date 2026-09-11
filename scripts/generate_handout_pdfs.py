@@ -2778,6 +2778,124 @@ def build_day20(path: Path):
     print("Wrote", path)
 
 
+def build_day21(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 21 — Intro to Azure Pipelines | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(21, "Intro to Azure Pipelines"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph("Day 21 Handout — CI as code, not as a wizard", s["cover_title"]))
+    story.append(Paragraph(
+        "Learning in public · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    pieces = [
+        ["Piece", "Role", "Day 21 lab"],
+        ["YAML in Git", "The contract — reviewed with the code", "azure-pipelines.yml"],
+        ["Agent pool", "Who executes the job", "Microsoft-hosted ubuntu-latest"],
+        ["Run + logs", "The receipt you can audit", "One echo step, open the log"],
+    ]
+    story.append(section_box("Architecture A — what a pipeline is", pieces,
+                             col_widths=[38 * mm, 72 * mm, 70 * mm]))
+
+    story.append(Spacer(1, 6))
+    yaml_vs = [
+        ["Style", "Where it lives", "Risk"],
+        ["YAML", "In the repo, in the PR", "You must learn YAML — drift is visible"],
+        ["Classic", "In the service UI", "Convenient; config can drift outside Git"],
+    ]
+    story.append(section_box("Architecture B — YAML vs Classic", yaml_vs,
+                             col_widths=[32 * mm, 74 * mm, 74 * mm]))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Pipelines are not robots that replace engineers &nbsp;·&nbsp; "
+        "They are the contract that stops you from being the robot</b>",
+        ParagraphStyle("ol", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(Paragraph(
+        "In project <b>azure-100-labs</b>:",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Pipelines → New pipeline → Azure Repos Git → this repo",
+        "Commit <b>azure-pipelines.yml</b> (trigger main, ubuntu-latest, echo Hello)",
+        "Run once and confirm the hosted image in the job log",
+        "Write <b>docs/pipelines-day21.md</b> (YAML vs Classic for this repo)",
+    ]))
+
+    story.append(Paragraph("Starter YAML", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "trigger:<br/>"
+        "&nbsp;&nbsp;- main<br/>"
+        "pool:<br/>"
+        "&nbsp;&nbsp;vmImage: ubuntu-latest<br/>"
+        "steps:<br/>"
+        "&nbsp;&nbsp;- script: echo Hello from Day 21<br/>"
+        "&nbsp;&nbsp;&nbsp;&nbsp;displayName: Hello"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Pipeline run succeeded",
+        "YAML lives in Git",
+        "docs/pipelines-day21.md written",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 22", s["h2"]))
+    story.append(Paragraph(
+        "Microsoft-hosted vs self-hosted agents.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+
+    doc.build(story)
+    print("Wrote", path)
+
+
 # Registry for future days (extend over time)
 HANDOUTS = {
     1: build_day01,
@@ -2800,6 +2918,7 @@ HANDOUTS = {
     18: build_day18,
     19: build_day19,
     20: build_day20,
+    21: build_day21,
 }
 
 
@@ -2827,6 +2946,7 @@ def main(days=None):
         18: DAYS / "day-18-migrating-repos" / "handout.pdf",
         19: DAYS / "day-19-repo-security" / "handout.pdf",
         20: DAYS / "day-20-phase-2-recap" / "handout.pdf",
+        21: DAYS / "day-21-intro-pipelines" / "handout.pdf",
     }
     for d in days:
         fn = HANDOUTS[d]

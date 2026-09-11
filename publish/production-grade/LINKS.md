@@ -9,4 +9,4 @@ Daily lesson URLs stay in `publish/day-NN/LINKS.md`.
 | 3 | 1 Sep 2026 | The Cold-Start Storm: Why fetching secrets from Key Vault on startup took down our cluster. | https://lnkd.in/p/g3bFxVCY |
 | 4 | 3 Sep 2026 | The pipeline variable that was a secret for two years | https://lnkd.in/p/ghVRPyxN |
 | 5 | 7 Sep 2026 | Tag `latest` and a rollback that was not yesterday | https://lnkd.in/p/dpB6Fm4Q |
-| 6 | ~10 Sep 2026 | | |
+| 6 | 12 Sep 2026 | A PAT in a screenshot and a weekend of rotation | |
