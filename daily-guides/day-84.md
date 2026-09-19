@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 84 of #100DaysOfAzureDevOps
+Jenkins migrations succeed when you migrate pipelines, not nostalgia.
 
-Jenkins migrations succeed when you migrate pipelines, not nostalgia
+Day 84 of #100DaysOfAzureDevOps. Migrating Jenkins to Azure Pipelines.
 
-Today's topic: **Migrating Jenkins to Azure Pipelines**.
+Jenkinsfile has a shape: agent, stages, post, credentials. Azure YAML has a mapping, not a religion. I have seen migrations that rebuilt the Jenkins UI in Azure DevOps because someone missed the blue ball. Nostalgia. The work is mapping stages to jobs, credentials to variable groups or Key Vault, agents to pools.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Today is paper: translate a sample Jenkinsfile. I am not standing up Jenkins. I am proving I can leave it without lying about feature parity.
 
-Tomorrow: Hybrid & multi-cloud CI/CD.
+What I keep seeing
+
+1. agent → pool
+• Jenkins label vs vmImage or a self-hosted pool
+• "We need the same snowflake agent" might be true; it might be nostalgia
+
+2. stages → stages/jobs
+• post { always } becomes a job condition or a later stage
+• Do not require identical names. Require identical guarantees
+
+3. credentials → envelopes
+• Jenkins credential store is not a reason to put secrets in YAML
+• Variable group / Key Vault from Phase 7
+
+4. Plugins are the trap
+• Every Jenkins plugin is a negotiation
+• If the plugin was the product, write that down — do not hide it in "the YAML is not ready"
+
+What I am doing in today's lab
+
+I am translating a sample Jenkinsfile (agent, stages, post) into Azure YAML on paper: stage→job, credentials→group/Key Vault, agents→pools. If I do not have an old Jenkinsfile, I write a tiny one first so the mapping is real, not abstract.
+
+Migrate the guarantees. Leave the blue ball to memory. Nostalgia does not compile.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-84-migrating-jenkins-to-azure-pipelines
+
+Tomorrow: Hybrid and multi-cloud CI/CD — insurance and complexity, survey only.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 84 — Jenkins to Azure Pipelines` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

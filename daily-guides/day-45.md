@@ -29,18 +29,52 @@ az deployment group what-if -g rg-day45 -f main.bicep
 ## LinkedIn post (copy-paste)
 
 ```
-Day 45 of #100DaysOfAzureDevOps
+what-if is a dress rehearsal — read the diff before the audience (prod) arrives.
 
-what-if is a dress rehearsal - read the diff before the audience (prod) arrives
+Day 45 of #100DaysOfAzureDevOps. Bicep modules and deployment.
 
-Today's topic: **Bicep Modules & Deployment**.
+A module is how Bicep stops being a 2,000-line main.bicep that nobody dares touch. Split storage into a module. Call it from main. what-if is the rehearsal: az deployment group what-if shows Create/Ignore/Modify/Delete before you let the audience in.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have seen production applies where nobody ran plan or what-if because "it is only a SKU change." The diff included a recreate. Dress rehearsal exists for that sentence.
 
-Tomorrow: Terraform basics.
+Patterns I keep seeing
+
+1. Modules are boundaries
+• Storage module takes name prefix / SKU as params
+• Main composes modules; it does not inline every resource forever
+
+2. what-if is mandatory manners
+• az deployment group what-if -g rg-day45 -f main.bicep
+• Read Modify and Delete like they are incidents that have not happened yet
+
+3. Deployment stacks are the grown-up cleanup story
+• Literacy: stacks can track and prune
+• Lab: one what-if, one module split, one real deploy if this is my track
+
+4. A diff you did not read still applies
+• CI can print what-if
+• Humans still have to look. Automation without eyes is a faster rumor
+
+What I am doing in today's lab
+
+I am running az deployment group what-if against main.bicep, splitting storage into a module, and only then deploying. If the what-if shows a Delete I did not expect, I stop. The audience is not invited to surprises.
+
+Read the diff. Prod is a terrible place to learn you recreated a disk.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-45-bicep-modules-deployment
+
+Tomorrow: Terraform basics — init, plan, apply, destroy, and state as memory.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 45 — Bicep Modules & Deployment` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

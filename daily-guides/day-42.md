@@ -30,18 +30,52 @@ az deployment group create -g rg-day42 -n stor -f infra/storage.json
 ## LinkedIn post (copy-paste)
 
 ```
-Day 42 of #100DaysOfAzureDevOps
+ARM JSON is the broccoli of Azure — nutritious, rarely anyone's favorite.
 
-ARM JSON is the broccoli of Azure - nutritious, rarely anyone's favorite
+Day 42 of #100DaysOfAzureDevOps. ARM templates basics.
 
-Today's topic: **ARM Templates Basics**.
+Every Portal click still becomes an ARM call. Bicep compiles to ARM. Terraform talks to the same control plane. If I refuse to read JSON templates, I will one day debug a failed deployment by staring at an error that only makes sense if I know schema, resources, and apiVersions.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+This is literacy, not my main tool. Deploy a tiny Storage Account template. Delete the resource group. Feel the broccoli. Then decide I do not have to eat a bucket of it every day.
 
-Tomorrow: ARM parameters & outputs.
+What I keep seeing
+
+1. Template structure is boring and load-bearing
+• $schema, contentVersion, parameters, variables, resources, outputs
+• Skip resources and you have a comment file
+
+2. apiVersion is a contract
+• Wrong version, surprise properties
+• Copy-paste from an old blog is how you deploy 2016 into 2026
+
+3. CLI is the honest deploy
+• az deployment group create -g rg-day42 -n stor -f infra/storage.json
+• Portal "export template" is a start; it is also a nest of defaults you did not choose
+
+4. Delete is part of the lab
+• Empty or leftover storage still bills
+• rg-day42 should not survive the night without a reason
+
+What I am doing in today's lab
+
+I am deploying a tiny Storage Account ARM template with az deployment group create, confirming the resource exists, then deleting the RG. I am not falling in love with JSON. I am making sure I can read the broccoli.
+
+Nutritious, not favorite. Still eat a forkful so Bicep and Terraform errors make sense.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-42-arm-templates-basics
+
+Tomorrow: ARM parameters and outputs — dials instead of hardcoded names.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 42 — ARM Templates Basics` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

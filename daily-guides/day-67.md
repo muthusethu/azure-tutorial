@@ -32,18 +32,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 67 of #100DaysOfAzureDevOps
+Shift-left security means finding the fire in the kitchen, not on the evening news.
 
-Shift-left security means finding the fire in the kitchen, not on the evening news
+Day 67 of #100DaysOfAzureDevOps. Compliance scanning in pipelines.
 
-Today's topic: **Compliance Scanning in Pipelines**.
+SAST, dependency scanning, secret scanning. The kitchen is the pull request. The evening news is a leaked key in a public gist. I have seen both. Adding a scan that publishes a summary and fails on high if the tool allows it is the lab. Perfect coverage is not. A scan you ignore is décor.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Mindset: dependency scan on restore, secret scan on the repo, results as a pipeline summary. GitHub push protection on a mirror if that is what I have. Azure DevOps tasks vary; the habit does not.
 
-Tomorrow: DevSecOps shift-left.
+Patterns I keep seeing
+
+1. Secrets first — they are already a fire
+• Scan the repo; fail if a key-shaped string lands
+• Yesterday's Key Vault work is wasted if today's commit contains DemoSecret's cousin
+
+2. Dependencies are the supply chain
+• Restore/install is when you learn you pulled a CVE
+• A lockfile without a scan is a list, not a control
+
+3. SAST is the slow cousin that still matters
+• If I have a task, I run it
+• If I do not, I document the gap instead of pretending
+
+4. Publish results where humans look
+• Pipeline summary, not a log line 4,000 down
+• Fail on high if the tool can; warnings-only is how kitchens burn politely
+
+What I am doing in today's lab
+
+I am adding a secret scan task or enabling push protection on a personal mirror, failing the build on high vulnerabilities if the tool allows, and capturing a summary. If the marketplace task is too spicy (Day 83 energy), I still run an open-source scanner in a script. The fire drill is the point.
+
+Find it in the kitchen. Evening news is for people who skipped the PR.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-67-compliance-scanning-in-pipelines
+
+Tomorrow: DevSecOps shift-left — Security stage before Deploy.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 67 — Compliance Scanning in CI` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

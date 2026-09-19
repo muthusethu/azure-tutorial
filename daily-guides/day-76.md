@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 76 of #100DaysOfAzureDevOps
+A red pipeline ignored for a week is a culture problem wearing a YAML costume.
 
-A red pipeline ignored for a week is a culture problem wearing a YAML costume
+Day 76 of #100DaysOfAzureDevOps. Pipeline monitoring and analytics.
 
-Today's topic: **Pipeline Monitoring & Analytics**.
+Build analytics, release analytics, flaky tests. Azure DevOps will show failure rate if I look. I have been on teams where main was red from Monday to Thursday because "it is always like that." That is not YAML. That is a culture that trained itself to ignore the fire alarm.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Open Pipelines analytics/insights. Note this week's failure rate. If I have few runs, I still look at the last ten and write which failed and why. Flakes get names or they get ignored forever.
 
-Tomorrow: Cost management.
+What I keep seeing
+
+1. Failure rate is a DORA cousin
+• A number I can say out loud
+• Zero runs is not 100% success. It is darkness
+
+2. Flakes are incidents on installment
+• Re-run until green is how you teach the team to ignore red
+• Name the flake or delete the test. Do not live with a coin flip
+
+3. Duration is a cost
+• Hosted minutes, feedback delay
+• A 40-minute CI that used to be 8 is a product problem
+
+4. Insights are only useful if someone owns red
+• Today: I own my lab pipelines
+• If I leave a red run "for later," I am practicing the culture I am complaining about
+
+What I am doing in today's lab
+
+I am opening Azure DevOps → Pipelines → Analytics/Insights, noting failure rate this week (or last N runs), and fixing or documenting any red I am ignoring. Costume off. If it is red, it is mine.
+
+Red is a signal. A week of mute is a culture. YAML is just the fabric.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-76-pipeline-monitoring-analytics
+
+Tomorrow: Cost management — delete orphan RGs, tighten the budget alert.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 76 — Pipeline Monitoring` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

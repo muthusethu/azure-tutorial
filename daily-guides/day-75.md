@@ -29,18 +29,53 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 75 of #100DaysOfAzureDevOps
+A dashboard is a storyboard — if it needs a 30-min explanation, it is a novel, not a dashboard.
 
-A dashboard is a storyboard - if it needs a 30-min explanation, it is a novel, not a dashboard
+Day 75 of #100DaysOfAzureDevOps. Dashboards and workbooks.
 
-Today's topic: **Dashboards & Workbooks**.
+Stakeholders will not read your KQL. They will glance at a storyboard. Three tiles: availability, failures, cost. If I need a guided tour, I built a novel. I have presented both. The novel loses the room.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Portal dashboard, pin charts from App Insights and Cost Management if I can. Share with myself only. Workbooks are the version with narrative and parameters; I can peek. Today is three tiles that tell a true short story.
 
-Tomorrow: Pipeline monitoring.
+Patterns I keep seeing
+
+1. Three tiles, three questions
+• Are we up?
+• Are we erroring?
+• Are we spending by accident?
+
+2. Pin from the real blades
+• App Insights charts, not a screenshot pasted as art
+• Cost: even a lab sparkline keeps the habit honest
+
+3. Share scope is identity again
+• Myself only
+• A public dashboard of a lab is still a data leak if I pin the wrong thing
+
+4. Workbooks later for guided ops
+• Literacy: parameters, steps, a runbook in portal form
+• If the storyboard is already a novel, I cut tiles — I do not add chapters
+
+What I am doing in today's lab
+
+I am creating a dashboard, pinning availability, failures, and cost, and not sharing it beyond myself. If I do not have App Insights data, I pin what I do have and label a tile "no data yet" rather than inventing a healthy green.
+
+Storyboard. Glanceable. If it needs a TED talk, it is not a dashboard.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-75-dashboards-workbooks
+
+Tomorrow: Pipeline monitoring — a red build ignored for a week is culture, not YAML.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 75 — Dashboards & Workbooks` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

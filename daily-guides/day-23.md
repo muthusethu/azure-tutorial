@@ -50,18 +50,53 @@ stages:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 23 of #100DaysOfAzureDevOps
+YAML pipelines are Lego instructions written by someone who enjoys whitespace arguments.
 
-YAML pipelines are Lego instructions written by someone who enjoys whitespace arguments
+Day 23 of #100DaysOfAzureDevOps. YAML pipeline basics.
 
-Today's topic: **YAML Pipeline Basics**.
+Classic editor pipelines taught a generation to click. YAML taught the next one to argue about indentation. After ten years around release trains, I still prefer the argument. A pipeline you cannot diff in a pull request is a pipeline that will drift the moment two people edit it in the UI on the same afternoon.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Today is literacy, not poetry. Triggers, stages, jobs, steps. A PR trigger so main does not become a dumping ground. Logs read end-to-end so "the build failed" becomes a specific step, not a vibe.
 
-Tomorrow: CI pipeline for a .NET app.
+What I keep seeing
+
+1. Schema is a map, not decoration
+• trigger and pr decide when the robot wakes up
+• stages group jobs; jobs grab an agent; steps are the actual work
+• If you cannot point to which layer failed, you will debug the wrong layer
+
+2. dependsOn is a promise
+• Test that does not depend on Build will race it and lie
+• A missing dependsOn looks like speed until it ships an unbuilt artifact
+
+3. PR triggers are manners
+• include: main on pull requests catches the break before merge
+• Skipping PR CI is how "it worked on my branch" becomes tomorrow's incident
+
+4. Logs are the product of the pipeline
+• displayName is how humans find the step at 1am
+• Reading the run once, fully, is cheaper than guessing for a week
+
+What I am doing in today's lab
+
+I am expanding the hello pipeline into stages Build then Test (Test can still be echo), adding a PR trigger on main, and reading the pipeline run logs end-to-end instead of celebrating the green checkbox.
+
+If you cannot explain the YAML out loud, you do not own the pipeline yet. Whitespace is annoying. Undiffable clicks are worse.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-23-yaml-pipeline-basics
+
+Tomorrow: CI pipeline for a .NET app — restore, build, test, publish, artifact.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 23 — YAML Pipeline Basics` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

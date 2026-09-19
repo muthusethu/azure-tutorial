@@ -30,18 +30,53 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 49 of #100DaysOfAzureDevOps
+IaC without a pipeline is homework; IaC in a pipeline is how grown-ups change prod.
 
-IaC without a pipeline is homework; IaC in a pipeline is how grown-ups change prod
+Day 49 of #100DaysOfAzureDevOps. IaC in pipelines.
 
-Today's topic: **IaC in Pipelines**.
+A plan on a laptop is a school assignment. A plan in CI, published as an artifact, applied only when an approval says so, is how you stop "it worked on my Terraform." I have watched production apply from a developer workstation because the pipeline "wasn't ready." The workstation had a different variable file. Of course it did.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Pipeline: terraform plan -out=tfplan (or bicep what-if). Publish the plan. Apply with a condition — eq(variables['apply'], 'true') or an environment approval. Not both auto-approve and hope.
 
-Tomorrow: Phase 5 mini project.
+Patterns I keep seeing
+
+1. Plan in CI on a clean agent
+• The agent checks out the same commit a human reviewed
+• Laptop plans pick up leftover env vars like lint
+
+2. Apply is gated
+• condition: and(succeeded(), eq(variables['apply'], 'true'))
+• Or a prod environment approval from Day 38
+• Auto-approve in a lab destroy is fine; auto-approve prod is a personality disorder
+
+3. The plan file is the artifact
+• Apply the plan you reviewed, not a fresh plan nobody saw
+• A second plan at apply time is how surprises sneak in
+
+4. Identity of the pipeline is scoped
+• The service connection should not be Owner on the subscription
+• IaC robots with flamethrowers write very complete incidents
+
+What I am doing in today's lab
+
+I am adding a pipeline that runs terraform plan -out=tfplan (or Bicep what-if), publishes the plan, and applies only when apply=true or an approval lands. I will run it once without apply, once with. If the second run changes something the first plan did not show, I stop and read.
+
+Homework stays on the laptop. Production changes wait in a pipeline with a brake.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-49-iac-in-pipelines
+
+Tomorrow: Phase 5 mini project — one plan+apply from a pipeline, then destroy.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 49 — IaC in Pipelines` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -1,67 +1,55 @@
-# Day 01 — Cloud Computing & Azure Fundamentals
+# Day 1 — Cloud Computing & Azure Fundamentals
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Understand **IaaS vs PaaS vs SaaS**, **regions**, and **availability zones**. Set up a personal Azure budget alert and first resource group.
+Who holds the spatula, which city, which building
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for diagrams. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Concept | Meaning | Metaphor |
-|---------|---------|----------|
-| **IaaS** | You manage OS + app | Rent the whole kitchen |
-| **PaaS** | You manage app; platform managed | Shared kitchen with a manager |
-| **SaaS** | You configure/use the product | Order takeout |
-| **Region** | Geography / set of datacenters | City |
-| **Availability Zone** | Separate datacenter in a region | Different building, same city |
-
-**One-liner:** Region = city · Zone = building · IaaS/PaaS/SaaS = who holds the spatula.
-
-## Learn
-
-- [Azure regions overview](https://learn.microsoft.com/azure/reliability/regions-overview)
-- Shared responsibility across cloud service models
+| Layer | IaaS (VM) | PaaS (App Service) | SaaS |
+| --- | --- | --- | --- |
+| Azure type | Microsoft.Compute/virtualMachines | Microsoft.Web/sites, Microsoft.Web/sites/functions | Microsoft 365, GitHub, Azure DevOps |
+| Application / data | You: app, disks, backups | You: app + App Settings / Connection Strings | Vendor: tenant data under their SLA |
+| Runtime / middleware | You: IIS, nginx, .NET, Node, Java | Vendor: Kudu / platform stack you pick | Vendor |
+| OS / patching | You: Windows/Linux Update, NSG, disks | Vendor patches the worker | Vendor |
+| Network / identity | You: VNet, NIC, NSG, public IP | You: VNet integration, Private Endpoint, Entra ID | Vendor + your tenant admin |
+| Failure blast | You reboot the VM; you own the 2am patch | Swap slot / scale out; platform recycles workers | Wait on vendor status + your admin settings |
 
 ## Step-by-step lab
 
-1. Sign in to [Azure Portal](https://portal.azure.com) with a **personal** account (not work SSO).
-2. **Subscriptions** → note name and ID.
-3. **Cost Management** → create a budget alert (e.g. Rs 500 or $20).
-4. Create resource group `rg-day01-lab` in **Central India** (or nearest region).
-5. Optional — Cloud Shell / Azure CLI:
-
-```bash
-az account show --output table
-az group create --name rg-day01-lab --location centralindia
-az group list --output table
-```
-
-6. Browse a free-tier create blade if you want, but do not deploy costly resources yet.
+1. portal.azure.com → sign in with the personal Microsoft account. Top-right directory picker: confirm it is NOT a work tenant.
+2. Subscriptions → open the personal subscription → copy Name + Subscription ID into notes (never a work sub).
+3. Cost Management + Billing → Budgets → Add → amount Rs 500 or $20 → alert email = you. Save.
+4. Resource groups → Create → Name rg-day01-lab → Region Central India (or nearest) → Review + create.
+5. Open Cloud Shell (Bash) → az account show --output table → confirm the same subscription ID.
+6. Browse Create a resource → Storage account or App Service create blade. Read SKUs. Do NOT deploy.
+7. Optional: az group list --output table. Keep rg-day01-lab for Day 2 or delete if you created nothing inside.
 
 ## Done when
 
-- [ ] You can explain IaaS / PaaS / SaaS with one example each  
-- [ ] You can explain Region vs Availability Zone  
-- [ ] Budget alert exists  
-- [ ] `rg-day01-lab` exists (or you know how to create it)
+- [ ] Can explain IaaS vs PaaS vs SaaS with one Azure resource type each
+- [ ] Can explain Region vs Availability Zone without saying 'datacenter somewhere'
+- [ ] Budget alert exists on the personal subscription
+- [ ] rg-day01-lab exists in the chosen region (or you can recreate it)
 
 ## LinkedIn
 
-Use the post draft in [`../../daily-guides/day-01.md`](../../daily-guides/day-01.md) and attach **[handout.pdf](./handout.pdf)** as a LinkedIn document.
+Post draft: [`../../daily-guides/day-01.md`](../../daily-guides/day-01.md)  
+Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-Handout: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-01-cloud-fundamentals
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-01-cloud-fundamentals
 ```
-
-Hashtags: `#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic`
 
 ## Next
 
-**Day 02** — Azure Portal vs CLI vs PowerShell.
+**Day 2** — Azure Portal, CLI & PowerShell basics

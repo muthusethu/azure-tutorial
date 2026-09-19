@@ -31,18 +31,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 99 of #100DaysOfAzureDevOps
+Pricing is a boundary — undercharging buys stress, overcharging without proof buys silence.
 
-Pricing is a boundary - undercharging buys stress, overcharging without proof buys silence
+Day 99 of #100DaysOfAzureDevOps. Outreach templates and pricing.
 
-Today's topic: **Outreach Templates & Pricing**.
+I am writing two DM templates that offer a public walkthrough, not a "hire me" pitch, and I am noting a rate band privately. This LinkedIn series still does not sell. Templates without spammy CTAs. Pricing ranges are references in a private note, not a number I will invent here for theater.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+The vibe of a decent DM: you published something useful, here is the link, happy to answer questions. The vibe of a bad DM is a cold résumé with a calendar link. I have received both. Only one gets a reply from me.
 
-Tomorrow: Launch day.
+Patterns I keep seeing
+
+1. Help first, ask never in this series
+• This post has no website CTA
+• The templates live in a private file, not as comments on strangers' jobs
+
+2. Proof is the public repo
+• Walkthrough link from Days 94–95
+• Without proof, a high rate is silence; without a boundary, a low rate is stress
+
+3. Rates stay private today
+• A band in a note I do not publish
+• I will not post a fake day rate to look senior
+
+4. Spam is a reputation tax
+• Mass DM is how you teach people to mute you
+• Two templates, used rarely, beats fifty copies
+
+What I am doing in today's lab
+
+I am writing two DMs focused on solving a DevOps pain and pointing at the public CI/CD walkthrough, plus a private rate-band note. I am not dropping those DMs on this post. Tomorrow is launch day. Today is boundaries.
+
+A boundary is a kindness to future-you. Spam is a tax. This series stays a classroom.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-99-outreach-templates-pricing
+
+Tomorrow: Launch day — portfolio, recap, destroy leftovers, write the next 100.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 99 — Outreach Templates & Pricing` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

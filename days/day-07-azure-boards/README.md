@@ -1,46 +1,45 @@
-# Day 07 — Azure Boards Deep Dive
+# Day 7 — Azure Boards Deep Dive
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Plan the 100-day journey in Azure Boards: hierarchy, board flow, and a reusable query.
+Epic to Task is a planning graph. WIP limits keep the board honest.
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Level | Purpose |
-|-------|---------|
-| **Epic** | Large initiative (e.g. 100 Days Learning) |
-| **Feature** | Phase or theme (e.g. Phase 1 Foundations) |
-| **User Story** | One finishable outcome |
-| **Task / Bug** | Steps or defects |
-
-**Flow:** Backlog → Sprint / Board columns → Done
-
-## Learn
-
-- [What is Azure Boards?](https://learn.microsoft.com/azure/devops/boards/get-started/what-is-azure-boards)
+| Type | Parent / child | This series example |
+| --- | --- | --- |
+| Epic | Top of the tree | 100 Days Learning |
+| Feature | Child of Epic | Phase 1 Foundations |
+| User Story | Child of Feature; AB# links to PRs later | Explore Azure Test Plans |
+| Task | Child of Story; hours optional | Create test plan, add 2 cases |
+| Bug | Can hang off Story or backlog | Use when a lab step actually fails |
+| Issue (Agile) | Impediment, not a delivery item | Skip unless blocked on SKU/trial |
 
 ## Step-by-step lab
 
-1. Open project `azure-100-labs` → **Boards**
-2. Create Epic `100 Days Learning`
-3. Add Feature `Phase 1 Foundations`
-4. Add 3 User Stories (Days 8–10 topics)
-5. Move one story To Do → Doing → Done
-6. Query: Work Item Type = User Story AND State <> Done
+1. Boards → Work items → New Work Item → Epic → Title 100 Days Learning → Save. Note the ID.
+2. New Feature Phase 1 Foundations → Add link → Parent → the Epic. Save.
+3. Create 3 User Stories as children of the Feature: Explore Azure Test Plans; Create Azure Artifacts feed; Stand up end-to-end mini project.
+4. Boards → Boards → drag one story New/To Do → Active/Doing → Closed/Done. Watch the column counts.
+5. Board settings (gear) → Columns → Doing → WIP limit 3. Save.
+6. Boards → Queries → New query → Work Item Type = User Story AND State <> Closed → Save as Open stories.
+7. Open one story → Related Work. You will link a PR here in Phase 2. Do not invent fake employer sprints.
 
 ## Done when
 
-- [ ] Hierarchy exists in Boards  
-- [ ] One story completed on the board  
-- [ ] “Open stories” query saved or noted  
+- [ ] Can explain Epic → Feature → User Story → Task
+- [ ] Hierarchy exists in azure-100-labs
+- [ ] One story moved to Done on the board; WIP set on Doing
+- [ ] Saved query: User Story AND State <> Closed
 
 ## LinkedIn
 
@@ -48,11 +47,9 @@ Post draft: [`../../daily-guides/day-07.md`](../../daily-guides/day-07.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/45RGZXX
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-07-azure-boards
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-07-azure-boards)
 
 ## Next
 
-**Day 08** — Azure Test Plans basics.
+**Day 8** — Azure Test Plans basics

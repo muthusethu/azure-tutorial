@@ -33,18 +33,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 98 of #100DaysOfAzureDevOps
+Profiles are loud — make sure your contract allows the volume before you hit publish.
 
-Profiles are loud - make sure your contract allows the volume before you hit publish
+Day 98 of #100DaysOfAzureDevOps. Professional profile setup.
 
-Today's topic: **Professional Profile Setup**.
+Marketplace profiles (the kind that imply paid work) are loud. Employment agreements are often quieter until they are not. I am reading moonlighting and IP policy before creating any paid profile. Draft offline. Activate only if allowed. Personal equipment, personal time, personal Azure — the same rules this whole series already used.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+This post is not an invitation to hire me and not a tour of platforms. It is a reminder that a public portfolio and a paid-work profile are different volume levels. Policy first.
 
-Tomorrow: Outreach & pricing.
+What I keep seeing
+
+1. Policy before profile
+• Read the actual agreement
+• A draft in a local file is not a violation; a live paid profile might be
+
+2. Portfolio links are the quiet version
+• GitHub and the case study from Days 94–95
+• They do not require a marketplace account
+
+3. Personal equipment only
+• The rule has not changed since Day 1
+• Work laptop, work tenant, work time — still no
+
+4. No targeting of anyone's customers
+• Learning in public is not a prospecting list
+• This series stays educational
+
+What I am doing in today's lab
+
+I am reading employer moonlighting policy before creating any paid profiles, drafting copy offline, and activating only if allowed. Checklist in notes: policy reviewed, portfolio links ready, personal equipment only. If policy says no, the draft stays a draft and GitHub still exists.
+
+Volume is a choice. Contract first. Publish second. Loud is not the same as allowed.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-98-professional-profile-setup
+
+Tomorrow: Outreach templates and pricing — solve a pain, keep rates private, still no sell on this series.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 98 — Professional Profile Setup` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

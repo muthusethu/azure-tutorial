@@ -43,18 +43,53 @@ steps:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 25 of #100DaysOfAzureDevOps
+Node CI without caching is watching paint dry while paying Microsoft for the privilege.
 
-Node CI without caching is watching paint dry while paying Microsoft for the privilege
+Day 25 of #100DaysOfAzureDevOps. CI pipeline for a Node.js app.
 
-Today's topic: **CI Pipeline for a Node.js App**.
+npm install on a cold agent is a small tax that becomes a lifestyle. I have sat through pipelines that spent four minutes downloading the same packages the team downloaded an hour earlier. Cache@2 is not a micro-optimization for a conference talk. It is how you stop paying hosted-agent minutes to re-download left-pad's entire family tree.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+The other habit: npm install in CI when the lockfile exists. npm ci is the one that respects the lock. If CI uses npm install, you do not have a lockfile. You have a suggestion.
 
-Tomorrow: CI for Python.
+What usually goes wrong
+
+1. npm ci, not npm install, when package-lock.json exists
+• ci fails if the lock is stale — that is a feature
+• install will quietly mutate the graph and still go green
+
+2. Cache the right key
+• Cache@2 key: npm | Agent.OS | package-lock.json
+• Cache node_modules (or the npm cache) — not the entire repo
+• Wrong key = cache never hits and you still wait
+
+3. Pin Node like you pin .NET
+• NodeTool@0 with 20.x (or the engines field you actually mean)
+• ubuntu-latest Node floating is how "works on my 18" becomes "fails on 22"
+
+4. A tiny app is enough
+• Today's sample-node can have a test script that prints ok
+• The point is the pipeline shape, not a fake product
+
+What I am doing in today's lab
+
+I am adding a tiny Node app under /src/sample-node, wiring NodeTool@0, Cache@2 keyed off package-lock.json, then npm ci and npm test. If the cache hits, the log should show it. If it misses, I want to know why, not shrug.
+
+Pay for compute that does work. Do not pay for compute that re-downloads the internet.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-25-ci-pipeline-for-a-node-js-app
+
+Tomorrow: CI for Python — pip, ruff, pytest on a tiny sample.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 25 — CI Pipeline for a Node.js App` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

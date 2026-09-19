@@ -38,18 +38,52 @@ steps:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 26 of #100DaysOfAzureDevOps
+pytest is the friend who tells you the truth before your users do.
 
-pytest is the friend who tells you the truth before your users do
+Day 26 of #100DaysOfAzureDevOps. CI pipeline for a Python app.
 
-Today's topic: **CI Pipeline for a Python App**.
+Python CI looks optional until an import fails in production because the agent had a different implicit package. I have watched teams "just run the script" on a developer laptop, push, and discover that pytest was never in the pipeline because "we will add tests later." Later is a calendar that does not exist.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Today is a small sample: UsePythonVersion@0 at 3.11, pip, ruff, pytest. Lint that is allowed to warn in a lab is still lint you can see. Tests that do not run in CI are documentation of intent, not a safety net.
 
-Tomorrow: CI for Java/Maven.
+Patterns I keep seeing
+
+1. Pin the interpreter
+• UsePythonVersion@0 with 3.11 (or the version in .python-version)
+• The agent image's leftover Python is not your runtime
+
+2. Install tools in the job, not in folklore
+• pip install pytest ruff in the pipeline so the next person is not hunting a wiki
+• requirements.txt (even a short one) beats "it was on my machine"
+
+3. Lint and test are different signals
+• ruff check . catches style and a class of bugs early
+• pytest -q tells you behavior; do not conflate them into one exit code you ignore
+
+4. A failing lint in lab can be || true once — not forever
+• I am allowing ruff to warn today so the first pipeline exists
+• Leaving || true in a real main branch is how quality becomes optional
+
+What I am doing in today's lab
+
+I am adding /src/sample-python with at least one pytest, then a pipeline that upgrades pip, installs pytest and ruff, runs ruff check, and runs pytest -q. Green means the interpreter, the tools, and the tests agreed in CI — not that I ran a file locally.
+
+Users will test your Python if you will not. pytest is cheaper.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-26-ci-pipeline-for-a-python-app
+
+Tomorrow: CI for Java/Maven — lifecycle, tests, and not jumping off the train early.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 26 — CI Pipeline for a Python App` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

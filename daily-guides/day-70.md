@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 70 of #100DaysOfAzureDevOps
+Phase 7 recap: speed without security is just a faster incident.
 
-Phase 7 recap: speed without security is just a faster incident
+Day 70 of #100DaysOfAzureDevOps. Mini project and recap for Phase 7 — security, compliance, and governance.
 
-Today's topic: **Mini Project + Recap (Phase 7)**.
+Entra, RBAC, service connections, Key Vault, pipeline fetch, Policy, scanning, shift-left, boring pipeline design. The mini project is one demo pipeline that fetches a secret, a tag policy that is actually assigned, and approvals on. Secret not in YAML.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I can ship faster by skipping all of it. I have seen that speed. It arrives at an incident with better velocity metrics.
 
-Tomorrow: Azure Monitor fundamentals.
+What I am keeping from Phase 7
+
+1. Identity, then RBAC, then secrets
+• Bouncer list, scoped badges, hotel safe
+• Skipping to Key Vault with Owner SPNs is cosplay
+
+2. Policy is the tag adult
+• Visible on the compliance blade
+• Not a PDF of good intentions
+
+3. Security stage before Deploy
+• Fail criteria written
+• No continueOnError confession
+
+4. Definition of done
+• Secret not in YAML; policy visible; approvals on
+• Screenshot without secret values
+
+What I am doing in today's lab
+
+I am wiring one demo pipeline that fetches DemoSecret, confirming the RG tag policy is on, keeping prod approval, and writing the recap. If any secret printed this week, I rotate the dummy and fix the step. Speed is allowed. Unauthenticated speed is not a flex. The screenshot still shows asterisks, not letters. Policy blade still shows the assignment.
+
+Faster incidents are still incidents. Phase 7 is the brakes that let Phase 4 go fast without lying. Wear them before you enjoy the velocity.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-70-mini-project-recap-phase-7
+
+Tomorrow: Azure Monitor fundamentals — flashlight, not the fix.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 70 — Phase 7 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

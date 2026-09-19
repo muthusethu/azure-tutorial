@@ -35,18 +35,53 @@ CMD ["npm", "start"]
 ## LinkedIn post (copy-paste)
 
 ```
-Day 51 of #100DaysOfAzureDevOps
+Containers are shipping containers for processes — same app, fewer "works on my laptop" customs checks.
 
-Containers are shipping containers for processes - same app, fewer 'works on my laptop' customs checks
+Day 51 of #100DaysOfAzureDevOps. Docker fundamentals.
 
-Today's topic: **Docker Fundamentals**.
+The laptop had Node 20, a global package, and a .env that was never committed. Production had Node 18 and no global package. Customs seized the app at the border. A Dockerfile is how you ship the process with its language, its OS slice, and its start command — not a prayer that the destination looks like your desk.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Images, containers, layers, cache. COPY package*.json before COPY . so npm ci can cache. I have seen Dockerfiles that copy the universe first and then wait five minutes on every README change. Layer cache is a design, not a miracle.
 
-Tomorrow: Azure Container Registry.
+Patterns I keep seeing
+
+1. Image vs container
+• Image is the immutable snapshot
+• Container is a running instance of that snapshot
+• Mutating a running container and calling it "the image" is how drift gets a hoodie
+
+2. Dockerfile order is cache order
+• FROM node:20-alpine, WORKDIR, COPY package*.json, RUN npm ci --omit=dev, COPY ., CMD
+• Copy source before install and every code change busts the dependency layer
+
+3. Pin the base
+• node:20-alpine is a choice
+• FROM node:latest is a surprise waiting for a Tuesday
+
+4. Local proof before registries
+• Docker Desktop on the personal PC
+• Build and run the hello app until localhost behaves
+
+What I am doing in today's lab
+
+I am installing Docker Desktop on my personal PC, writing a hello Dockerfile for the sample app, building it, running it, and noting the cache behavior when I change a line of source versus a line in package.json. ACR is tomorrow. Today the process has to ship locally.
+
+Pack the process. Stop negotiating with the destination's personality.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-51-docker-fundamentals
+
+Tomorrow: Azure Container Registry — private closet for images.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 51 — Docker Fundamentals` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

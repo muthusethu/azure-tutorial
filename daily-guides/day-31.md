@@ -38,18 +38,52 @@ stages:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 31 of #100DaysOfAzureDevOps
+Classic releases are the old mall; YAML CD is the street you actually live on now.
 
-Classic releases are the old mall; YAML CD is the street you actually live on now
+Day 31 of #100DaysOfAzureDevOps. Release pipelines overview.
 
-Today's topic: **Release Pipelines Overview**.
+Classic Release pipelines still work. They also hide the workflow in a UI that does not review well and does not travel with the repo. After a decade of delivery, I can still click a Classic stage in my sleep. I do not want my labs, or a future team's source of truth, to live in that mall.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+YAML CD is a deployment job, an environment, and a strategy. runOnce. deploy. The environment named dev is not a folder on a laptop. It is an Azure DevOps object you can hang approvals and checks on later this phase.
 
-Tomorrow: Deploy to App Service.
+Patterns I keep seeing
+
+1. Prefer YAML CD for new work
+• The pipeline file lives next to the app
+• Classic is literacy for brownfield, not the default for a 100-day lab
+
+2. Environments are first-class
+• Pipelines → Environments → create dev
+• A deployment job targets environment: dev so history is not a buried log
+
+3. strategy.runOnce.deploy is the smallest CD
+• steps under deploy run on the agent against that environment
+• echo Deploying to dev is a legal first proof — the wiring matters more than the bits today
+
+4. CD consumes CI, it does not impersonate it
+• Download the artifact from Day 24–30
+• Rebuilding in the release job is how staging and production diverge
+
+What I am doing in today's lab
+
+I am leaving Classic alone for these labs, creating environment dev in Pipelines → Environments, and adding a DeployDev stage with a deployment job that echoes a deploy. Tomorrow the echo becomes App Service. Today the environment object has to exist.
+
+Live on the street that diffs. Visit the mall only when a legacy release still pays the rent.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-31-release-pipelines-overview
+
+Tomorrow: Deploy to Azure App Service — zip deploy from the pipeline.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 31 — Release Pipelines Overview` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

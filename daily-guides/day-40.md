@@ -29,18 +29,54 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 40 of #100DaysOfAzureDevOps
+Phase 4 recap: shipping is a pipeline with brakes, not a YOLO button.
 
-Phase 4 recap: shipping is a pipeline with brakes, not a YOLO button
+Day 40 of #100DaysOfAzureDevOps. Mini project and recap for Phase 4 — Continuous Delivery.
 
-Today's topic: **Mini Project + Recap (Phase 4)**.
+This phase was App Service, Functions, slots, blue-green, canary, rolling, approvals, and multi-env promotion. The spine is the same: an artifact from CI, an environment object, a strategy for how traffic meets bits, and a brake someone can actually pull.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have watched "just deploy it" work until it did not. YOLO is a button. Delivery is a path with stages, checks, and a rollback that is not a scavenger hunt. Today's definition of done is one pipeline run with visible approvals and logs saved.
 
-Tomorrow: IaC concepts.
+What I am keeping from Phase 4
+
+1. CD is YAML, environments, and a strategy
+• Classic mall is literacy; the street we live on is multi-stage YAML
+• environment: dev/prod is how history shows up
+
+2. Traffic strategies are choices with costs
+• Slots/swap ≈ dressing room
+• Blue-green ≈ light switch if you paid for two worlds
+• Canary ≈ die early
+• Rolling ≈ mixed versions on purpose
+
+3. Brakes are approvals plus rollback docs
+• Reject must work
+• rollback.md must exist even if prod is an echo
+
+4. Same artifact through the chain
+• The recap is not complete if Prod rebuilt
+• Ghosts from Day 39 still count as a miss
+
+What I am doing in today's lab
+
+I am running a green path Dev → Staging → Prod (prod may be echo if there is no budget), capturing approvals in the run, saving logs, and writing a recap without heroics. Success is a boring screenshot of a pipeline that waited for me.
+
+Ship with brakes. A YOLO button is not courage. It is unpaid incident duty.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-40-mini-project-recap-phase-4
+
+Tomorrow: IaC concepts — declarative vs imperative, drift, pick Bicep or Terraform.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 40 — Phase 4 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -2896,7 +2896,170 @@ def build_day21(path: Path):
     print("Wrote", path)
 
 
-# Registry for future days (extend over time)
+def build_day22(path: Path):
+    s = styles()
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title="Day 22 — Hosted vs Self-hosted Agents | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+
+    story.append(header_bar(22, "Microsoft-hosted vs Self-hosted Agents"))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph(
+        "Day 22 Handout — Pick the agent like a capacity decision, not a personality trait",
+        s["cover_title"],
+    ))
+    story.append(Paragraph(
+        "Phase 3 · Continuous Integration · Personal lab only · Educational content · Not a sales pitch",
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    compare = [
+        ["Dimension", "Microsoft-hosted", "Self-hosted"],
+        ["What it is", "Microsoft-provided VM image for the job", "A machine / scale set you operate"],
+        ["YAML", "<font face='Courier' size='7.5'>pool:<br/>&nbsp;&nbsp;vmImage: ubuntu-latest</font>",
+         "<font face='Courier' size='7.5'>pool: Default<br/># or a named pool</font>"],
+        ["Images", "ubuntu-latest, windows-latest, macOS SKUs with SDKs on the image",
+         "Whatever you installed. You own drift."],
+        ["Patching / disk", "Microsoft patches the VM. Workspace dies with the job",
+         "You patch OS, agents, AV, certs. Disk fills with leftover workspaces"],
+        ["Network", "Public Microsoft IPs. No hop into your VNet unless you design for it",
+         "Can sit on a VNet / on-prem. Use when the job must reach private endpoints"],
+        ["Licensed tools", "Public SDKs only. No ISV compiler that cannot leave the building",
+         "Install the licensed compiler, private NuGet, air-gapped feed"],
+        ["Failure mode", "Queue delay / hosted outage / image SKU change",
+         "Agent offline, capability mismatch, scale-set at 0, 2am patch window"],
+        ["Bill", "Microsoft-hosted minutes + parallel-job SKU",
+         "Parallel-job SKU <b>plus</b> the VM / scale set. Two bills, not one"],
+    ]
+    story.append(section_box(
+        "Architecture A — hosted vs self-hosted (same YAML job, different product)",
+        compare,
+        col_widths=[32 * mm, 74 * mm, 74 * mm],
+    ))
+
+    when = [
+        ["Constraint", "Default", "Move off hosted when"],
+        ["Public SaaS build", "Hosted ubuntu-latest", "Never, unless a later constraint appears"],
+        ["Private network hop", "Hosted cannot see it", "Job must hit a VNet-only feed, private AKS API, or on-prem artifact share"],
+        ["Licensed / air-gapped tool", "Not on the Microsoft image", "Compiler, scanner, or SDK that policy forbids on a public VM"],
+        ["Mac / Windows SKU need", "Use the hosted image first", "Image lacks the SDK pin you actually build with — then pin or self-host"],
+        ["Control as a feeling", "Still hosted", "\"We want control\" is not a constraint. Offline agents at 2am is the cost of that feeling"],
+    ]
+    story.append(section_box(
+        "Architecture B — decide with a constraint, not a blog title",
+        when,
+        col_widths=[42 * mm, 58 * mm, 80 * mm],
+    ))
+
+    story.append(Paragraph("One-liner to remember", s["h1"]))
+    one = Table([[Paragraph(
+        "<b>Hosted is Uber. Self-hosted is owning the car — insurance, parking, and the 2am flat tyre included. "
+        "Pick hosted until a concrete constraint forces you off it.</b>",
+        ParagraphStyle("ol22", fontName="Helvetica", fontSize=9.5, leading=12,
+                       textColor=NAVY, alignment=TA_CENTER)
+    )]], colWidths=[180 * mm])
+    one.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+        ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+        ("TOPPADDING", (0, 0), (-1, -1), 10),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+    ]))
+    story.append(one)
+
+    story.append(Paragraph("Pitfalls that actually queue jobs forever", s["h1"]))
+    traps = [
+        ["Pitfall", "What you see", "Fix"],
+        ["Capability folklore", "Job waits on a pool named \"the Java agent\"",
+         "Demand a registered capability in YAML, not a nickname in Slack"],
+        ["Pool sprawl", "Five pools, nobody knows which one is live",
+         "One pool per real constraint (OS / network / license). Delete the rest"],
+        ["Missing parallel job", "Self-hosted VM is up; pipeline still queued",
+         "Self-hosted still needs an Azure DevOps parallel job. The VM bill is extra"],
+        ["Agent version drift", "Worked Friday, fails Monday after an agent update",
+         "Pin agent version on scale sets. Treat agents as cattle with a known image"],
+        ["Workspace leftovers", "Disk 100%, jobs fail with no obvious YAML error",
+         "Clean workspaces; prefer scale-set agents that die with the job"],
+    ]
+    story.append(section_box(
+        "Architecture C — why \"the agent is the problem\" is usually configuration",
+        traps,
+        col_widths=[40 * mm, 70 * mm, 70 * mm],
+    ))
+
+    story.append(Paragraph("Step-by-step lab (25–40 min)", s["h1"]))
+    story.append(Paragraph(
+        "Personal Azure DevOps org only. Project <b>azure-100-labs</b> (or today's lab project).",
+        s["body"],
+    ))
+    story.append(numbered([
+        "Open Microsoft Learn: hosted vs self-hosted agents. Write three constraints that would force self-hosted (private network, licensed tool, policy). If you cannot name one, hosted stays the default.",
+        "Org settings → Agent pools. List every pool. Note Microsoft-hosted vs any Default / self-hosted pool. Screenshot nothing from an employer org.",
+        "Open yesterday's YAML (Day 21). Confirm <font face='Courier' size='8'>pool: vmImage: ubuntu-latest</font>. That is the rule for every remaining 100-day lab unless a private-network requirement appears.",
+        "In the last pipeline run, open the job log. Find the image name / hosted agent line. That receipt is how you prove hosted actually ran.",
+        "Write <b>docs/agents-day22.md</b> with: (1) the three constraints, (2) the pool list from this org, (3) the one-sentence rule you will follow for Days 23–100.",
+    ]))
+
+    story.append(Paragraph("Starter YAML — hosted stays the default", s["h1"]))
+    cmd = Table([[Paragraph(
+        "<font face='Courier' size='7.5'>"
+        "trigger:<br/>"
+        "&nbsp;&nbsp;- main<br/>"
+        "pool:<br/>"
+        "&nbsp;&nbsp;vmImage: ubuntu-latest&nbsp;&nbsp;# Microsoft-hosted. Do not switch to a named pool for labs.<br/>"
+        "steps:<br/>"
+        "&nbsp;&nbsp;- script: echo Agent image is $(Agent.OS) / $(Agent.Name)<br/>"
+        "&nbsp;&nbsp;&nbsp;&nbsp;displayName: Prove which agent ran"
+        "</font>",
+        s["body"],
+    )]], colWidths=[180 * mm])
+    cmd.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+        ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+        ("LEFTPADDING", (0, 0), (-1, -1), 8),
+        ("TOPPADDING", (0, 0), (-1, -1), 8),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+    ]))
+    story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Can explain hosted vs self-hosted without saying \"we wanted control\"",
+        "Named at least one real constraint that would justify self-hosted — or wrote \"none yet\"",
+        "YAML still uses vmImage: ubuntu-latest",
+        "docs/agents-day22.md exists on the personal repo",
+        "Posted the LinkedIn document (personal account, no employer)",
+    ]))
+
+    story.append(Paragraph("Tomorrow — Day 23", s["h2"]))
+    story.append(Paragraph(
+        "YAML pipeline basics — trigger, stages, jobs, steps, a PR trigger, and reading the log as the product of the run.",
+        s["body"],
+    ))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+    doc.build(story)
+    print("Wrote", path)
+
+
+# Registry for custom (hand-drawn) days 1–21 plus upgraded Day 22
 HANDOUTS = {
     1: build_day01,
     2: build_day02,
@@ -2919,45 +3082,263 @@ HANDOUTS = {
     19: build_day19,
     20: build_day20,
     21: build_day21,
+    22: build_day22,
 }
+
+PUBLISH_MAP = {
+    1: DAYS / "day-01-cloud-fundamentals" / "handout.pdf",
+    2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
+    3: DAYS / "day-03-arm-basics" / "handout.pdf",
+    4: DAYS / "day-04-devops-principles" / "handout.pdf",
+    5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
+    6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
+    7: DAYS / "day-07-azure-boards" / "handout.pdf",
+    8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
+    9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
+    10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
+    11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
+    12: DAYS / "day-12-branching-strategies" / "handout.pdf",
+    13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
+    14: DAYS / "day-14-pull-requests" / "handout.pdf",
+    15: DAYS / "day-15-advanced-git" / "handout.pdf",
+    16: DAYS / "day-16-git-hooks" / "handout.pdf",
+    17: DAYS / "day-17-fork-permissions" / "handout.pdf",
+    18: DAYS / "day-18-migrating-repos" / "handout.pdf",
+    19: DAYS / "day-19-repo-security" / "handout.pdf",
+    20: DAYS / "day-20-phase-2-recap" / "handout.pdf",
+    21: DAYS / "day-21-intro-pipelines" / "handout.pdf",
+}
+
+GITHUB_DAYS = "https://github.com/muthusethu/azure-tutorial/tree/main/days"
+
+
+def _esc(text: str) -> str:
+    from xml.sax.saxutils import escape
+
+    return escape(text or "")
+
+
+def folder_slug(day: int, topic: str) -> str:
+    import re
+
+    s = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")
+    s = re.sub(r"-{2,}", "-", s)
+    if len(s) > 48:
+        s = s[:48].rstrip("-")
+    return f"day-{day:02d}-{s}"
+
+
+def code_html(code: str) -> str:
+    body = _esc(code.strip()).replace(" ", "&nbsp;").replace("\n", "<br/>")
+    return f"<font face='Courier' size='7.5'>{body}</font>"
+
+
+def curriculum():
+    import sys
+
+    scripts_dir = Path(__file__).resolve().parent
+    if str(scripts_dir) not in sys.path:
+        sys.path.insert(0, str(scripts_dir))
+    from generate_daily_guides import DAYS as GUIDE_DAYS
+    from generate_daily_guides import MORE, phase_for
+
+    items = {}
+    for item in list(GUIDE_DAYS) + list(MORE):
+        day, _date, topic, learn, lab, code, hook, tomorrow = item
+        items[day] = {
+            "topic": topic,
+            "learn": learn,
+            "lab": lab,
+            "code": code,
+            "hook": hook,
+            "tomorrow": tomorrow,
+            "phase": phase_for(day),
+        }
+    return items
+
+
+def build_from_guide(path: Path, day: int, spec: dict) -> None:
+    s = styles()
+    topic = spec["topic"]
+    doc = SimpleDocTemplate(
+        str(path),
+        pagesize=A4,
+        leftMargin=15 * mm,
+        rightMargin=15 * mm,
+        topMargin=12 * mm,
+        bottomMargin=12 * mm,
+        title=f"Day {day} — {topic} | 100DaysOfAzureDevOps",
+        author="Personal learning series",
+    )
+    story = []
+    story.append(header_bar(day, topic))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("100 Days of Azure DevOps", s["cover_sub"]))
+    story.append(Paragraph(
+        _esc(f"Day {day} Handout — {topic}"),
+        s["cover_title"],
+    ))
+    story.append(Paragraph(
+        _esc(f"Phase {spec['phase']} · Learning in public · Personal lab only · Not a sales pitch"),
+        s["cover_sub"],
+    ))
+    story.append(Spacer(1, 4))
+    story.append(HRFlowable(width="100%", thickness=1, color=TEAL, spaceAfter=8))
+
+    learn_rows = [["#", "Learn"]]
+    for i, item in enumerate(spec["learn"], start=1):
+        learn_rows.append([str(i), _esc(item)])
+    story.append(section_box(
+        "What to learn today",
+        learn_rows,
+        col_widths=[12 * mm, 168 * mm],
+    ))
+
+    if spec.get("hook"):
+        story.append(Paragraph("One-liner to remember", s["h1"]))
+        one = Table([[Paragraph(
+            f"<b>{_esc(spec['hook'])}</b>",
+            ParagraphStyle(
+                f"ol{day}",
+                fontName="Helvetica",
+                fontSize=9.5,
+                leading=12,
+                textColor=NAVY,
+                alignment=TA_CENTER,
+            ),
+        )]], colWidths=[180 * mm])
+        one.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FEF3C7")),
+            ("BOX", (0, 0), (-1, -1), 1, colors.HexColor("#D97706")),
+            ("TOPPADDING", (0, 0), (-1, -1), 10),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+        ]))
+        story.append(one)
+
+    story.append(Paragraph("Step-by-step lab (20–30 min)", s["h1"]))
+    story.append(numbered([_esc(x) for x in spec["lab"]]))
+
+    if spec.get("code") and spec["code"].strip():
+        story.append(Paragraph("Starter snippet", s["h1"]))
+        cmd = Table(
+            [[Paragraph(code_html(spec["code"]), s["body"])]],
+            colWidths=[180 * mm],
+        )
+        cmd.setStyle(TableStyle([
+            ("BACKGROUND", (0, 0), (-1, -1), LIGHT),
+            ("BOX", (0, 0), (-1, -1), 0.6, LINE),
+            ("LEFTPADDING", (0, 0), (-1, -1), 8),
+            ("TOPPADDING", (0, 0), (-1, -1), 8),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+        ]))
+        story.append(cmd)
+
+    story.append(Paragraph("Done checklist", s["h1"]))
+    story.append(bullets([
+        "Read the learn points",
+        "Finished the lab on a personal subscription / org",
+        "Posted the LinkedIn lesson (personal account, no employer)",
+        "Deleted spare lab resources if they cost money",
+    ]))
+
+    nxt = spec.get("tomorrow") or ""
+    story.append(Paragraph(f"Tomorrow — Day {day + 1}" if day < 100 else "After Day 100", s["h2"]))
+    story.append(Paragraph(_esc(nxt), s["body"]))
+
+    story.append(Spacer(1, 10))
+    story.append(HRFlowable(width="100%", thickness=0.6, color=LINE, spaceAfter=6))
+    story.append(Paragraph(
+        "Personal learning handout for LinkedIn series · Views are my own · "
+        "Not affiliated with any employer · Not legal advice",
+        s["footer"],
+    ))
+    story.append(Paragraph(SERIES_TAGS, s["footer"]))
+    doc.build(story)
+    print("Wrote", path)
+
+
+def write_day_readme(folder: Path, day: int, spec: dict, slug: str) -> None:
+    topic = spec["topic"]
+    nxt = spec.get("tomorrow") or ""
+    learn = "\n".join(f"- {x}" for x in spec["learn"])
+    lab = "\n".join(f"{i}. {x}" for i, x in enumerate(spec["lab"], start=1))
+    text = f"""# Day {day} — {topic}
+
+| | |
+|---|---|
+| **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | Phase {spec['phase']} |
+| **Time box** | 60–90 minutes |
+| **Handout** | [handout.pdf](./handout.pdf) |
+
+## Goal
+
+{spec['learn'][0] if spec['learn'] else topic}
+
+## High-level architecture (summary)
+
+Open **[handout.pdf](./handout.pdf)** for the full lab sheet. Short version:
+
+{learn}
+
+## Step-by-step lab
+
+{lab}
+
+## Done when
+
+- [ ] Lab steps completed on a personal Azure / Azure DevOps account
+- [ ] Notes captured
+- [ ] Spare lab resources deleted if they cost money
+
+## LinkedIn
+
+Post draft: [`../../daily-guides/day-{day:02d}.md`](../../daily-guides/day-{day:02d}.md)  
+Attach **[handout.pdf](./handout.pdf)**.
+
+```
+{GITHUB_DAYS}/{slug}
+```
+
+## Next
+
+**Day {day + 1}** — {nxt}
+"""
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "README.md").write_text(text, encoding="utf-8")
+
+
+def rewrite_days_index(guide: dict) -> None:
+    lines = [
+        "# Days index",
+        "",
+        "One folder per day of **#100DaysOfAzureDevOps**.",
+        "",
+        "Each folder contains:",
+        "",
+        "- `README.md` — topic summary + step-by-step lab  ",
+        "- `handout.pdf` — architecture + checklist (for LinkedIn document posts)",
+        "",
+        "| Day | Topic | Folder |",
+        "|----:|--------|--------|",
+    ]
+    for day in range(1, 101):
+        pdf = PUBLISH_MAP[day]
+        slug = pdf.parent.name
+        topic = guide[day]["topic"] if day in guide else slug
+        lines.append(f"| {day:02d} | {topic} | [{slug}](./{slug}) |")
+    lines.append("")
+    (DAYS / "README.md").write_text("\n".join(lines), encoding="utf-8")
+    print("Wrote", DAYS / "README.md")
 
 
 def main(days=None):
-    OUT.mkdir(parents=True, exist_ok=True)
-    days = days or sorted(HANDOUTS.keys())
-    publish_map = {
-        1: DAYS / "day-01-cloud-fundamentals" / "handout.pdf",
-        2: DAYS / "day-02-portal-cli-powershell" / "handout.pdf",
-        3: DAYS / "day-03-arm-basics" / "handout.pdf",
-        4: DAYS / "day-04-devops-principles" / "handout.pdf",
-        5: DAYS / "day-05-azure-devops-services" / "handout.pdf",
-        6: DAYS / "day-06-azure-devops-org" / "handout.pdf",
-        7: DAYS / "day-07-azure-boards" / "handout.pdf",
-        8: DAYS / "day-08-azure-test-plans" / "handout.pdf",
-        9: DAYS / "day-09-azure-artifacts" / "handout.pdf",
-        10: DAYS / "day-10-phase-1-recap" / "handout.pdf",
-        11: DAYS / "day-11-git-fundamentals" / "handout.pdf",
-        12: DAYS / "day-12-branching-strategies" / "handout.pdf",
-        13: DAYS / "day-13-azure-repos-setup" / "handout.pdf",
-        14: DAYS / "day-14-pull-requests" / "handout.pdf",
-        15: DAYS / "day-15-advanced-git" / "handout.pdf",
-        16: DAYS / "day-16-git-hooks" / "handout.pdf",
-        17: DAYS / "day-17-fork-permissions" / "handout.pdf",
-        18: DAYS / "day-18-migrating-repos" / "handout.pdf",
-        19: DAYS / "day-19-repo-security" / "handout.pdf",
-        20: DAYS / "day-20-phase-2-recap" / "handout.pdf",
-        21: DAYS / "day-21-intro-pipelines" / "handout.pdf",
-    }
-    for d in days:
-        fn = HANDOUTS[d]
-        out = OUT / f"day-{d:02d}-handout.pdf"
-        fn(out)
-        pub = publish_map.get(d)
-        if pub is not None:
-            pub.parent.mkdir(parents=True, exist_ok=True)
-            pub.write_bytes(out.read_bytes())
-            print("Also wrote", pub)
+    """Architecture handouts live in rich_handout.py (Days 1–100)."""
+    from rich_handout import main as rich_main
+
+    rich_main(days)
 
 
 if __name__ == "__main__":
     main()
+

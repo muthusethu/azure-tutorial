@@ -33,18 +33,52 @@ steps:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 82 of #100DaysOfAzureDevOps
+Copy-paste YAML is how organizations invent 14 slightly different ways to be broken.
 
-Copy-paste YAML is how organizations invent 14 slightly different ways to be broken
+Day 82 of #100DaysOfAzureDevOps. Pipeline templates and reusable YAML.
 
-Today's topic: **Pipeline Templates & Reusable YAML**.
+templates, extends, parameters. I have counted fourteen "standard" build pipelines that all forgot the same cache key. Copy-paste is a bug-spreading strategy. A template with projectPath is one place to fix the ritual.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Extract templates/build.yml. Reuse it from the main pipeline. parameters.projectPath. The first template can echo. The point is the call site, not a novel of abstractions on day one.
 
-Tomorrow: Extensions & marketplace.
+What I keep seeing
+
+1. parameters are the contract
+• projectPath: string
+• A template with secret defaults nobody sees is a trap
+
+2. Reuse from main
+• steps: - template: templates/build.yml
+• Two consumers tomorrow in the Phase 9 recap; one caller today is the seed
+
+3. extends is the bigger hammer
+• Literacy: a pipeline can extend a template that owns stages
+• Lab: a step template is enough to feel the win
+
+4. Fix once
+• When Node 20 becomes Node 22, I want one file to change
+• Fourteen files is how one team stays on 18 until an incident
+
+What I am doing in today's lab
+
+I am extracting templates/build.yml with a projectPath parameter and calling it from the main pipeline. echo Building the parameter is legal for the first cut. If I still have duplicated restore/build steps after this, I did not extract. I rearranged. The call site should look boring: one template line, one path.
+
+One broken template is cheaper than fourteen unique snowflakes. Reuse is a reliability feature.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-82-pipeline-templates-reusable-yaml
+
+Tomorrow: Marketplace extensions — spices, not a handful in the stew.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 82 — Pipeline Templates & YAML` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

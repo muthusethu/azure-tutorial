@@ -1,58 +1,29 @@
-# Cross-platform publishing
+# Publishing (LinkedIn + GitHub)
 
-Canonical source (always link back here):
+Canonical lab + PDF: https://github.com/muthusethu/azure-tutorial
 
-https://github.com/muthusethu/azure-tutorial
+**Latest:** Day 22 posted Saturday 19 Sep 2026 — https://lnkd.in/p/d_6enPDZ  
+**Next:** Day 23 Sunday 20 Sep 2026, 07:00 IST — [`../days/day-23-yaml-pipeline-basics/`](../days/day-23-yaml-pipeline-basics)
 
-**LinkedIn** remains the daily home base. **GitHub** is the canonical lab + PDF source. Other platforms amplify the same lesson — do **not** invent a second series voice.
+| Place | Status |
+|---|---|
+| LinkedIn personal | Daily `#100DaysOfAzureDevOps` document + `handout.pdf` |
+| GitHub `days/day-NN-*/` | README + architecture PDF. Every post includes this folder URL. |
+| `#ProductionGradeAzure` | Paused 19 Sep–18 Oct |
+| X / other platforms | Not in the daily loop |
 
-**Separate track:** [#ProductionGradeAzure](./production-grade/) — every **3–4 days**, an extra LinkedIn post (senior engineer style). Independent of the daily lesson. Style model in [`production-grade/notes.md`](./production-grade/notes.md) Note 1.
+## Files
 
-## Platform status
+| File | Use |
+|---|---|
+| [`100-days-linkedin-track.md`](./100-days-linkedin-track.md) | Copy-paste LinkedIn text (Days 22–51) |
+| [`100-days-detailed-posts.md`](./100-days-detailed-posts.md) | Copy-paste for Days 52–100 |
+| [`100-days-document-titles.md`](./100-days-document-titles.md) | LinkedIn document title (max 58 chars) |
+| [`100-days-linkedin-tracker.csv`](./100-days-linkedin-tracker.csv) | Posted / URL |
 
-| Platform | Status | Notes |
-|----------|--------|--------|
-| LinkedIn | **Active** | Daily post + PDF |
-| GitHub | **Active** | `days/day-NN-*/` |
-| X (Twitter) | **Paused** | `@ItsCloudhub_Tec` permanently read-only (appeal submitted / pending). Do **not** create a new X account to continue the series. Do not plan daily X threads until reinstated. |
-| Threads | Optional later | Can reuse old X drafts if desired; not required |
-| Dev.to / Hashnode | Optional 2–3× week | Set canonical URL → GitHub day folder |
-| Medium / Reddit / IG / YouTube | Optional | Lower priority while LinkedIn streak runs |
+## Every morning (07:00 IST)
 
-## Rules (every platform)
-
-- Educational only — no hiring CTAs, no “follow for tips” spam
-- Personal learning series — views are your own
-- Link GitHub day folder (or article canonical URL) when the platform allows links
-- Same hashtag set **only on LinkedIn**: `#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic`
-- Reddit: **zero hashtags**, zero “follow me”
-- If X returns: post slowly, avoid link-heavy first tweets, no burst threads on day one
-
-## Suggested cadence (do not burn out)
-
-| When | Platforms |
-|------|-----------|
-| Daily ~10am | **LinkedIn** — #100DaysOfAzureDevOps (+ PDF) |
-| Every 3–4 days | **LinkedIn** — extra post ([production-grade](./production-grade/)) |
-| Same week (optional) | **Dev.to** *or* **Hashnode** |
-| 1× per week (optional) | **Medium** week recap |
-| Only when standalone-useful | **Reddit** (r/AZURE, r/devops) — pure content |
-| Paused | **X** |
-| Optional later | Threads, Instagram, YouTube, Facebook groups |
-
-## Folder layout
-
-```text
-publish/
-  README.md
-  day-01/ … day-NN/
-    02-x-threads.md     ← kept for archive / if X is reinstated; not required daily
-    LINKS.md
-    …
-```
-
-## After you publish
-
-Paste URLs into that day’s `LINKS.md` (LinkedIn + GitHub at minimum).
-
-**GitHub links in LinkedIn posts:** use Bitly short links. Index: [`BITLY.md`](./BITLY.md). Create new ones with `python scripts/bitly_shorten.py "<github-day-url>" "Day NN title"` (token in local `.env`).
+1. Upload `days/day-NN-*/handout.pdf` as a LinkedIn **document**.
+2. Paste the document title.
+3. Paste the post. Confirm it contains `Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-NN-…`
+4. Personal profile only. No company tag. No Health Check.

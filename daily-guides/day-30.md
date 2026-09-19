@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 30 of #100DaysOfAzureDevOps
+Phase 3 recap: CI is a seatbelt you wear before the crash, not after.
 
-Phase 3 recap: CI is a seatbelt you wear before the crash, not after
+Day 30 of #100DaysOfAzureDevOps. Mini project and recap for Phase 3 — Continuous Integration.
 
-Today's topic: **Mini Project + Recap (Phase 3)**.
+Nine days of agents, YAML, .NET, Node, Python, Maven, matrix, and secrets. The point was not to become four ecosystems in a week. The point was to feel the same spine in every language: restore or install, build, test, publish an artifact, keep secrets out of the file.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have been in delivery long enough to know the crash is not theoretical. A merge on Friday, a missing test, a hosted agent that drifted. CI is the seatbelt. Putting it on after the incident is a blog post, not a practice.
 
-Tomorrow: Release pipelines overview.
+What Phase 3 actually taught me to keep
+
+1. YAML anatomy I can draw from memory
+• trigger / pr → stages → jobs → pool → steps
+• If I cannot sketch it, I copied it
+
+2. One primary stack, stubs for the rest
+• Pick .NET or Node or Python as the real green build
+• The other languages can stay samples; depth beats a graveyard of half pipelines
+
+3. Artifacts are the handoff
+• CI produces a drop; CD should not rebuild
+• A screenshot of a green run is allowed; a screenshot of a secret is not
+
+4. Secrets stay in groups
+• No passwords in azure-pipelines.yml
+• That rule survives every phase after this
+
+What I am doing in today's lab
+
+I am picking my primary stack, getting a green build on main, saving a screenshot with no secrets, and writing a short recap: YAML anatomy plus one war story from this week (a cache miss, a skipped test, a secret that almost got echoed). Pipelines live under /pipelines.
+
+Wear the seatbelt on the first commit you care about. Phase 3 is that commit, repeated until it is boring.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-30-mini-project-recap-phase-3
+
+Tomorrow: Release pipelines overview — Classic vs YAML CD, and an environment named dev.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 30 — Phase 3 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

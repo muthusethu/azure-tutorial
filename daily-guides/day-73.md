@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 73 of #100DaysOfAzureDevOps
+App Insights is a GoPro on your app — embarrassing, invaluable.
 
-App Insights is a GoPro on your app - embarrassing, invaluable
+Day 73 of #100DaysOfAzureDevOps. Application Insights integration.
 
-Today's topic: **Application Insights Integration**.
+Instrumentation, dependencies, live metrics. A GoPro will record you dropping the ball. That is the point. I have shipped apps whose only telemetry was IIS logs and a prayer. Failures map, dependency arrows, a request that took 8 seconds because it waited on a DNS mistake — you see it when the SDK is in the app and the connection string is not in git.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Create Application Insights. Connect to the sample app or use a portal demo. Generate traffic. Look at failures. Connection string via Key Vault or app settings. Never commit it.
 
-Tomorrow: Alerts & action groups.
+Patterns I keep seeing
+
+1. Connection string is a secret
+• App settings or Key Vault
+• A connection string in source is a postcard with a camera attached
+
+2. Dependencies tell the truth
+• HTTP, SQL, Redis — the map of who you wait on
+• A slow app with a clean CPU is often a slow friend
+
+3. Live metrics are for the incident, not the wallpaper
+• Use them when you are in it
+• Do not require a human to stare at live metrics as the only alert
+
+4. Generate traffic or you will admire an empty GoPro
+• Hit the sample, fail on purpose once if I can
+• Empty failures blade is not "we are reliable." It is "we are dark"
+
+What I am doing in today's lab
+
+I am creating Application Insights, pointing the sample (or portal demo) at it, generating traffic, opening the failures map, and confirming the connection string is not in the repo. If I cannot instrument the app today, I still create the resource and walk the blades with demo data honestly labeled as demo.
+
+Embarrassing video is how you stop dropping the ball. No camera, no coaching.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-73-application-insights-integration
+
+Tomorrow: Alerts and action groups — screams need a destination.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 73 — Application Insights` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

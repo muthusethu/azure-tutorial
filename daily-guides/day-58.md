@@ -30,18 +30,52 @@ helm upgrade --install myapp charts/myapp --set image.tag=$(Build.BuildId)
 ## LinkedIn post (copy-paste)
 
 ```
-Day 58 of #100DaysOfAzureDevOps
+Helm is templating for YAML mountains — values.yaml is where environments stop being copy-paste crimes.
 
-Helm is templating for YAML mountains - values.yaml is where environments stop being copy-paste crimes
+Day 58 of #100DaysOfAzureDevOps. Helm charts basics.
 
-Today's topic: **Helm Charts Basics**.
+Three folders of nearly identical Kubernetes YAML is a crime scene. Helm's chart is a mountain with a trail: Chart.yaml, templates/, values.yaml. helm create myapp. Then values for image tag, replica count, environment. upgrade --install so install and upgrade are one thought.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have watched teams fork a chart per environment and then forget to copy a security context. values.yaml is where env differences belong. Template drift is how prod missed a probe for six months.
 
-Tomorrow: AKS scaling & networking.
+What I keep seeing
+
+1. create, then delete most of the sample
+• helm create charts/myapp
+• The sample chart is a tour, not a product
+
+2. image.tag is a value
+• helm upgrade --install myapp charts/myapp --set image.tag=$(Build.BuildId)
+• Hardcoded latest in the template is the Friday tag again
+
+3. One chart, many values files
+• values-dev.yaml vs values-prod.yaml
+• Not charts-dev vs charts-prod copies
+
+4. uninstall is a lab skill
+• Install, upgrade a tag, uninstall once
+• Helm releases left behind are unnamed pets
+
+What I am doing in today's lab
+
+I am running helm create, packaging values for the image tag, install/upgrade once with --set image.tag, then uninstall. If I have no cluster, I still helm template and read the rendered YAML so I can see the Deployment the chart actually produced. Rendering is the point of the mountain. A chart I never render is just another folder of hopes.
+
+Stop copying YAML mountains. Put the difference in values. That is the whole trick.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-58-helm-charts-basics
+
+Tomorrow: AKS scaling, monitoring, networking — HPA vs fixed replicas.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 58 — Helm Charts Basics` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

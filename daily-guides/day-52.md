@@ -33,18 +33,52 @@ docker push <uniqueacr>.azurecr.io/myapp:day52
 ## LinkedIn post (copy-paste)
 
 ```
-Day 52 of #100DaysOfAzureDevOps
+ACR is a private closet for images — public Docker Hub is the thrift store.
 
-ACR is a private closet for images - public Docker Hub is the thrift store
+Day 52 of #100DaysOfAzureDevOps. Azure Container Registry.
 
-Today's topic: **Azure Container Registry (ACR)**.
+Public Hub is fine for base images you trust and for toys. Pushing an app image that contains your bits (and sometimes your accidentally copied .env) to a public registry is how a thrift store becomes a data leak. ACR is a private closet: tags, maybe ACR Tasks later, Basic SKU for the lab.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+docker tag, docker push, az acr login. Unique registry names because they are globally unique, like storage. Delete images you do not need. Basic ACR still bills. Closets overflow.
 
-Tomorrow: Build & push in pipelines.
+What I keep seeing
+
+1. Private by default for app images
+• az acr create ... --sku Basic
+• Hub for bases; ACR for myapp:day52
+
+2. Tags are pointers, not comments
+• myapp:day52 and later Build.BuildId
+• :latest is a moving sign. Do not promote latest as if it were immutable
+
+3. Login is identity
+• az acr login -n <uniqueacr>
+• Admin user enabled "for convenience" is a password in a drawer
+
+4. Garbage collection is a habit
+• Delete images you do not need
+• Untagged manifests pile up like unread mail
+
+What I am doing in today's lab
+
+I am creating a Basic ACR in rg-day52, logging in, tagging myapp:latest as <uniqueacr>.azurecr.io/myapp:day52, pushing, confirming the repository in Portal, and deleting extra tags. If the name collides, I pick another unique name — I do not reuse a registry I do not own.
+
+Put app images in a closet. The thrift store is for bases you intended to be public.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-52-azure-container-registry-acr
+
+Tomorrow: Build and push images in pipelines — humans will push the wrong Friday tag.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 52 — Azure Container Registry (ACR)` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -29,18 +29,53 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 71 of #100DaysOfAzureDevOps
+If you cannot see it, you cannot fix it — Monitor is the flashlight, not the fix.
 
-If you cannot see it, you cannot fix it - Monitor is the flashlight, not the fix
+Day 71 of #100DaysOfAzureDevOps. Azure Monitor fundamentals.
 
-Today's topic: **Azure Monitor Fundamentals**.
+Metrics, logs, activity log, diagnostic settings. A flashlight does not patch the hole. It tells you which wall is wet. I have been in war rooms where nobody had diagnostics enabled, so we argued from Portal screenshots and feelings. The fix was later. The seeing should have been first.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Enable diagnostics on a lab resource to Log Analytics — or note the cost and skip long retention. Activity log is the control-plane diary. Metrics are the pulse. Logs are the sentences. I am not building a SIEM today. I am turning on a light.
 
-Tomorrow: Log Analytics & KQL.
+Patterns I keep seeing after a decade in delivery
+
+1. Metrics vs logs vs activity
+• Metrics: CPU, length of a queue, availability
+• Logs: the story in rows
+• Activity: who changed what in ARM
+
+2. Diagnostics are opt-in more often than people think
+• App Service / Key Vault / NSG — pick one lab resource
+• Without diagnostic settings, the workspace is an empty room
+
+3. Retention is a bill
+• Lab: short retention or skip if cost is tight
+• Infinite logs is not maturity. It is a storage hobby
+
+4. Monitor is not the product fix
+• A pretty chart of 500s is still 500s
+• The flashlight's job is to end the argument about reality
+
+What I am doing in today's lab
+
+I am opening Monitor → Overview, enabling diagnostic settings on one lab resource (App Service or Key Vault) to a workspace if cost allows, and writing which signal I would use to detect "it is down." If I skip the workspace, I still map metrics vs logs vs activity on paper.
+
+Turn on the light before you argue. Monitor does not heal. It stops the guessing.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-71-azure-monitor-fundamentals
+
+Tomorrow: Log Analytics and KQL — AzureActivity, top operations, a saved query.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 71 — Azure Monitor Fundamentals` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

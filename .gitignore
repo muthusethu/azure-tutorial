@@ -38,3 +38,7 @@ canvases/
 
 # Generator scratch copies (canonical PDFs live under days/day-NN-*/handout.pdf)
 daily-guides/handouts/
+
+# Author-only timed checklists — never publish
+operator/
+scripts/build_operator_tasks.py

@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 81 of #100DaysOfAzureDevOps
+Repo strategy is politics with folders — pick the drama you can afford.
 
-Repo strategy is politics with folders - pick the drama you can afford
+Day 81 of #100DaysOfAzureDevOps. Multi-repo and monorepo strategies.
 
-Today's topic: **Multi-repo & Monorepo Strategies**.
+A monorepo is atomic PRs and shared pipelines. Multi-repo is clear ownership and a harder time changing a cross-cutting concern. I have lived in both. Both have politics. Folders are just how the politics render.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+This lab stays a monorepo for samples — that is an ADR, not a religion. I will list when I would split repos for a real product: different lifecycles, different access, a library consumed by many. I will not list fake clients.
 
-Tomorrow: Pipeline templates.
+Patterns I keep seeing
+
+1. Monorepo strengths
+• One PR can change API and pipeline together
+• Templates live next to consumers
+
+2. Multi-repo strengths
+• Permissions and release cadence can differ
+• A noisy app does not rebuild a quiet library by accident — if you designed it that way
+
+3. The cost is coordination
+• Monorepo: CI graph and PATH discipline
+• Multi-repo: versioning and "which commit is prod" meetings
+
+4. Write the ADR
+• this lab stays monorepo for samples
+• Split when ownership or lifecycle actually splits — not when a blog post is trending
+
+What I am doing in today's lab
+
+I am writing an ADR that this 100-day repo stays monorepo, plus a short list of when I would split: different lifecycles, different access, a library consumed by many. No company names. Drama I can afford: one repo, many /src samples, pipelines that path-filter so a Node change does not rebuild .NET.
+
+Pick the folder politics on purpose. Defaulting to ten repos is not enterprise. It is scatter.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-81-multi-repo-monorepo-strategies
+
+Tomorrow: Pipeline templates — extract templates/build.yml and reuse it.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 81 — Multi-repo & Monorepo` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

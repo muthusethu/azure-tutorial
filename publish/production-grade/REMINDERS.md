@@ -6,6 +6,10 @@ Style model: **Green pipeline. Red production. Why “Succeeded” is not enough
 
 ---
 
+**Pause 19 Sep–18 Oct 2026.** Do not publish the next extra post (Note 6). The ItsCloudHub 30-day personal posts replace this track for that window. Resume extras after 18 Oct if you still want a third voice besides 100-days.
+
+---
+
 ## Upcoming
 
 | # | Target window | Title | Posted? |

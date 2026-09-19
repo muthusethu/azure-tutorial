@@ -32,18 +32,52 @@ AzureActivity
 ## LinkedIn post (copy-paste)
 
 ```
-Day 72 of #100DaysOfAzureDevOps
+KQL is SQL's cousin who lives in the cloud and judges your where-clauses.
 
-KQL is SQL's cousin who lives in the cloud and judges your where-clauses
+Day 72 of #100DaysOfAzureDevOps. Log Analytics workspace and KQL.
 
-Today's topic: **Log Analytics Workspace & KQL**.
+A workspace is a database for telemetry. KQL is how you ask it questions without exporting to Excel to "just filter." I have watched people screenshot 10,000 rows. The cousin is judging. summarize, where TimeGenerated, top 10. Save a query so tomorrow-you is not reinventing the where-clause.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Three queries: AzureActivity is a friendly start even when Heartbeat is empty. ago(1d), count by OperationNameValue. If the workspace is new and quiet, that is data too — I note it instead of faking a graph.
 
-Tomorrow: Application Insights.
+What I keep seeing
+
+1. Time is always part of the question
+• where TimeGenerated > ago(1d)
+• Unbounded queries are how you wait and pay
+
+2. summarize is the adult SELECT
+• count() by OperationNameValue
+• top 10 by count_ — a ranking, not a dump
+
+3. Save the query
+• A useful KQL that lives only in a chat will die
+• Workspace saved queries are the notebook
+
+4. Empty is a result
+• No Heartbeat if I never onboarded VMs
+• AzureActivity on a quiet lab sub may be thin — I run it anyway and say what I see
+
+What I am doing in today's lab
+
+I am running three KQL queries (AzureActivity sample plus two variations), saving one, and screenshotting results without tenant gossip. If the workspace has no logs, I enable a diagnostic from Day 71 first rather than inventing a table.
+
+Ask the cousin a precise question. Excel is not a Log Analytics strategy.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-72-log-analytics-workspace-kql
+
+Tomorrow: Application Insights — GoPro on the app, connection string not in git.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 72 — Log Analytics & KQL` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

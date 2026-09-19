@@ -31,18 +31,52 @@ az container create -g rg-day54 -n hello-aci \
 ## LinkedIn post (copy-paste)
 
 ```
-Day 54 of #100DaysOfAzureDevOps
+ACI is container fast-food — no cluster gym membership required.
 
-ACI is container fast-food - no cluster gym membership required
+Day 54 of #100DaysOfAzureDevOps. Azure Container Instances.
 
-Today's topic: **Azure Container Instances (ACI)**.
+AKS is a gym membership: easy to start, painful if you forget to cancel, overkill for a hello container. ACI is fast-food: run the image, get a DNS label, taste it, throw away the wrapper. I have seen teams skip ACI because it is not "real Kubernetes" and then spend a week on a cluster for a demo that needed a URL.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+az container create with the ACR image, registry credentials, a unique dns-name-label, port 80. Then delete. ACI can surprise-bill if you leave it. Fast-food left on the table still appears on the card.
 
-Tomorrow: Kubernetes fundamentals.
+What I keep seeing
+
+1. ACI is for run-and-done
+• No node pools, no control plane you babysit
+• Restart policy and CPU/memory still exist — it is not magic
+
+2. Pulling from ACR needs identity
+• registry-login-server, username/password or a better identity later
+• A public image is easier and teaches the wrong privacy lesson for app bits
+
+3. DNS labels collide
+• --dns-name-label <unique>
+• If create fails on the name, it is not Azure being rude. The name is taken
+
+4. Delete after test
+• ACI left running is a small silent bill
+• The lab is the create and the delete
+
+What I am doing in today's lab
+
+I am running the image in ACI once with az container create, hitting the URL, then deleting the container (and RG if that was the point). I am not keeping ACI up overnight to feel cloud-native. Gym membership is optional and later.
+
+Need a URL for a container tonight? Fast-food. Need orchestration? Then pay for the gym on purpose.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-54-azure-container-instances-aci
+
+Tomorrow: Kubernetes fundamentals — Pods, Deployments, Services, and a lemonade-stand warning.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 54 — Azure Container Instances` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

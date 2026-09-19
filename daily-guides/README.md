@@ -10,7 +10,9 @@ Use this exact set on every post:
 
 LinkedIn tone: educational + entertaining. No sales CTAs. Personal accounts only.
 
-**Extra posts (every 3–4 days):** Independent senior-engineer LinkedIn posts — see [`../publish/production-grade/`](../publish/production-grade/). Style model: *Green pipeline. Red production…* Not the same topic as that day’s lesson.
+**Track A (live):** daily `#100DaysOfAzureDevOps`. Copy-paste: [`../publish/100-days-linkedin-track.md`](../publish/100-days-linkedin-track.md). **Day 22 posted 19 Sep 2026.** Next is **Day 23 on 20 Sep 2026**. Dates in the table below are the original plan and are stale.
+
+**Extra posts (paused 19 Sep–18 Oct):** `#ProductionGradeAzure` — see [`../publish/production-grade/`](../publish/production-grade/).
 
 ## Daily LinkedIn package
 

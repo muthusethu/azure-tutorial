@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 74 of #100DaysOfAzureDevOps
+Alerts without action groups are screams into the void — polite, useless.
 
-Alerts without action groups are screams into the void - polite, useless
+Day 74 of #100DaysOfAzureDevOps. Alerts and action groups.
 
-Today's topic: **Alerts & Action Groups**.
+A metric alert that emails nobody is performance art. Action groups are the destination: email to myself for the lab. I have inherited alert rules that fired for a year into a disabled mailbox. Polite screams.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Create an action group. Create an alert on CPU, availability test, or a log query I can force. Then fire it once if I can. An alert you have never received is a rumor about the future.
 
-Tomorrow: Dashboards & workbooks.
+What I keep seeing
+
+1. Action group first
+• Email yourself (personal)
+• SMS/webhook later — today is proof of delivery
+
+2. Alert on something I can provoke
+• Availability test on a URL I control, or CPU on a tiny SKU
+• A 5xx alert on an app with no traffic will never graduate from theory
+
+3. Severity is a language
+• Sev 0 for "wake me"
+• If everything is Sev 0, nothing is
+
+4. Noise trains people to mute
+• One alert that fires cleanly beats ten that flap
+• I will delete the lab alert when I delete the resource
+
+What I am doing in today's lab
+
+I am creating an action group that emails my personal address, creating one alert rule, and trying to receive it. Monitor → Alerts → Create alert rule. If the email never arrives, the lab is not done. I check spam, then the action group.
+
+Scream at an inbox that exists. The void does not page.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-74-alerts-action-groups
+
+Tomorrow: Dashboards and workbooks — three tiles, not a novel.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 74 — Alerts & Action Groups` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

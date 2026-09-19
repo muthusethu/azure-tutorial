@@ -1,45 +1,45 @@
-# Day 06 — Setting Up an Azure DevOps Organization
+# Day 6 — Setting Up an Azure DevOps Org
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Create a clean personal Azure DevOps org and a home project (`azure-100-labs`) for the rest of the series.
+Org is the tenancy. Project is the gym. Empty projects build no muscle.
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Layer | What it is |
-|-------|------------|
-| **Organization** | Tenancy: users, billing/access boundary, collection settings |
-| **Project** | Container for Boards, Repos, Pipelines, Test Plans, Artifacts |
-| **Process template** | Shape of work items (Agile / Scrum / Basic / CMMI) |
-| **Permissions** | Collection Admin vs Project Admin vs Contributor |
-
-**Rule:** personal Microsoft account only. No work invites.
-
-## Learn
-
-- [Plan your organizational structure](https://learn.microsoft.com/azure/devops/user-guide/plan-your-azure-devops-org-structure)
+| Layer | Controls | Lab choice |
+| --- | --- | --- |
+| Organization | Users, OAuth apps, agent pools, billing, Policies | Personal MSA owner only |
+| Project | Boards/Repos/Pipelines/Test/Artifacts isolation | azure-100-labs (private) |
+| Process | Work item types + states (Agile/Scrum/Basic/CMMI) | Agile for this series |
+| Team | Backlog, area, iteration, board columns | Default project team is enough |
+| Repo | Git (default) vs TFVC (do not use TFVC here) | Git, default branch main (Day 13) |
+| Parallel jobs | Microsoft-hosted vs self-hosted job SKUs | Free Microsoft-hosted minute pool |
 
 ## Step-by-step lab
 
-1. Open `https://dev.azure.com/<your-org>`
-2. Org settings → Overview + Users/Permissions (personal only)
-3. Create project `azure-100-labs` (Agile, private)
-4. Set project description: `Personal 100DaysOfAzureDevOps labs — views are my own`
-5. Optional: configure `az devops` defaults
+1. https://dev.azure.com/<your-org> → Organization settings (bottom left) → Overview. Note org name and owner email.
+2. Organization settings → Users. Confirm only your personal Microsoft account. Remove any work guest.
+3. Organization settings → Permissions → Project Collection Administrators. You only.
+4. New project → Name azure-100-labs → Private → Process Agile → Create.
+5. Project settings → Overview → Description: Personal 100DaysOfAzureDevOps labs - views are my own.
+6. az extension add --name azure-devops && az devops configure --defaults organization=https://dev.azure.com/<your-org> project=azure-100-labs
+7. az devops project list -o table && az devops project show --project azure-100-labs -o jsonc
 
 ## Done when
 
-- [ ] You can explain org vs project in one sentence each  
-- [ ] `azure-100-labs` exists and is private  
-- [ ] No work accounts were invited  
+- [ ] Can explain organization vs project vs process template
+- [ ] azure-100-labs exists, private, Agile
+- [ ] No work accounts in Org settings → Users
+- [ ] az devops configure defaults point at this org + project
 
 ## LinkedIn
 
@@ -47,11 +47,9 @@ Post draft: [`../../daily-guides/day-06.md`](../../daily-guides/day-06.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/4ivofF7
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-06-azure-devops-org
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-06-azure-devops-org)
 
 ## Next
 
-**Day 07** — Azure Boards deep dive.
+**Day 7** — Azure Boards deep dive

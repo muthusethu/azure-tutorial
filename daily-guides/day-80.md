@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 80 of #100DaysOfAzureDevOps
+Phase 8 recap: deploy is not done — observable is done.
 
-Phase 8 recap: deploy is not done - observable is done
+Day 80 of #100DaysOfAzureDevOps. Mini project and recap for Phase 8 — monitoring and observability.
 
-Today's topic: **Mini Project + Recap (Phase 8)**.
+Monitor, KQL, App Insights, alerts that email someone, a three-tile dashboard, pipeline analytics, cost cleanup, Advisor, a runbook. The mini project is observability on a deployed app: App Insights + one alert + one dashboard. Definition of done: I can detect a forced failure within five minutes.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have signed off deploys that were "done" because the pipeline was green. Users were already in the flashlight's dark zone. Observable is done.
 
-Tomorrow: Multi-repo & monorepo.
+What I am keeping from Phase 8
+
+1. Flashlight, camera, scream, storyboard
+• Monitor / App Insights / action group / dashboard
+• Missing one is a blind corner
+
+2. Five minutes is the test
+• Force a failure I control
+• If I cannot see it, the stack is décor
+
+3. Cost and noise are part of ops
+• Delete leftover RGs
+• Mute is not a strategy; tune is
+
+4. Incidents have paper
+• Runbook + blameless template
+• Even a lab deserves that habit
+
+What I am doing in today's lab
+
+I am wiring App Insights, one alert, one dashboard, forcing a failure I can reverse, and confirming I notice within five minutes. Recap without fake MTTR numbers. If I cannot force a failure, I say so and still finish the three pieces. Done means I can detect a forced failure, not that the dashboard is pretty.
+
+Green pipeline is a conveyor belt. Observable is the product. Phase 8 is the difference between shipped and seen.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-80-mini-project-recap-phase-8
+
+Tomorrow: Multi-repo vs monorepo — pick the drama I can afford.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 80 — Phase 8 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

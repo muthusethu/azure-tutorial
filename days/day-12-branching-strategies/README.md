@@ -1,45 +1,45 @@
-# Day 12 — Branching Strategies for CI/CD
+# Day 12 — Branching Strategies
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
-| **Phase** | Phase 2 — Azure Repos & Git Mastery |
+| **Phase** | 2 - Azure Repos & Git Mastery |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Compare GitFlow, GitHub Flow, and Trunk-Based Development; document your branching decision as an ADR in `azure-100-labs`.
+Git Flow is a seating chart. Trunk-based is a food truck. Pick for ship cadence.
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for complete tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Model | Branch Structure | Best For | Main Risk |
-|:------|:-----------------|:---------|:----------|
-| **GitFlow** | main + develop + feature/release/hotfix | Scheduled releases, multi-version prod | Late integration, merge debt |
-| **GitHub Flow** | main + short feature/* | Continuous delivery, one prod line | main must stay green |
-| **Trunk-Based** | main (+ branches < 1 day) | High velocity, mature CI | Requires flags + discipline |
-
-**Lab choice for azure-100-labs:** GitHub Flow — protected `main`, `feature/*` < 2 days, PR + squash merge.
-
-## Learn
-
-- [Trunk-Based Development](https://trunkbaseddevelopment.com/)
-- [Azure Repos branching guidance](https://learn.microsoft.com/azure/devops/repos/git/git-branching-guidance)
+| Model | Refs you keep | Merge / release |
+| --- | --- | --- |
+| Git Flow | main + develop + feature/* + release/* + hotfix/* | release/* cut; merge to main AND develop |
+| GitHub Flow | main + short feature/* | PR to main; deploy main |
+| Trunk-based | main; branches hours not days; maybe release/* tags | Small PRs; feature flags if needed |
+| This lab | main protected (Day 19) + feature/* < 2 days | Squash PR; no develop branch |
+| TFVC / release branches forever | long-lived release/2024.09 | Out of scope — you stay on Git |
+| Environment branches (dev/qa/prod) | Three eternally diverging mains | Avoid; promote artifacts not branches |
 
 ## Step-by-step lab
 
-1. `git switch -c feature/day12-branching-adr`
-2. Create `docs/branching-strategy.md` ADR
-3. Document: protected main, short feature branches, PR required, no develop branch
-4. Commit, push, and open PR in Azure Repos
+1. git switch main && git pull && git switch -c feature/day12-branching-adr
+2. Create docs/branching-strategy.md with Decision: GitHub Flow (trunk-based lite).
+3. Document: main always deployable; feature/* < 2 days; PR required; squash merge; no develop/release/hotfix long lives.
+4. List 3 reasons Git Flow is rejected for this lab (solo, no multi-version prod, want short lead time).
+5. git add docs/branching-strategy.md && git commit -m "docs: add branching strategy ADR" && git push -u origin feature/day12-branching-adr
+6. Azure Repos → Pull requests → New PR into main. Title: docs: branching ADR. You may complete it or leave for Day 14 template.
+7. Repos → Branches. Confirm there is no develop. If you created one by habit, delete it after merging any needed commits.
 
 ## Done when
 
-- [ ] You can explain when to use GitFlow vs GitHub Flow vs Trunk-Based
-- [ ] ADR exists in `docs/branching-strategy.md`
-- [ ] Feature branch pushed to Azure Repos
+- [ ] Can contrast Git Flow vs GitHub Flow vs trunk-based with branch names
+- [ ] docs/branching-strategy.md is on a feature branch (or merged)
+- [ ] No develop branch in azure-100-labs
+- [ ] ADR says squash + short feature/*
 
 ## LinkedIn
 
@@ -47,11 +47,9 @@ Post draft: [`../../daily-guides/day-12.md`](../../daily-guides/day-12.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/46xX1GJ
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-12-branching-strategies
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-12-branching-strategies)
 
 ## Next
 
-**Day 13** — Azure Repos setup (remotes, permissions, repo hygiene).
+**Day 13** — Azure Repos setup

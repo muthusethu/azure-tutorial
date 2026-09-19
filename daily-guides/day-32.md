@@ -34,18 +34,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 32 of #100DaysOfAzureDevOps
+App Service is PaaS comfort food — less drama than VMs, still enough knobs to burn dinner.
 
-App Service is PaaS comfort food - less drama than VMs, still enough knobs to burn dinner
+Day 32 of #100DaysOfAzureDevOps. Deploying to Azure App Service.
 
-Today's topic: **Deploying to Azure App Service**.
+I have spent years around VMs that needed patching, agents, and a load balancer that someone named after a pet. App Service removes a pile of that drama. It does not remove configuration, SKU choice, or the zip that is not the zip you thought you published.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Today is a Free/F1 plan, a webapp in a personal resource group, AzureWebApp@1, and a service connection that must not be over-privileged later. Cost-sensitive means the RG dies tonight. Comfort food still goes stale if you leave it on the counter.
 
-Tomorrow: Deploy to Azure Functions.
+What usually happens
+
+1. Zip deploy is a contract
+• package: $(Pipeline.Workspace)/drop/**/*.zip must match what CI published
+• Wrong glob = a successful task that deployed nothing useful
+
+2. Service connection is identity
+• azureSubscription in AzureWebApp@1 is the robot's badge
+• If that badge is Owner on the subscription, the lab is teaching the wrong lesson
+
+3. SKU is a budget decision
+• F1/free for a hello app
+• Slots and some networking need a higher plan — do not discover that after the deploy is "done"
+
+4. Delete is a skill
+• Personal RG, personal subscription, delete tonight if cost-sensitive
+• Orphan App Service plans are quiet invoices
+
+What I am doing in today's lab
+
+I am creating a free/F1 App Service plan and webapp in a personal RG, deploying a hello app from the pipeline with AzureWebApp@1, confirming the URL responds, and deleting the RG tonight if I do not need it for slots later this week.
+
+PaaS is comfort. The knobs are still hot. Deploy the zip you published, then clean up the kitchen.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-32-deploying-to-azure-app-service
+
+Tomorrow: Deploy to Azure Functions — Consumption vs Premium, timer or HTTP sample.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 32 — Deploying to Azure App Service` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 61 of #100DaysOfAzureDevOps
+Entra ID is the bouncer list for Azure — if identity is wrong, every other control is cosplay.
 
-Entra ID is the bouncer list for Azure - if identity is wrong, every other control is cosplay
+Day 61 of #100DaysOfAzureDevOps. Azure AD (Entra ID) fundamentals.
 
-Today's topic: **Azure AD (Entra ID) Fundamentals**.
+Tenants, users, groups, app registrations. Everything else in Azure assumes this list is right. I have watched beautiful RBAC and Key Vault designs collapse because the app registration was in the wrong tenant or the secret was taped to a wiki. If the bouncer list is wrong, the velvet rope is theater.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Personal tenant. Register an app day61-lab. Note the client ID. I am not putting a client secret in YAML. Tomorrow is Key Vault for secrets, or a certificate later. Redirect URI optional for this lab.
 
-Tomorrow: RBAC deep dive.
+Patterns I keep seeing
+
+1. Tenant is the building
+• Work tenant vs personal tenant — labs stay personal
+• A registration in the wrong directory is a bug that looks like RBAC
+
+2. App registration is not a user
+• It is an identity for an application
+• Client ID is public-ish; client secret is not
+
+3. Groups beat one-off assignments at scale
+• Literacy: assign to groups
+• Lab: I am one user, still do not make the app Owner of the subscription
+
+4. Secrets have a next step
+• Do not create a secret I will paste into a pipeline today
+• Note the ID; Key Vault is the envelope later this week
+
+What I am doing in today's lab
+
+In the personal tenant I am registering app day61-lab, noting the client ID, and not creating a long-lived secret in a text file. Portal: Entra ID → App registrations → New registration. Redirect URI optional. Screenshot without secrets.
+
+Fix the bouncer list first. Every other Azure control is cosplay if identity is a rumor.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-61-azure-ad-entra-id-fundamentals
+
+Tomorrow: RBAC deep dive — Reader on a lab RG, Owner as a flamethrower.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 61 — Entra ID Fundamentals` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

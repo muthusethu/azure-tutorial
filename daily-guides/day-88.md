@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 88 of #100DaysOfAzureDevOps
+GitOps means the cluster stops being a petting zoo for kubectl.
 
-GitOps means the cluster stops being a petting zoo for kubectl
+Day 88 of #100DaysOfAzureDevOps. GitOps with Flux or Argo CD.
 
-Today's topic: **GitOps with Flux/Argo CD**.
+Git as the desired state. A controller reconciles the cluster. A PR changes prod. No cowboy kubectl. I have been the cowboy. It is fun until three cowboys ride at once. GitOps is how the zoo gets a lock on the gate.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Read GitOps principles. Optional local Flux quickstart. Compare to Azure Pipelines push (Day 57). Push CD applies from a job. GitOps pulls from Git. Both can be mature. Mixing cowboy kubectl with either is the petting zoo.
 
-Tomorrow: Scaling DevOps for large teams.
+What I keep seeing
+
+1. Desired state is Git, not a memory
+• If it is not in the repo, the cluster will drift back or fight you
+• Hotfix via kubectl is a debt with interest
+
+2. Controllers close the loop
+• Flux/Argo reconcile
+• A pipeline that only pushes still needs something to notice drift
+
+3. PRs are the change window
+• Review, then merge, then the cluster follows
+• Prod access for humans can shrink
+
+4. Optional quickstart, mandatory comparison
+• Local Flux if I have time and a cluster
+• Written comparison to Azure Pipelines push if I do not
+
+What I am doing in today's lab
+
+I am reading GitOps principles, optionally running a local Flux quickstart, and writing push-vs-pull in a short note. I will not kubectl into a reconciled cluster to "just fix it" as a habit, even in a lab. The zoo stays closed.
+
+If the cluster is a petting zoo, Git is not the source of truth. The last cowboy is.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-88-gitops-with-flux-argo-cd
+
+Tomorrow: Scaling DevOps for large teams — five platform capabilities for a 50-dev org.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 88 — GitOps with Flux / Argo CD` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

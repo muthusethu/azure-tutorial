@@ -3,47 +3,43 @@
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
-| **Phase** | Phase 2 — Azure Repos & Git Mastery |
+| **Phase** | 2 - Azure Repos & Git Mastery |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Compare fork vs shared-repo workflows and document least-privilege Azure Repos permissions for `azure-100-labs`.
+Permissions are seatbelts — annoying until someone force-pushes main into the sun
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for complete tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Model | How it works | Best for |
-|:------|:-------------|:---------|
-| **Shared repo** | Feature branches + PRs in one repo | Internal teams |
-| **Fork** | Work in fork → PR to upstream | OSS / external contributors |
-
-| Role | Typical power | Risk if over-granted |
-|:-----|:--------------|:---------------------|
-| **Readers** | View | Low |
-| **Contributors** | Push / PR | Force push, bypass policies |
-| **Project Admins** | Settings + security | Accidental wide-open access |
-
-## Learn
-
-- [Set Git repository permissions](https://learn.microsoft.com/azure/devops/repos/git/set-git-repository-permissions)
-- [Forks in Azure Repos](https://learn.microsoft.com/azure/devops/repos/git/forks)
+| Identity | Typical Git rights | Lab setting |
+| --- | --- | --- |
+| Project Collection Admin | Bypass almost everything | You only |
+| Project Administrators | Repo create/delete, security | You |
+| Contributors | Contribute (push to non-protected), PR | Default if a friend joins |
+| Readers | Clone / pull | No push |
+| <Repo> Bypass policies | Push to main ignoring PR | Deny for Contributors |
+| Force push (rewrite) | git push --force on that ref | Deny on main for everyone but you-as-breakglass |
 
 ## Step-by-step lab
 
-1. Project settings → Repositories → Security
-2. Confirm Contributors can contribute; force push denied for main
-3. `git switch -c feature/day17-repo-permissions`
-4. Add `docs/repo-permissions.md` ADR
-5. Commit, push, open PR
+1. Project settings → Repositories → select azure-100-labs → Security.
+2. Select Contributors. Find Force push. Set Deny (or confirm inherited Deny) for this repo / refs/heads/main if scoped.
+3. Find Bypass policies when pushing / Bypass policies when completing pull requests. Deny for Contributors.
+4. Confirm your user (as Project Admin) still can administer. Do not add a work AAD group.
+5. Write docs/repo-permissions-day17.md: Contributors may contribute via PR; cannot force-push main; cannot bypass policies.
+6. Optional: GitHub → new private repo → add remote github and push notes only. Never mirror a work repository.
+7. Commit the markdown on feature/day17-permissions and open a PR. Do not screenshot employer orgs.
 
 ## Done when
 
-- [ ] Fork vs shared-repo difference is clear
-- [ ] Permissions ADR committed
-- [ ] Force-push risk understood for Contributors
+- [ ] Can explain fork workflow vs in-repo feature branches
+- [ ] Contributors cannot force-push main (Deny)
+- [ ] Bypass policies denied for Contributors
+- [ ] docs/repo-permissions-day17.md committed on the personal repo
 
 ## LinkedIn
 
@@ -51,11 +47,9 @@ Post draft: [`../../daily-guides/day-17.md`](../../daily-guides/day-17.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/3UE039L
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-17-fork-permissions
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-17-fork-permissions)
 
 ## Next
 
-**Day 18** — Migrating repos to Azure Repos.
+**Day 18** — Migrating repos to Azure Repos

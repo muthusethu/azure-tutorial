@@ -34,18 +34,54 @@ pool:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 22 of #100DaysOfAzureDevOps
+Hosted agents are Uber; self-hosted is owning the car — insurance and parking included.
 
-Hosted agents are Uber; self-hosted is owning the car - insurance and parking included
+Day 22 of #100DaysOfAzureDevOps. Microsoft-hosted vs self-hosted agents.
 
-Today's topic: **Microsoft-hosted vs Self-hosted Agents**.
+After about a decade in infrastructure and delivery, the agent question still arrives in week one of any pipeline design. Not because people romanticize VMs. Because a licensed compiler, a private network hop, or a policy that says binaries cannot leave the building shows up and suddenly ubuntu-latest feels naive.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+I have watched teams default to self-hosted for "control" and then spend nights patching agents, chasing disk filled with leftover workspaces, and explaining why the pool is offline. I have also watched teams stay on Microsoft-hosted until a job needed a VPN that hosted agents will never have. Both choices are valid. Pretending they cost the same is not.
 
-Tomorrow: YAML pipeline basics.
+Patterns I keep seeing after a decade in delivery
+
+1. Hosted should stay the default until a constraint appears
+• ubuntu-latest, windows-latest, macOS images with SDKs already on them
+• Microsoft patches the VM; you pay in minutes, not in patch Tuesday
+• Fine for public SaaS builds and for every remaining lab in this 100-day series unless the job needs a private network
+
+2. Self-hosted is a product you now operate
+• Scale sets, capabilities, agent version drift, antivirus, certificates
+• You own the 2am "agent is offline" ticket
+• Worth it for on-prem artifact feeds, licensed ISV tools, or VNet-only endpoints
+
+3. Capabilities versus folklore pool names
+• A job that demands a capability nobody registered will queue forever
+• Pool sprawl is how "the Java agent" becomes tribal knowledge instead of YAML
+
+4. Parallelism is two bills, not one
+• Hosted: Microsoft-hosted minutes and parallel-job SKUs
+• Self-hosted: you still need a parallel job in Azure DevOps; the VM bill is extra
+
+What I am doing in today's lab
+
+I am comparing hosted vs self-hosted in the docs, listing agent pools under org settings, and writing the rule I will actually follow: Microsoft-hosted ubuntu-latest for all remaining 100-day labs unless I hit a private-network requirement. The YAML stays pool: vmImage: ubuntu-latest.
+
+Pick hosted until a concrete constraint forces you off it. Owning the car is not a personality trait.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-22-microsoft-hosted-vs-self-hosted-agents
+
+Tomorrow: YAML pipeline basics — triggers, stages, jobs, steps, and a PR trigger I can actually read in the logs.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 22 — Hosted vs Self-hosted Agents` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

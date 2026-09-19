@@ -31,18 +31,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 97 of #100DaysOfAzureDevOps
+Interviews are pipelines for your career — rehearse the happy path and the failure path.
 
-Interviews are pipelines for your career - rehearse the happy path and the failure path
+Day 97 of #100DaysOfAzureDevOps. Mock interview prep.
 
-Today's topic: **Mock Interview Prep**.
+Common Azure DevOps scenario questions. Answer out loud. Record yourself once. It will be embarrassing in the App Insights sense — useful. I have bombed questions I could have built in a lab because I only ever typed, never spoke. Interviews are not a typing test. They are a pipeline: input question, stages of reasoning, an artifact called an answer, and a failure path when you do not know.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Topics: branching, YAML, secrets, rollback, DORA. Happy path and failure path. "I would look it up" is allowed if I then say where and what I would verify.
 
-Tomorrow: Professional profile setup.
+Patterns I keep seeing
+
+1. Promote the same artifact
+• How do you promote across envs?
+• If my spoken answer rebuilds in prod, I go back to Day 39
+
+2. Secret in a PR
+• Rotate, purge from history if needed, treat the PR as an incident
+• "Delete the line and merge" is the wrong failure path
+
+3. Pipeline red on Friday 5pm
+• Do not YOLO to prod to make the dashboard green
+• Playbook: what is broken, who is affected, revert vs fix-forward with a clock
+
+4. DORA without theater
+• I can define the four metrics
+• I will not invent a team's numbers I never measured
+
+What I am doing in today's lab
+
+I am answering five questions out loud and recording once: artifact promotion, secret in a PR, Friday red pipeline, branching, rollback. I will listen once. If I ramble, I write a 4-bullet version and say it again. Rehearsal is the lab.
+
+Happy path and failure path. A career pipeline with only the happy path fails the first real run.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-97-mock-interview-prep
+
+Tomorrow: Professional profile setup — policy first, draft offline.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 97 — Mock Interview Prep` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

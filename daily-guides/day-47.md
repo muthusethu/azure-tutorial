@@ -35,18 +35,52 @@ resource "azurerm_resource_group" "lab" {
 ## LinkedIn post (copy-paste)
 
 ```
-Day 47 of #100DaysOfAzureDevOps
+azurerm is Terraform's Azure dialect — same ideas, different accent.
 
-azurerm is Terraform's Azure dialect - same ideas, different accent
+Day 47 of #100DaysOfAzureDevOps. Terraform with Azure (azurerm).
 
-Today's topic: **Terraform with Azure (azurerm)**.
+The azurerm provider is how Terraform speaks ARM without you writing ARM. provider "azurerm" { features {} }. Auth today is Azure CLI: az login on a personal account, personal subscription. I have seen service principals with Owner at subscription scope used "just for Terraform." That is not a dialect. That is a master key in a language file.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Lab shape: resource group plus storage. Central India or the region I actually use. Names that can collide will. Destroy still exists.
 
-Tomorrow: Terraform modules & remote state.
+Patterns I keep seeing
+
+1. Provider block is the accent
+• features {} is required even when empty
+• Pin provider versions in real work; floating latest is a surprise engine
+
+2. Auth via CLI for labs
+• az login, then Terraform uses that context
+• Tomorrow's professional version is a scoped identity, not my user forever
+
+3. Resources map 1:1 with Azure types
+• azurerm_resource_group, then a storage account in that group
+• If the plan creates a second RG, my reference is wrong — I read the plan
+
+4. Region is a variable waiting to happen
+• location = "Central India" is fine in a lab
+• Hardcoding it in six modules is how you migrate with a prayer
+
+What I am doing in today's lab
+
+I am authenticating with az login, writing a tiny azurerm config that creates rg-day47-tf and a storage account, applying, verifying in Portal or CLI, then destroying. No subscription-Owner robot. Personal user, personal sub, short life.
+
+Same ideas as ARM/Bicep. Different accent. Do not give the dialect a master key to practice grammar.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-47-terraform-with-azure-azurerm
+
+Tomorrow: Terraform modules and remote state — locking so two applies cannot tug-of-war.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 47 — Terraform with Azure` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

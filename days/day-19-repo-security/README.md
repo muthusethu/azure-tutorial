@@ -1,44 +1,45 @@
-# Day 19 — Repo Security (Branch Policies)
+# Day 19 — Repo Security
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
-| **Phase** | Phase 2 — Azure Repos & Git Mastery |
+| **Phase** | 2 - Azure Repos & Git Mastery |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Protect `main` with Azure Repos branch policies and prove the PR-only path works.
+Branch policies are parental controls for adults who still push to main at 11:58pm
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for complete tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Control | Answers | Example |
-|:--------|:--------|:--------|
-| **Repo permissions** | Who can access | Readers / Contributors / Admins |
-| **Branch policies** | How `main` changes | PR required, reviewers, work items, squash |
-
-**Lab baseline on `main`:** 1 reviewer · linked work item required · squash-only merges
-
-## Learn
-
-- [Branch policies](https://learn.microsoft.com/azure/devops/repos/git/branch-policies)
+| Policy | Azure Repos setting | Lab value |
+| --- | --- | --- |
+| Minimum reviewers | Require a minimum number of reviewers | 1 (yourself OK) |
+| Linked work items | Check for linked work items | Required |
+| Merge types | Limit merge types | Allow squash only |
+| Comment resolution | Check for comment resolution | Optional today; on in real teams |
+| Build validation | Build pipeline must succeed | Add after Day 21 YAML exists |
+| Status checks | External GitHub/ADO statuses | Skip unless you add one |
 
 ## Step-by-step lab
 
-1. Branches → `main` → Branch policies
-2. Enable reviewers, linked work items, squash-only
-3. Prove direct push to `main` fails
-4. Merge via PR on `feature/day19-branch-policies`
-5. Document in `docs/branch-policies.md`
+1. Repos → Branches → … on main → Branch policies.
+2. Require a minimum number of reviewers: 1. Allow requestors to approve their own changes (solo lab).
+3. Check for linked work items: Required.
+4. Limit merge types: uncheck Merge / Rebase / Semi-linear; leave Squash merge checked.
+5. Save. Locally: git switch main && echo bypass > notes/should-fail.txt && git add && git commit -m "docs: should be blocked" && git push origin main
+6. Expect rejected by policy. Delete the local commit: git reset --hard origin/main (only if push failed and commit is local).
+7. Open a PR from a feature branch with a linked work item and squash-complete it to prove the happy path.
 
 ## Done when
 
-- [ ] Policies live on `main`
-- [ ] PR path verified
-- [ ] Bypass treated as break-glass only
+- [ ] main requires 1 reviewer and a linked work item
+- [ ] Merge types limited to squash
+- [ ] Direct git push origin main failed
+- [ ] A compliant PR still merges
 
 ## LinkedIn
 
@@ -46,11 +47,9 @@ Post draft: [`../../daily-guides/day-19.md`](../../daily-guides/day-19.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/4zSQtjo
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-19-repo-security
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-19-repo-security)
 
 ## Next
 
-**Day 20** — Phase 2 mini project & recap.
+**Day 20** — Phase 2 mini project

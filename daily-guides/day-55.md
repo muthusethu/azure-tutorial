@@ -42,18 +42,52 @@ spec:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 55 of #100DaysOfAzureDevOps
+Kubernetes is an airport for containers — powerful, expensive, and overkill for a lemonade stand.
 
-Kubernetes is an airport for containers - powerful, expensive, and overkill for a lemonade stand
+Day 55 of #100DaysOfAzureDevOps. Kubernetes fundamentals.
 
-Today's topic: **Kubernetes Fundamentals**.
+Pods, Deployments, Services, namespaces. The vocabulary is the ticket. The airport is real: scheduling, networking, identity, and a bill if you choose AKS too early. I have watched lemonade-stand apps land on a cluster because a résumé wanted the word Kubernetes. The app needed a container and a URL. It got an airport.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Prefer concepts plus kind or minikube if AKS cost is high. Write a Deployment+Service YAML. Apply locally. If there is no cluster, reading the YAML and tracing a request through Service → Pod is still the lab. AKS is tomorrow and optional.
 
-Tomorrow: AKS setup.
+Patterns I keep seeing
+
+1. Pod is a wrapper, Deployment is the adult
+• You rarely create naked Pods in production
+• replicas, selector, template.labels must agree or the Deployment stares at an empty room
+
+2. Service is how traffic finds Pods
+• Labels, not IP folklore
+• containerPort in the spec must match what the process listens on
+
+3. Namespaces are tenancy lite
+• default is fine for a lab
+• Everything in default forever is how lemonade stands become lost luggage
+
+4. Local cluster is a valid airport simulator
+• kind/minikube for apply
+• Read-only if I cannot run a cluster — still write the YAML
+
+What I am doing in today's lab
+
+I am writing a Deployment+Service YAML for the app (image from ACR, port 80), applying on local kind/minikube if I have it, or tracing the YAML on paper if I do not. I am not creating AKS today just to feel advanced.
+
+Learn the airport. Do not land a lemonade stand there until the stand needs runways.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-55-kubernetes-fundamentals
+
+Tomorrow: AKS setup — smallest cluster or skip; destroy the same weekend if I create it.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 55 — Kubernetes Fundamentals` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

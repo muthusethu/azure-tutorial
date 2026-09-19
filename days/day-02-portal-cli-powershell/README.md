@@ -1,64 +1,55 @@
-# Day 02 — Azure Portal, CLI & PowerShell
+# Day 2 — Azure Portal, CLI & PowerShell Basics
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Know **when** to use Portal vs CLI vs PowerShell. Create a resource group from the CLI on a personal subscription.
+Portal is the map; CLI is GPS; PowerShell is the object knife
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for the decision diagram. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Tool | Metaphor | Best for |
-|------|----------|----------|
-| **Portal** | Tourist map | First-time exploration, visual checks |
-| **Azure CLI (`az`)** | GPS coordinates | Repeatable scripts, pipelines later |
-| **PowerShell** | Swiss-army knife | Windows automation, object pipelines |
-
-**Rule of thumb:** explore once in Portal → second time use CLI → forever after, script it.
-
-## Learn
-
-- [Install Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
-- Naming: `rg-day02-lab` beats `New Resource Group (1)`
+| Hop | What it is | Proof in the lab |
+| --- | --- | --- |
+| You | Intent: create RG, list, delete | Decide rg-day02-lab / centralindia |
+| Portal | portal.azure.com ARM JSON via the blade | Create RG once with clicks to feel the cost |
+| Azure CLI | az → REST to management.azure.com | az group create --name rg-day02-lab |
+| Azure PowerShell | Az module cmdlets, PS objects | New-AzResourceGroup when you need objects |
+| ARM | Auth, RBAC, policy, lock, provider routing | Same 201/202 whether click or CLI |
+| Resource provider | Microsoft.Resources/resourceGroups | az group show -n rg-day02-lab -o jsonc |
 
 ## Step-by-step lab
 
-1. Install Azure CLI on a **personal** PC.
-2. `az login` → select personal subscription.
-3. Create `rg-day02-lab` in Central India (or nearest).
-4. Optionally recreate once via Portal to feel the click cost.
-5. Delete when done.
-
-```bash
-az login
-az group create --name rg-day02-lab --location centralindia
-az group list --output table
-az group delete --name rg-day02-lab --yes --no-wait
-```
+1. Install Azure CLI from https://aka.ms/installazurecliwindows (or brew/apt on your OS). Run az version.
+2. Terminal: az login → pick the personal subscription. az account set --subscription "<personal-id>".
+3. az group create --name rg-day02-lab --location centralindia. Confirm with az group show --name rg-day02-lab -o jsonc.
+4. portal.azure.com → Resource groups → Create the same shape once (name rg-day02-portal-compare) to count the clicks.
+5. az group list --output table. Compare properties: location, provisioningState, tags.
+6. az group delete --name rg-day02-portal-compare --yes --no-wait. Keep or delete rg-day02-lab before Day 3.
+7. Optional: pwsh → Connect-AzAccount → Get-AzResourceGroup -Name rg-day02-lab. Same ARM object, different client.
 
 ## Done when
 
-- [ ] You can explain Portal vs CLI vs PowerShell in one sentence each  
-- [ ] `az login` works on your machine  
-- [ ] You created an RG without relying only on Portal  
+- [ ] Can explain Portal vs CLI vs PowerShell in one line each
+- [ ] az login targets the personal subscription (az account show)
+- [ ] Created rg-day02-lab via CLI and inspected JSON
+- [ ] Deleted the compare RG (or documented why it remains)
 
 ## LinkedIn
 
 Post draft: [`../../daily-guides/day-02.md`](../../daily-guides/day-02.md)  
-Attach **[handout.pdf](./handout.pdf)** as a LinkedIn document.
+Attach **[handout.pdf](./handout.pdf)**.
 
 ```
 https://github.com/muthusethu/azure-tutorial/tree/main/days/day-02-portal-cli-powershell
 ```
 
-Hashtags: `#100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic`
-
 ## Next
 
-**Day 03** — Azure Resource Manager (ARM) basics.
+**Day 3** — Azure Resource Manager (ARM) basics

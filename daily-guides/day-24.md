@@ -50,18 +50,52 @@ steps:
 ## LinkedIn post (copy-paste)
 
 ```
-Day 24 of #100DaysOfAzureDevOps
+.NET CI is the same ritual every time: restore, build, test, publish — skip one and production finds it for you.
 
-.NET CI is the same ritual every time: restore, build, test, publish - skip one and production finds it for you
+Day 24 of #100DaysOfAzureDevOps. CI pipeline for a .NET app.
 
-Today's topic: **CI Pipeline for a .NET App**.
+I have lost count of how many "the API is down" threads ended with a missing restore, a Debug build in a Release slot, or tests that were commented out because they were slow. The ritual is boring on purpose. restore, build, test, publish. Then an artifact that the next environment can actually deploy.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+UseDotNet@2 pins the SDK so the agent image does not surprise you. Path filters keep the pipeline from rebuilding the universe when someone edits a README. None of this is clever. All of it is how .NET teams stop being the person who compiled from their laptop into production.
 
-Tomorrow: CI for Node.js.
+Patterns from a decade of delivery
+
+1. Pin the SDK
+• UseDotNet@2 with 8.x (or whatever the repo actually builds)
+• "It compiled on the agent last month" is not a version strategy
+
+2. Restore is not optional theater
+• dotnet restore, then build -c Release --no-restore
+• Skipping restore to "save time" is how you get a random package graph
+
+3. Test before you publish, even if today the test is thin
+• dotnet test on the same configuration you ship
+• || true in a lab is honesty; in production it is a lie you scheduled
+
+4. Publish an artifact, do not rebuild later
+• PublishBuildArtifacts (or PublishPipelineArtifact) from bin/Release
+• The CD stage should consume drop, not invoke dotnet build again
+
+What I am doing in today's lab
+
+I am creating a minimal Web API under /src/SampleApi (dotnet new webapi), adding a pipeline that restores, builds, tests, and publishes, and storing the drop as a pipeline artifact. Path trigger stays on src/SampleApi/** so the rest of the repo can be noisy.
+
+Skip a step of the ritual and you are not being agile. You are postponing the finding to a user.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-24-ci-pipeline-for-a-net-app
+
+Tomorrow: CI for Node.js — npm ci, Cache@2, and stopping the paint-dry restore.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 24 — CI Pipeline for a .NET App` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -1,46 +1,45 @@
-# Day 09 — Azure Artifacts
+# Day 9 — Azure Artifacts
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Create a project-scoped Azure Artifacts feed with upstream sources enabled, configure feed views (@local, @prerelease, @release), and connect client tooling (npm / NuGet).
+The pantry. Pipelines cook. Without a feed you re-buy flour every build.
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for complete tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Concept | Purpose |
-|---------|---------|
-| **Feed** | Container for packages (NuGet, npm, Maven, Python, Universal) |
-| **Upstream Sources** | Cache public packages locally (resilience against external outages) |
-| **Feed Views** | Release gates (`@local` → `@prerelease` → `@release`) without re-versioning |
-| **Retention Policy** | Automatically clean up old package versions to manage storage |
-
-**Dependency Flow:** Developer / CI ↔ Azure Artifacts Feed ↔ Upstream Public Registries (nuget.org / npmjs.org)
-
-## Learn
-
-- [Azure Artifacts overview](https://learn.microsoft.com/azure/devops/artifacts/start-using-azure-artifacts)
+| Piece | What it is | Lab setting |
+| --- | --- | --- |
+| Feed | Private registry scoped to org or project | day09-packages, project-scoped |
+| Upstream nuget.org | Proxy + cache of public NuGet | Enable on create |
+| Upstream npmjs | Proxy + cache of public npm | Enable on create |
+| View @local | Default: every push lands here | Do not skip; this is the inbox |
+| View @prerelease / @release | Promotion without changing the version | Use in Phase 3, not today |
+| Retention | Max versions / days to keep | Leave default; 2 GB free tier is enough |
 
 ## Step-by-step lab
 
-1. Open `azure-100-labs` → **Artifacts**
-2. Create Feed `day09-packages` (project-scoped)
-3. Enable upstream sources for **nuget.org** and **npmjs**
-4. Review feed views (`@local`, `@prerelease`, `@release`)
-5. Click **Connect to feed** → review `.npmrc` / `nuget.config` snippet
-6. Save feed URL for Phase 3 CI/CD automation
+1. azure-100-labs → Artifacts → Create Feed.
+2. Name day09-packages. Scope: Project azure-100-labs (not organization). Visibility: members of this project.
+3. Check Include packages from common public sources (nuget.org, npmjs). Create.
+4. Feed settings → Views. Note @local, @prerelease, @release. Do not delete them.
+5. Connect to feed → NuGet → copy the packageSources URL. Paste into notes/artifacts-day09.md locally.
+6. Connect to feed → npm → copy the registry= https://pkgs.dev.azure.com/.../npm/registry/ line.
+7. Permissions tab: you are Owner. Do not add work users. Empty package list is success for today.
 
 ## Done when
 
-- [ ] You can explain Feeds vs Upstream Sources vs Feed Views
-- [ ] Feed `day09-packages` exists in `azure-100-labs`
-- [ ] Upstream caching is enabled and client configuration understood
+- [ ] Can explain feed vs upstream vs view (@local/@release)
+- [ ] day09-packages exists, project-scoped, upstreams on
+- [ ] Feed URL saved in notes (NuGet and/or npm)
+- [ ] No PAT, password, or nupkg committed
 
 ## LinkedIn
 
@@ -48,11 +47,9 @@ Post draft: [`../../daily-guides/day-09.md`](../../daily-guides/day-09.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/4xDxqIc
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-09-azure-artifacts
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-09-azure-artifacts)
 
 ## Next
 
-**Day 10** — Phase 1 Capstone Mini Project & Recap.
+**Day 10** — Mini project + recap

@@ -1,52 +1,45 @@
-# Day 10 — Phase 1 Capstone Mini Project & Recap
+# Day 10 — Mini Project + Recap (Phase 1)
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Celebrate the completion of Phase 1 (Azure & DevOps Foundations). Consolidate all 5 Azure DevOps hubs in `azure-100-labs`, build an overview dashboard, and prepare for Phase 2 (Git & Repos).
+Five hubs + ARM hygiene in one personal project before Git gets serious
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for complete tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Phase 1 Focus | Core Components | Key Proof Deliverable |
-|:--------------|:----------------|:----------------------|
-| **Azure Core** (Days 1–3) | Cloud models, CLI/PWSH, ARM, Governance | Resource hierarchy, Locks, Budget alerts |
-| **DevOps Principles** (Day 4) | CALMS, DORA metrics | Deployment Frequency & MTTR mindset |
-| **Azure DevOps Suite** (Days 5–10) | Boards, Repos, Pipelines, Test Plans, Artifacts | Project `azure-100-labs`, WIP limits, Test runs, Feeds |
-
-**Hub Integration in `azure-100-labs`:**  
-User Story (Boards) ↔ Code Commit (Repos) ↔ Quality Run (Test Plans) ↔ Dependency (Artifacts) ↔ Overview Dashboard
-
-## Learn
-
-- [Azure DevOps documentation](https://learn.microsoft.com/azure/devops/)
-- [Dashboards in Azure DevOps](https://learn.microsoft.com/azure/devops/report/dashboards/overview)
+| Track | Days | Proof in azure-100-labs |
+| --- | --- | --- |
+| Cloud models | 1 | Can name IaaS/PaaS/SaaS + region vs AZ |
+| Clients + ARM | 2–3 | az group + tags/locks understood; lab RGs gone |
+| CALMS / DORA | 4 | docs/calms-dora-day04.md (local or in repo) |
+| Five hubs | 5–9 | Boards tree, Test Plan, Artifacts feed |
+| Org hygiene | 6 | Personal org; PCA = you; project private Agile |
+| Git bootstrap | 10 | README on default branch; clone URL works |
 
 ## Step-by-step lab
 
-1. Open `azure-100-labs` in Azure DevOps.
-2. Verify all Phase 1 hubs are populated:
-   - **Boards:** Epic, Feature, and User Stories tracked.
-   - **Repos:** Initialized Git repo with `README.md`.
-   - **Test Plans:** Test Plan `Phase 1 Smoke Tests` with test cases.
-   - **Artifacts:** Feed `day09-packages` with upstream caching enabled.
-3. Build **Overview → Dashboards** (`Phase 1 Command Center`):
-   - Add Query Tile (Open stories).
-   - Add Work Item chart widget.
-   - Add Markdown summary widget.
-4. Clean up any leftover Azure resource groups to maintain zero idle cost.
+1. Boards: confirm Epic 100 Days Learning, Feature Phase 1 Foundations, at least 3 stories. Fix if missing.
+2. Repos → Files. If empty: Initialize with a README. If clone exists, skip to the git commands below.
+3. Locally: git clone https://dev.azure.com/<org>/azure-100-labs/_git/azure-100-labs && add README content && git push.
+4. Overview → Dashboards → New dashboard Phase 1 Command Center → add Chart for work items using query Open stories.
+5. Artifacts: confirm feed day09-packages. Test Plans: confirm Day08 Smoke still exists.
+6. az group list --query "[?starts_with(name, 'rg-day')].{name:name, loc:location}" -o table → delete leftovers.
+7. Write 5 lines in README: what stuck, what was confusing. Personal voice. No client names.
 
 ## Done when
 
-- [ ] All 5 hubs in `azure-100-labs` are configured and verified
-- [ ] `Phase 1 Command Center` dashboard is live
-- [ ] No unwanted resources remain running in Azure subscription
+- [ ] Can recap IaaS/PaaS/SaaS, ARM tags/locks, CALMS, DORA, five hubs
+- [ ] azure-100-labs has Git README + Boards tree + Artifacts feed + Test Plan
+- [ ] Dashboard widget exists from a real query
+- [ ] No leftover rg-day* resource groups (or listed why kept)
 
 ## LinkedIn
 
@@ -54,11 +47,9 @@ Post draft: [`../../daily-guides/day-10.md`](../../daily-guides/day-10.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/4gDGA05
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-10-phase-1-recap
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-10-phase-1-recap)
 
 ## Next
 
-**Day 11** — Phase 2 Kickoff: Git Foundations for DevOps Engineers.
+**Day 11** — Git fundamentals

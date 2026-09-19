@@ -30,18 +30,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 85 of #100DaysOfAzureDevOps
+Multi-cloud is insurance and complexity — buy it for a reason, not a slide.
 
-Multi-cloud is insurance and complexity - buy it for a reason, not a slide
+Day 85 of #100DaysOfAzureDevOps. Hybrid and multi-cloud CI/CD.
 
-Today's topic: **Hybrid & Multi-cloud CI/CD**.
+Azure Pipelines can deploy to other clouds. That sentence is true and expensive. Identity, secrets, network, three consoles, three bills. I have sat through slides titled "multi-cloud strategy" that were really "we might need AWS someday." Insurance. Complexity. Buy it when a constraint is real.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Survey only. Write risks: secrets, identity, network. Do not actually deploy to AWS unless a personal account is ready and I want that bill. Prefer one cloud deep in these 100 days. Pattern: build once in Azure DevOps, deploy with cloud-specific tasks if you must.
 
-Tomorrow: DR & backup.
+Patterns I keep seeing
+
+1. Build once still applies
+• The artifact or image is the passport
+• Rebuilding per cloud is the ghost from Day 39 with extra stamps
+
+2. Identity does not unify itself
+• Entra vs IAM vs another IdP
+• A secret copied into two clouds is two postcards
+
+3. Network is the boring blocker
+• Hybrid: self-hosted agents, VPN, private endpoints
+• A hosted agent cannot see your on-prem by wishing
+
+4. Slides are not constraints
+• A reason: data residency, an existing estate, a product on two clouds
+• Not a reason: the architecture diagram looks worldly
+
+What I am doing in today's lab
+
+I am writing a one-pager of risks (secrets, identity, network) and the rule for this series: one cloud deep. I am not opening AWS "just to try" unless I already have a personal account and a destroy plan. Survey, not a second gym membership.
+
+Insurance is priced. If you cannot name the risk you are buying, it is a slide.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-85-hybrid-multi-cloud-ci-cd
+
+Tomorrow: Disaster recovery and backup — RPO, RTO, restore or it is fiction.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 85 — Hybrid & Multi-cloud CI/CD` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

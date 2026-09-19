@@ -1,48 +1,45 @@
-# Day 08 — Azure Test Plans Basics
+# Day 8 — Azure Test Plans Basics
 
 | | |
 |---|---|
 | **Series** | [#100DaysOfAzureDevOps](https://github.com/muthusethu/azure-tutorial) |
+| **Phase** | 1 - Azure & DevOps Foundations |
 | **Time box** | 60–90 minutes |
 | **Handout** | [handout.pdf](./handout.pdf) |
 
 ## Goal
 
-Understand the hierarchy of Azure Test Plans (Plan → Suite → Case → Run) and how manual / exploratory tests link back to Azure Boards work items.
+A shared checklist so 'works on my machine' stops being a personality trait
 
-## High-level architecture (summary)
+## Architecture (summary)
 
-Open **[handout.pdf](./handout.pdf)** for tables. Short version:
+Open **[handout.pdf](./handout.pdf)** for the full tables.
 
-| Level | Role |
-|-------|------|
-| **Test Plan** | Top-level container for a sprint, release, or milestone |
-| **Test Suite** | Grouping of test cases (Static, Requirement-based, Query-based) |
-| **Test Case** | Discrete test scenario with step-by-step action + expected outcome |
-| **Test Run** | Execution instance recording Pass, Fail, Blocked, and bug links |
-
-**Traceability loop:** User Story (Boards) ↔ Test Case (Test Plans) ↔ Test Run ↔ Bug (Boards)
-
-## Learn
-
-- [Azure Test Plans overview](https://learn.microsoft.com/azure/devops/test/overview)
+| Object | What it is | Lab name |
+| --- | --- | --- |
+| Test Plan | Container for a milestone / sprint | Day08 Smoke |
+| Test Suite (static) | Hand-picked cases | Portal checks |
+| Requirement-based suite | Auto from a User Story | Optional: suite from Day 7 story |
+| Query-based suite | WIQL of test cases | Skip until you have 10+ cases |
+| Test Case (work item) | Steps: Action + Expected Result | Login to Portal; Create RG via CLI |
+| Test Run / Test Point | Outcome: Passed, Failed, Blocked, Not executed | Web runner, not a pipeline yet |
 
 ## Step-by-step lab
 
-1. Open `azure-100-labs` → **Test Plans**
-2. Create Test Plan `Phase 1 Smoke Tests`
-3. Add a Static Suite `Portal & CLI Baseline`
-4. Add 2 Test Cases:
-   - `TC01: Verify Azure login and personal subscription directory`
-   - `TC02: Verify resource group creation via Azure CLI`
-5. Execute via Web Runner → mark steps Passed / Blocked
-6. Link test case to a User Story in Boards to inspect end-to-end traceability
+1. azure-100-labs → Test Plans. If prompted, start the Test Plans trial on this personal org only.
+2. New Test Plan → Name Day08 Smoke → Area = default team. Create.
+3. Add suite → Static suite → Portal checks.
+4. New Test Case: Login to Portal. Steps: (1) Open portal.azure.com (2) Confirm personal directory. Expected: subscription visible, no work tenant.
+5. New Test Case: Create RG via CLI. Steps: az group create -n rg-day08-smoke -l centralindia then az group delete -n rg-day08-smoke --yes --no-wait.
+6. Run for web application → mark Login Passed. Mark CLI case Passed or Blocked with a comment if az is missing.
+7. Open the test case → Links → add User Story Explore Azure Test Plans (Day 7). Boards should show the test link.
 
 ## Done when
 
-- [ ] You can explain Test Plan vs Suite vs Case vs Run
-- [ ] Test Plan and test cases exist in `azure-100-labs`
-- [ ] You executed at least one test run and recorded results
+- [ ] Can explain Test Plan vs Suite vs Case vs Run
+- [ ] Day08 Smoke exists with two cases and at least one executed outcome
+- [ ] One case linked to a Boards User Story
+- [ ] No work-org Test Plans used
 
 ## LinkedIn
 
@@ -50,11 +47,9 @@ Post draft: [`../../daily-guides/day-08.md`](../../daily-guides/day-08.md)
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```
-https://bit.ly/4zHsGD3
+https://github.com/muthusethu/azure-tutorial/tree/main/days/day-08-azure-test-plans
 ```
-
-(Full path: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-08-azure-test-plans)
 
 ## Next
 
-**Day 09** — Azure Artifacts.
+**Day 9** — Azure Artifacts

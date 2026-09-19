@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 90 of #100DaysOfAzureDevOps
+Phase 9 recap: enterprise is reuse plus guardrails, not more YAML copy-paste.
 
-Phase 9 recap: enterprise is reuse + guardrails, not more YAML copy-paste
+Day 90 of #100DaysOfAzureDevOps. Mini project and recap for Phase 9 — advanced and enterprise patterns.
 
-Today's topic: **Mini Project + Recap (Phase 9)**.
+Repo strategy, templates, marketplace restraint, Jenkins mapping, multi-cloud caution, DR that restores, landing zones on paper, GitOps vs push, a paved-road catalog. The mini project is the enterprise artifact: templates/ used by two sample pipelines, one green run each.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Enterprise is not a font on a slide. It is one fix that repairs two consumers, plus a gate that still bites.
 
-Tomorrow: Capstone 1.
+What I am keeping from Phase 9
+
+1. One template, two consumers
+• If both are green, reuse is real
+• If I duplicated to go green, I failed the recap with extra files
+
+2. Guardrails from Phase 7 still apply
+• Secrets, approvals, Policy
+• A template that echoes secrets is a faster incident
+
+3. Paper architecture counts
+• Landing zone sketch, GitOps comparison, DR targets
+• I do not need a fake enterprise subscription to have thought
+
+4. Definition of done
+• one template, two consumers, one green run each
+• ADR for monorepo still true unless I changed it on purpose
+
+What I am doing in today's lab
+
+I am publishing templates/ consumed by two sample pipelines, running both to green, and writing the recap. Reuse plus guardrails. If a third pipeline still has pasted YAML, I extract or I admit it is leftover homework. Two green consumers is the definition of done — not a third unique snowflake.
+
+Enterprise is not more YAML. It is less YAML, better gates, and a road people actually walk.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-90-mini-project-recap-phase-9
+
+Tomorrow: Capstone 1 — thin vertical slice, not a fake ecommerce platform.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 90 — Phase 9 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

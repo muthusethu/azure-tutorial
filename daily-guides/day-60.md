@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 60 of #100DaysOfAzureDevOps
+Phase 6 recap: package once, run anywhere — but "anywhere" still has a bill.
 
-Phase 6 recap: package once, run anywhere - but 'anywhere' still has a bill
+Day 60 of #100DaysOfAzureDevOps. Mini project and recap for Phase 6 — containers and Kubernetes.
 
-Today's topic: **Mini Project + Recap (Phase 6)**.
+Dockerfile, ACR, pipeline build/push, ACI as fast-food, Kubernetes vocabulary, optional AKS, Helm, a glance at HPA. The mini project is one path: containerize the app, put the image in ACR, deploy via CI/CD. Prefer Container Apps or ACI if AKS cost bites. Architecture one-liner in the recap.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+"Run anywhere" is a slogan. Anywhere with a registry pull, a CPU, and an invoice is the adult version.
 
-Tomorrow: Entra ID fundamentals.
+What I am keeping from Phase 6
+
+1. Image in ACR is the artifact now
+• Not only a zip. A tagged image from the pipeline
+• latest is not the promotion ID
+
+2. One deploy path, automated
+• ACI or Container Apps or AKS — one
+• Three half-paths is not a recap. It is a buffet
+
+3. Helm or manifests in Git
+• No sticky-note kubectl as the process
+• values.yaml for env differences
+
+4. Cost is part of the architecture one-liner
+• If AKS exists, destroy date is in the recap
+• If I skipped AKS, that is an architecture decision, not a failure
+
+What I am doing in today's lab
+
+I am finishing image-in-ACR plus one successful automated deploy path, writing a one-line architecture, and killing ACI/AKS leftovers. Done = image in ACR + one successful deploy path automated. The bill should not include a forgotten gym.
+
+Package once. Run on a path you can pay for and tear down. Slogans do not get invoices.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-60-mini-project-recap-phase-6
+
+Tomorrow: Entra ID fundamentals — tenants, app registrations, identity as the bouncer list.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 60 — Phase 6 Mini Project & Recap` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

@@ -33,18 +33,54 @@ terraform destroy -auto-approve
 ## LinkedIn post (copy-paste)
 
 ```
-Day 46 of #100DaysOfAzureDevOps
+Terraform state is the memory of your infra — lose it and you are arguing with ghosts.
 
-Terraform state is the memory of your infra - lose it and you are arguing with ghosts
+Day 46 of #100DaysOfAzureDevOps. Terraform basics.
 
-Today's topic: **Terraform Basics**.
+init, plan, apply, destroy. The verbs are simple. The state file is the plot. Terraform's memory of what it created lives in state. Lose it, and the next apply will try to create things that already exist, or will refuse to destroy things you can still see in the Portal. I have watched grown teams argue with ghosts for a day because someone deleted terraform.tfstate to "clean up."
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Today is local state on purpose: a resource group only, then destroy at the end of the night. Remote state is Day 48. Skipping destroy is how a lab becomes a subscription.
 
-Tomorrow: Terraform with Azure.
+What I keep seeing
+
+1. The four verbs are a ritual
+• terraform init — providers
+• plan — the diff
+• apply — change the world
+• destroy — the adult ending
+
+2. State is not a cache
+• It is the mapping from resource addresses to Azure IDs
+• Delete it and Terraform amnesia begins
+
+3. Plan is the dress rehearsal (again)
+• Never apply a mental diff
+• If plan surprises you, you do not apply until it does not
+
+4. Destroy tonight
+• Local state lab: RG only
+• Always destroy at end of night — leftover RGs are how Cost Management becomes a personality test
+
+What I am doing in today's lab
+
+I am installing Terraform, running init/plan/apply on a resource group with local state, confirming the RG in Azure, then terraform destroy -auto-approve. If destroy fails, I do not shrug and leave it. Ghosts start as leftovers.
+
+Protect state like production data. Memory loss in Terraform is not a vibe. It is an outage you scheduled.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-46-terraform-basics
+
+Tomorrow: Terraform with Azure (azurerm) — CLI auth, RG + storage.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 46 — Terraform Basics` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 

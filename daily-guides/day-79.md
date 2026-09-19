@@ -29,18 +29,52 @@ Finish today's topic with one small hands-on proof and one LinkedIn post. Prefer
 ## LinkedIn post (copy-paste)
 
 ```
-Day 79 of #100DaysOfAzureDevOps
+Postmortems without blame create learning; postmortems with blame create silence.
 
-Postmortems without blame create learning; postmortems with blame create silence
+Day 79 of #100DaysOfAzureDevOps. Incident management basics.
 
-Today's topic: **Incident Management Basics**.
+On-call concepts, runbooks, postmortems. I have sat in both kinds of review. The blameless one produced a checklist. The blame one produced quieter Slack and the same outage later. Silence is not reliability.
 
-I am learning in public for 100 days - mistakes included, sales pitches not included.
+Write a one-page runbook for "webapp down" in /docs/runbook-webapp-down.md: Symptom → Checks → Mitigate → Communicate → Postmortem link. A template for a blameless write-up. I do not need a real outage to practice the shape. I need the page to exist before 2am.
 
-Tomorrow: Phase 8 mini project.
+Patterns I keep seeing
+
+1. Runbooks are for 2am brains
+• Short steps, named checks, a health URL
+• A novel runbook will not be read in an incident
+
+2. Mitigate is not root cause
+• Swap back, scale, disable a flag — stop the bleeding
+• Root cause waits until users can log in
+
+3. Communicate is a step, not a side effect
+• Who gets a message, what the status is
+• Silence while you debug is how rumors fill the gap
+
+4. Blameless is a writing rule
+• What happened, what we believed, what we change
+• Not who is stupid. That sentence trains people to hide the next incident
+
+What I am doing in today's lab
+
+I am writing the webapp-down runbook and a blameless postmortem template. Symptom → Checks → Mitigate → Communicate → Postmortem. If I have a real lab failure this week, I fill the template once. If not, the empty template still has headings I would not want to invent under stress.
+
+Learn in the write-up. Silence in the write-up is how the outage books a sequel.
+
+Handout PDF is attached to this document post.
+
+Lab notes + PDF: https://github.com/muthusethu/azure-tutorial/tree/main/days/day-79-incident-management-basics
+
+Tomorrow: Phase 8 mini project — App Insights + one alert + one dashboard.
 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
+
+### How to post
+
+1. LinkedIn → **document** → upload today's `handout.pdf`
+2. **Document title:** `Day 79 — Incident Management Basics` (max 58 chars)
+3. Paste the text above (press **Enter** between sections so line breaks stay)
 
 ### Posting tips
 
