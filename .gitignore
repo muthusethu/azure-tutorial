@@ -36,7 +36,9 @@ canvases/
 # Personal planning PDF (local only — not published)
 100_Day_Azure_DevOps_Plan.pdf
 
-# Local-only: author drafts, generators, timed checklists
+# Local-only: author drafts, generators, timed checklists, LinkedIn copy
 daily-guides/
 scripts/
 operator/
+publish/
+docs/
