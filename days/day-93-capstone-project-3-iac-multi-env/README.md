@@ -44,7 +44,6 @@ Open **[handout.pdf](./handout.pdf)** for the full tables.
 
 ## LinkedIn
 
-Post draft: [`../../daily-guides/day-93.md`](../../daily-guides/day-93.md)  
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```

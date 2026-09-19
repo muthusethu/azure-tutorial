@@ -6,7 +6,7 @@
 
 | Platform | File | Priority |
 |----------|------|----------|
-| LinkedIn | [`../../daily-guides/day-03.md`](../../daily-guides/day-03.md) | P0 |
+| LinkedIn | [`../../days/day-03-arm-basics/`](../../days/day-03-arm-basics/) | P0 |
 | X | — | **Paused** |
 | Dev.to / Hashnode | optional later | P2 |
 

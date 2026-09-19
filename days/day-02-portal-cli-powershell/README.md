@@ -43,7 +43,6 @@ Open **[handout.pdf](./handout.pdf)** for the full tables.
 
 ## LinkedIn
 
-Post draft: [`../../daily-guides/day-02.md`](../../daily-guides/day-02.md)  
 Attach **[handout.pdf](./handout.pdf)**.
 
 ```

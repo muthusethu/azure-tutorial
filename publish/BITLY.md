@@ -26,12 +26,4 @@ Use these in LinkedIn posts instead of the long GitHub URL.
 | 20 | https://bit.ly/4r4WN3m | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-20-phase-2-recap |
 | 21 | https://bit.ly/4iWaf7t | https://github.com/muthusethu/azure-tutorial/tree/main/days/day-21-intro-pipelines |
 
-**Going forward:** after each new `days/day-NN-*/` folder is on `main`, run:
-
-```bash
-python scripts/bitly_shorten.py "https://github.com/muthusethu/azure-tutorial/tree/main/days/day-NN-slug" "Day NN title"
-```
-
-Paste the Bitly URL into that day’s LinkedIn post and `publish/day-NN/LINKS.md`.
-
-Token: local `.env` only (`BITLY_ACCESS_TOKEN`). Copy from `.env.example`. Never commit `.env`.
+**Days 22+:** paste the full GitHub folder URL in the post. Do not shorten.

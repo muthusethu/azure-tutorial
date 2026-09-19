@@ -36,9 +36,7 @@ canvases/
 # Personal planning PDF (local only — not published)
 100_Day_Azure_DevOps_Plan.pdf
 
-# Generator scratch copies (canonical PDFs live under days/day-NN-*/handout.pdf)
-daily-guides/handouts/
-
-# Author-only timed checklists — never publish
+# Local-only: author drafts, generators, timed checklists
+daily-guides/
+scripts/
 operator/
-scripts/build_operator_tasks.py

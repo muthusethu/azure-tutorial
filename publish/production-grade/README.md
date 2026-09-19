@@ -41,10 +41,9 @@ Exact day can shift. Priority is **quality + distinct topic**, not a rigid Day 4
 
 ## Reminders
 
-1. Morning: `python scripts/production_reminder.py` (still useful on scheduled days)
-2. Checklist: [`REMINDERS.md`](./REMINDERS.md)
-3. Drafts: [`notes.md`](./notes.md)
-4. URLs: [`LINKS.md`](./LINKS.md)
+1. Checklist: [`REMINDERS.md`](./REMINDERS.md)
+2. Drafts: [`notes.md`](./notes.md)
+3. URLs: [`LINKS.md`](./LINKS.md)
 
 ## Files
 

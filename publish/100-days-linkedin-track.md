@@ -15,7 +15,7 @@
 Last published: **Day 22** on Saturday 19 Sep 2026 — https://lnkd.in/p/d_6enPDZ  
 Next: **Day 23** Sunday 20 Sep 2026, 07:00 IST.
 
-This track resumed at Day 22 (Day 21 was 10 Sep). It does not jump to Day 31. Dates inside `daily-guides/day-XX.md` headers are stale; **use the dates below**.
+This track resumed at Day 22 (Day 21 was 10 Sep). It does not jump to Day 31. Use the dates in this file, not older calendars.
 
 Window: **19 Sep → 18 Oct 2026** = Days **22–51** (30 posts). Then continue Day 52 on 19 Oct.
 
@@ -42,36 +42,36 @@ Weekday after that: Track B at 19:15 (and Track C at 19:40 if Mon/Wed/Fri). Do n
 
 | Date | Day | Topic | Guide |
 |---|---|---|---|
-| Sat 19 Sep | Day 22 | Microsoft-hosted vs Self-hosted Agents | [day-22.md](../daily-guides/day-22.md) |
-| Sun 20 Sep | Day 23 | YAML Pipeline Basics | [day-23.md](../daily-guides/day-23.md) |
-| Mon 21 Sep | Day 24 | CI Pipeline for a .NET App | [day-24.md](../daily-guides/day-24.md) |
-| Tue 22 Sep | Day 25 | CI Pipeline for a Node.js App | [day-25.md](../daily-guides/day-25.md) |
-| Wed 23 Sep | Day 26 | CI Pipeline for a Python App | [day-26.md](../daily-guides/day-26.md) |
-| Thu 24 Sep | Day 27 | CI Pipeline for a Java/Maven App | [day-27.md](../daily-guides/day-27.md) |
-| Fri 25 Sep | Day 28 | Multi-stage YAML Pipelines | [day-28.md](../daily-guides/day-28.md) |
-| Sat 26 Sep | Day 29 | Pipeline Variables, Groups & Secrets | [day-29.md](../daily-guides/day-29.md) |
-| Sun 27 Sep | Day 30 | Mini Project + Recap (Phase 3) | [day-30.md](../daily-guides/day-30.md) |
-| Mon 28 Sep | Day 31 | Release Pipelines Overview | [day-31.md](../daily-guides/day-31.md) |
-| Tue 29 Sep | Day 32 | Deploying to Azure App Service | [day-32.md](../daily-guides/day-32.md) |
-| Wed 30 Sep | Day 33 | Deploying to Azure Functions | [day-33.md](../daily-guides/day-33.md) |
-| Thu 1 Oct | Day 34 | Deployment Slots & Swap Strategies | [day-34.md](../daily-guides/day-34.md) |
-| Fri 2 Oct | Day 35 | Blue-Green Deployments | [day-35.md](../daily-guides/day-35.md) |
-| Sat 3 Oct | Day 36 | Canary Releases | [day-36.md](../daily-guides/day-36.md) |
-| Sun 4 Oct | Day 37 | Rolling Deployments | [day-37.md](../daily-guides/day-37.md) |
-| Mon 5 Oct | Day 38 | Approval Gates & Environments | [day-38.md](../daily-guides/day-38.md) |
-| Tue 6 Oct | Day 39 | Multi-environment Pipeline | [day-39.md](../daily-guides/day-39.md) |
-| Wed 7 Oct | Day 40 | Mini Project + Recap (Phase 4) | [day-40.md](../daily-guides/day-40.md) |
-| Thu 8 Oct | Day 41 | IaC Concepts | [day-41.md](../daily-guides/day-41.md) |
-| Fri 9 Oct | Day 42 | ARM Templates Basics | [day-42.md](../daily-guides/day-42.md) |
-| Sat 10 Oct | Day 43 | ARM Parameters & Outputs | [day-43.md](../daily-guides/day-43.md) |
-| Sun 11 Oct | Day 44 | Bicep Fundamentals | [day-44.md](../daily-guides/day-44.md) |
-| Mon 12 Oct | Day 45 | Bicep Modules & Deployment | [day-45.md](../daily-guides/day-45.md) |
-| Tue 13 Oct | Day 46 | Terraform Basics | [day-46.md](../daily-guides/day-46.md) |
-| Wed 14 Oct | Day 47 | Terraform with Azure (azurerm) | [day-47.md](../daily-guides/day-47.md) |
-| Thu 15 Oct | Day 48 | Terraform Modules & Remote State | [day-48.md](../daily-guides/day-48.md) |
-| Fri 16 Oct | Day 49 | IaC in Pipelines | [day-49.md](../daily-guides/day-49.md) |
-| Sat 17 Oct | Day 50 | Mini Project + Recap (Phase 5) | [day-50.md](../daily-guides/day-50.md) |
-| Sun 18 Oct | Day 51 | Docker Fundamentals | [day-51.md](../daily-guides/day-51.md) |
+| Sat 19 Sep | Day 22 | Microsoft-hosted vs Self-hosted Agents | [day-22-microsoft-hosted-vs-self-hosted-agents](../days/day-22-microsoft-hosted-vs-self-hosted-agents/) |
+| Sun 20 Sep | Day 23 | YAML Pipeline Basics | [day-23-yaml-pipeline-basics](../days/day-23-yaml-pipeline-basics/) |
+| Mon 21 Sep | Day 24 | CI Pipeline for a .NET App | [day-24-ci-pipeline-for-a-net-app](../days/day-24-ci-pipeline-for-a-net-app/) |
+| Tue 22 Sep | Day 25 | CI Pipeline for a Node.js App | [day-25-ci-pipeline-for-a-node-js-app](../days/day-25-ci-pipeline-for-a-node-js-app/) |
+| Wed 23 Sep | Day 26 | CI Pipeline for a Python App | [day-26-ci-pipeline-for-a-python-app](../days/day-26-ci-pipeline-for-a-python-app/) |
+| Thu 24 Sep | Day 27 | CI Pipeline for a Java/Maven App | [day-27-ci-pipeline-for-a-java-maven-app](../days/day-27-ci-pipeline-for-a-java-maven-app/) |
+| Fri 25 Sep | Day 28 | Multi-stage YAML Pipelines | [day-28-multi-stage-yaml-pipelines](../days/day-28-multi-stage-yaml-pipelines/) |
+| Sat 26 Sep | Day 29 | Pipeline Variables, Groups & Secrets | [day-29-pipeline-variables-groups-secrets](../days/day-29-pipeline-variables-groups-secrets/) |
+| Sun 27 Sep | Day 30 | Mini Project + Recap (Phase 3) | [day-30-mini-project-recap-phase-3](../days/day-30-mini-project-recap-phase-3/) |
+| Mon 28 Sep | Day 31 | Release Pipelines Overview | [day-31-release-pipelines-overview](../days/day-31-release-pipelines-overview/) |
+| Tue 29 Sep | Day 32 | Deploying to Azure App Service | [day-32-deploying-to-azure-app-service](../days/day-32-deploying-to-azure-app-service/) |
+| Wed 30 Sep | Day 33 | Deploying to Azure Functions | [day-33-deploying-to-azure-functions](../days/day-33-deploying-to-azure-functions/) |
+| Thu 1 Oct | Day 34 | Deployment Slots & Swap Strategies | [day-34-deployment-slots-swap-strategies](../days/day-34-deployment-slots-swap-strategies/) |
+| Fri 2 Oct | Day 35 | Blue-Green Deployments | [day-35-blue-green-deployments](../days/day-35-blue-green-deployments/) |
+| Sat 3 Oct | Day 36 | Canary Releases | [day-36-canary-releases](../days/day-36-canary-releases/) |
+| Sun 4 Oct | Day 37 | Rolling Deployments | [day-37-rolling-deployments](../days/day-37-rolling-deployments/) |
+| Mon 5 Oct | Day 38 | Approval Gates & Environments | [day-38-approval-gates-environments](../days/day-38-approval-gates-environments/) |
+| Tue 6 Oct | Day 39 | Multi-environment Pipeline | [day-39-multi-environment-pipeline](../days/day-39-multi-environment-pipeline/) |
+| Wed 7 Oct | Day 40 | Mini Project + Recap (Phase 4) | [day-40-mini-project-recap-phase-4](../days/day-40-mini-project-recap-phase-4/) |
+| Thu 8 Oct | Day 41 | IaC Concepts | [day-41-iac-concepts](../days/day-41-iac-concepts/) |
+| Fri 9 Oct | Day 42 | ARM Templates Basics | [day-42-arm-templates-basics](../days/day-42-arm-templates-basics/) |
+| Sat 10 Oct | Day 43 | ARM Parameters & Outputs | [day-43-arm-parameters-outputs](../days/day-43-arm-parameters-outputs/) |
+| Sun 11 Oct | Day 44 | Bicep Fundamentals | [day-44-bicep-fundamentals](../days/day-44-bicep-fundamentals/) |
+| Mon 12 Oct | Day 45 | Bicep Modules & Deployment | [day-45-bicep-modules-deployment](../days/day-45-bicep-modules-deployment/) |
+| Tue 13 Oct | Day 46 | Terraform Basics | [day-46-terraform-basics](../days/day-46-terraform-basics/) |
+| Wed 14 Oct | Day 47 | Terraform with Azure (azurerm) | [day-47-terraform-with-azure-azurerm](../days/day-47-terraform-with-azure-azurerm/) |
+| Thu 15 Oct | Day 48 | Terraform Modules & Remote State | [day-48-terraform-modules-remote-state](../days/day-48-terraform-modules-remote-state/) |
+| Fri 16 Oct | Day 49 | IaC in Pipelines | [day-49-iac-in-pipelines](../days/day-49-iac-in-pipelines/) |
+| Sat 17 Oct | Day 50 | Mini Project + Recap (Phase 5) | [day-50-mini-project-recap-phase-5](../days/day-50-mini-project-recap-phase-5/) |
+| Sun 18 Oct | Day 51 | Docker Fundamentals | [day-51-docker-fundamentals](../days/day-51-docker-fundamentals/) |
 
 ---
 
@@ -79,7 +79,7 @@ Weekday after that: Track B at 19:15 (and Track C at 19:40 if Mon/Wed/Fri). Do n
 
 **19 Oct = Day 52** (Azure Container Registry). Keep daily posting. Handout: `days/day-52-azure-container-registry-acr/handout.pdf`.
 
-Copy for Days **52–100** is in [`100-days-detailed-posts.md`](./100-days-detailed-posts.md) and in each `daily-guides/day-XX.md`. Same format as Days 22–51 below.
+Copy for Days **52–100** is in [`100-days-detailed-posts.md`](./100-days-detailed-posts.md). Same format as Days 22–51 below.
 
 ---
 
@@ -87,7 +87,7 @@ Copy for Days **52–100** is in [`100-days-detailed-posts.md`](./100-days-detai
 
 ## Day 22 — Sat 19 Sep 2026 — Microsoft-hosted vs Self-hosted Agents
 
-Guide: [`daily-guides/day-22.md`](../daily-guides/day-22.md)  
+Lab: [`days/day-22-microsoft-hosted-vs-self-hosted-agents/`](../days/day-22-microsoft-hosted-vs-self-hosted-agents/)  
 PDF: attach `days/day-22-microsoft-hosted-vs-self-hosted-agents/handout.pdf`.  
 **Document title:** `Day 22 — Hosted vs Self-hosted Agents`
 
@@ -137,7 +137,7 @@ Tomorrow: YAML pipeline basics — triggers, stages, jobs, steps, and a PR trigg
 
 ## Day 23 — Sun 20 Sep 2026 — YAML Pipeline Basics
 
-Guide: [`daily-guides/day-23.md`](../daily-guides/day-23.md)  
+Lab: [`days/day-23-yaml-pipeline-basics/`](../days/day-23-yaml-pipeline-basics/)  
 PDF: attach `days/day-23-yaml-pipeline-basics/handout.pdf`.  
 **Document title:** `Day 23 — YAML Pipeline Basics`
 
@@ -186,7 +186,7 @@ Tomorrow: CI pipeline for a .NET app — restore, build, test, publish, artifact
 
 ## Day 24 — Mon 21 Sep 2026 — CI Pipeline for a .NET App
 
-Guide: [`daily-guides/day-24.md`](../daily-guides/day-24.md)  
+Lab: [`days/day-24-ci-pipeline-for-a-net-app/`](../days/day-24-ci-pipeline-for-a-net-app/)  
 PDF: attach `days/day-24-ci-pipeline-for-a-net-app/handout.pdf`.  
 **Document title:** `Day 24 — CI Pipeline for a .NET App`
 
@@ -234,7 +234,7 @@ Tomorrow: CI for Node.js — npm ci, Cache@2, and stopping the paint-dry restore
 
 ## Day 25 — Tue 22 Sep 2026 — CI Pipeline for a Node.js App
 
-Guide: [`daily-guides/day-25.md`](../daily-guides/day-25.md)  
+Lab: [`days/day-25-ci-pipeline-for-a-node-js-app/`](../days/day-25-ci-pipeline-for-a-node-js-app/)  
 PDF: attach `days/day-25-ci-pipeline-for-a-node-js-app/handout.pdf`.  
 **Document title:** `Day 25 — CI Pipeline for a Node.js App`
 
@@ -283,7 +283,7 @@ Tomorrow: CI for Python — pip, ruff, pytest on a tiny sample.
 
 ## Day 26 — Wed 23 Sep 2026 — CI Pipeline for a Python App
 
-Guide: [`daily-guides/day-26.md`](../daily-guides/day-26.md)  
+Lab: [`days/day-26-ci-pipeline-for-a-python-app/`](../days/day-26-ci-pipeline-for-a-python-app/)  
 PDF: attach `days/day-26-ci-pipeline-for-a-python-app/handout.pdf`.  
 **Document title:** `Day 26 — CI Pipeline for a Python App`
 
@@ -331,7 +331,7 @@ Tomorrow: CI for Java/Maven — lifecycle, tests, and not jumping off the train 
 
 ## Day 27 — Thu 24 Sep 2026 — CI Pipeline for a Java/Maven App
 
-Guide: [`daily-guides/day-27.md`](../daily-guides/day-27.md)  
+Lab: [`days/day-27-ci-pipeline-for-a-java-maven-app/`](../days/day-27-ci-pipeline-for-a-java-maven-app/)  
 PDF: attach `days/day-27-ci-pipeline-for-a-java-maven-app/handout.pdf`.  
 **Document title:** `Day 27 — CI Pipeline for a Java App`
 
@@ -379,7 +379,7 @@ Tomorrow: Multi-stage YAML — dependsOn, matrix, conditions.
 
 ## Day 28 — Fri 25 Sep 2026 — Multi-stage YAML Pipelines
 
-Guide: [`daily-guides/day-28.md`](../daily-guides/day-28.md)  
+Lab: [`days/day-28-multi-stage-yaml-pipelines/`](../days/day-28-multi-stage-yaml-pipelines/)  
 PDF: attach `days/day-28-multi-stage-yaml-pipelines/handout.pdf`.  
 **Document title:** `Day 28 — Multi-stage YAML Pipelines`
 
@@ -427,7 +427,7 @@ Tomorrow: Pipeline variables, groups, and secrets — envelopes, not postcards.
 
 ## Day 29 — Sat 26 Sep 2026 — Pipeline Variables, Groups & Secrets
 
-Guide: [`daily-guides/day-29.md`](../daily-guides/day-29.md)  
+Lab: [`days/day-29-pipeline-variables-groups-secrets/`](../days/day-29-pipeline-variables-groups-secrets/)  
 PDF: attach `days/day-29-pipeline-variables-groups-secrets/handout.pdf`.  
 **Document title:** `Day 29 — Variables, Groups & Secrets`
 
@@ -475,7 +475,7 @@ Tomorrow: Phase 3 mini project — one green CI run I can screenshot without sec
 
 ## Day 30 — Sun 27 Sep 2026 — Mini Project + Recap (Phase 3)
 
-Guide: [`daily-guides/day-30.md`](../daily-guides/day-30.md)  
+Lab: [`days/day-30-mini-project-recap-phase-3/`](../days/day-30-mini-project-recap-phase-3/)  
 PDF: attach `days/day-30-mini-project-recap-phase-3/handout.pdf`.  
 **Document title:** `Day 30 — Phase 3 Mini Project & Recap`
 
@@ -523,7 +523,7 @@ Tomorrow: Release pipelines overview — Classic vs YAML CD, and an environment 
 
 ## Day 31 — Mon 28 Sep 2026 — Release Pipelines Overview
 
-Guide: [`daily-guides/day-31.md`](../daily-guides/day-31.md)  
+Lab: [`days/day-31-release-pipelines-overview/`](../days/day-31-release-pipelines-overview/)  
 PDF: attach `days/day-31-release-pipelines-overview/handout.pdf`.  
 **Document title:** `Day 31 — Release Pipelines Overview`
 
@@ -571,7 +571,7 @@ Tomorrow: Deploy to Azure App Service — zip deploy from the pipeline.
 
 ## Day 32 — Tue 29 Sep 2026 — Deploying to Azure App Service
 
-Guide: [`daily-guides/day-32.md`](../daily-guides/day-32.md)  
+Lab: [`days/day-32-deploying-to-azure-app-service/`](../days/day-32-deploying-to-azure-app-service/)  
 PDF: attach `days/day-32-deploying-to-azure-app-service/handout.pdf`.  
 **Document title:** `Day 32 — Deploying to Azure App Service`
 
@@ -619,7 +619,7 @@ Tomorrow: Deploy to Azure Functions — Consumption vs Premium, timer or HTTP sa
 
 ## Day 33 — Wed 30 Sep 2026 — Deploying to Azure Functions
 
-Guide: [`daily-guides/day-33.md`](../daily-guides/day-33.md)  
+Lab: [`days/day-33-deploying-to-azure-functions/`](../days/day-33-deploying-to-azure-functions/)  
 PDF: attach `days/day-33-deploying-to-azure-functions/handout.pdf`.  
 **Document title:** `Day 33 — Deploying to Azure Functions`
 
@@ -667,7 +667,7 @@ Tomorrow: Deployment slots and swap — staging as a dressing room.
 
 ## Day 34 — Thu 1 Oct 2026 — Deployment Slots & Swap Strategies
 
-Guide: [`daily-guides/day-34.md`](../daily-guides/day-34.md)  
+Lab: [`days/day-34-deployment-slots-swap-strategies/`](../days/day-34-deployment-slots-swap-strategies/)  
 PDF: attach `days/day-34-deployment-slots-swap-strategies/handout.pdf`.  
 **Document title:** `Day 34 — Deployment Slots & Swap`
 
@@ -715,7 +715,7 @@ Tomorrow: Blue-green deployments — two worlds, one traffic, a written rollback
 
 ## Day 35 — Fri 2 Oct 2026 — Blue-Green Deployments
 
-Guide: [`daily-guides/day-35.md`](../daily-guides/day-35.md)  
+Lab: [`days/day-35-blue-green-deployments/`](../days/day-35-blue-green-deployments/)  
 PDF: attach `days/day-35-blue-green-deployments/handout.pdf`.  
 **Document title:** `Day 35 — Blue-Green Deployments`
 
@@ -764,7 +764,7 @@ Tomorrow: Canary releases — 5% / 25% / 100% or abort.
 
 ## Day 36 — Sat 3 Oct 2026 — Canary Releases
 
-Guide: [`daily-guides/day-36.md`](../daily-guides/day-36.md)  
+Lab: [`days/day-36-canary-releases/`](../days/day-36-canary-releases/)  
 PDF: attach `days/day-36-canary-releases/handout.pdf`.  
 **Document title:** `Day 36 — Canary Releases`
 
@@ -814,7 +814,7 @@ Tomorrow: Rolling deployments — changing tires while the car is moving.
 
 ## Day 37 — Sun 4 Oct 2026 — Rolling Deployments
 
-Guide: [`daily-guides/day-37.md`](../daily-guides/day-37.md)  
+Lab: [`days/day-37-rolling-deployments/`](../days/day-37-rolling-deployments/)  
 PDF: attach `days/day-37-rolling-deployments/handout.pdf`.  
 **Document title:** `Day 37 — Rolling Deployments`
 
@@ -863,7 +863,7 @@ Tomorrow: Approval gates and environments — I am the approver on prod.
 
 ## Day 38 — Mon 5 Oct 2026 — Approval Gates & Environments
 
-Guide: [`daily-guides/day-38.md`](../daily-guides/day-38.md)  
+Lab: [`days/day-38-approval-gates-environments/`](../days/day-38-approval-gates-environments/)  
 PDF: attach `days/day-38-approval-gates-environments/handout.pdf`.  
 **Document title:** `Day 38 — Approval Gates & Environments`
 
@@ -911,7 +911,7 @@ Tomorrow: Multi-environment pipeline — Dev → Staging → Prod, same artifact
 
 ## Day 39 — Tue 6 Oct 2026 — Multi-environment Pipeline
 
-Guide: [`daily-guides/day-39.md`](../daily-guides/day-39.md)  
+Lab: [`days/day-39-multi-environment-pipeline/`](../days/day-39-multi-environment-pipeline/)  
 PDF: attach `days/day-39-multi-environment-pipeline/handout.pdf`.  
 **Document title:** `Day 39 — Multi-environment Pipeline`
 
@@ -960,7 +960,7 @@ Tomorrow: Phase 4 mini project — CI/CD with visible approvals.
 
 ## Day 40 — Wed 7 Oct 2026 — Mini Project + Recap (Phase 4)
 
-Guide: [`daily-guides/day-40.md`](../daily-guides/day-40.md)  
+Lab: [`days/day-40-mini-project-recap-phase-4/`](../days/day-40-mini-project-recap-phase-4/)  
 PDF: attach `days/day-40-mini-project-recap-phase-4/handout.pdf`.  
 **Document title:** `Day 40 — Phase 4 Mini Project & Recap`
 
@@ -1010,7 +1010,7 @@ Tomorrow: IaC concepts — declarative vs imperative, drift, pick Bicep or Terra
 
 ## Day 41 — Thu 8 Oct 2026 — IaC Concepts
 
-Guide: [`daily-guides/day-41.md`](../daily-guides/day-41.md)  
+Lab: [`days/day-41-iac-concepts/`](../days/day-41-iac-concepts/)  
 PDF: attach `days/day-41-iac-concepts/handout.pdf`.  
 **Document title:** `Day 41 — Infrastructure as Code Concepts`
 
@@ -1059,7 +1059,7 @@ Tomorrow: ARM templates basics — deploy a tiny Storage Account, then delete th
 
 ## Day 42 — Fri 9 Oct 2026 — ARM Templates Basics
 
-Guide: [`daily-guides/day-42.md`](../daily-guides/day-42.md)  
+Lab: [`days/day-42-arm-templates-basics/`](../days/day-42-arm-templates-basics/)  
 PDF: attach `days/day-42-arm-templates-basics/handout.pdf`.  
 **Document title:** `Day 42 — ARM Templates Basics`
 
@@ -1107,7 +1107,7 @@ Tomorrow: ARM parameters and outputs — dials instead of hardcoded names.
 
 ## Day 43 — Sat 10 Oct 2026 — ARM Parameters & Outputs
 
-Guide: [`daily-guides/day-43.md`](../daily-guides/day-43.md)  
+Lab: [`days/day-43-arm-parameters-outputs/`](../days/day-43-arm-parameters-outputs/)  
 PDF: attach `days/day-43-arm-parameters-outputs/handout.pdf`.  
 **Document title:** `Day 43 — ARM Parameters & Outputs`
 
@@ -1155,7 +1155,7 @@ Tomorrow: Bicep fundamentals — same control plane, less JSON horror.
 
 ## Day 44 — Sun 11 Oct 2026 — Bicep Fundamentals
 
-Guide: [`daily-guides/day-44.md`](../daily-guides/day-44.md)  
+Lab: [`days/day-44-bicep-fundamentals/`](../days/day-44-bicep-fundamentals/)  
 PDF: attach `days/day-44-bicep-fundamentals/handout.pdf`.  
 **Document title:** `Day 44 — Bicep Fundamentals`
 
@@ -1203,7 +1203,7 @@ Tomorrow: Bicep modules and what-if — dress rehearsal before prod.
 
 ## Day 45 — Mon 12 Oct 2026 — Bicep Modules & Deployment
 
-Guide: [`daily-guides/day-45.md`](../daily-guides/day-45.md)  
+Lab: [`days/day-45-bicep-modules-deployment/`](../days/day-45-bicep-modules-deployment/)  
 PDF: attach `days/day-45-bicep-modules-deployment/handout.pdf`.  
 **Document title:** `Day 45 — Bicep Modules & Deployment`
 
@@ -1251,7 +1251,7 @@ Tomorrow: Terraform basics — init, plan, apply, destroy, and state as memory.
 
 ## Day 46 — Tue 13 Oct 2026 — Terraform Basics
 
-Guide: [`daily-guides/day-46.md`](../daily-guides/day-46.md)  
+Lab: [`days/day-46-terraform-basics/`](../days/day-46-terraform-basics/)  
 PDF: attach `days/day-46-terraform-basics/handout.pdf`.  
 **Document title:** `Day 46 — Terraform Basics`
 
@@ -1301,7 +1301,7 @@ Tomorrow: Terraform with Azure (azurerm) — CLI auth, RG + storage.
 
 ## Day 47 — Wed 14 Oct 2026 — Terraform with Azure (azurerm)
 
-Guide: [`daily-guides/day-47.md`](../daily-guides/day-47.md)  
+Lab: [`days/day-47-terraform-with-azure-azurerm/`](../days/day-47-terraform-with-azure-azurerm/)  
 PDF: attach `days/day-47-terraform-with-azure-azurerm/handout.pdf`.  
 **Document title:** `Day 47 — Terraform with Azure`
 
@@ -1349,7 +1349,7 @@ Tomorrow: Terraform modules and remote state — locking so two applies cannot t
 
 ## Day 48 — Thu 15 Oct 2026 — Terraform Modules & Remote State
 
-Guide: [`daily-guides/day-48.md`](../daily-guides/day-48.md)  
+Lab: [`days/day-48-terraform-modules-remote-state/`](../days/day-48-terraform-modules-remote-state/)  
 PDF: attach `days/day-48-terraform-modules-remote-state/handout.pdf`.  
 **Document title:** `Day 48 — Terraform Modules & State`
 
@@ -1397,7 +1397,7 @@ Tomorrow: IaC in pipelines — plan in CI, apply behind an approval.
 
 ## Day 49 — Fri 16 Oct 2026 — IaC in Pipelines
 
-Guide: [`daily-guides/day-49.md`](../daily-guides/day-49.md)  
+Lab: [`days/day-49-iac-in-pipelines/`](../days/day-49-iac-in-pipelines/)  
 PDF: attach `days/day-49-iac-in-pipelines/handout.pdf`.  
 **Document title:** `Day 49 — IaC in Pipelines`
 
@@ -1446,7 +1446,7 @@ Tomorrow: Phase 5 mini project — one plan+apply from a pipeline, then destroy.
 
 ## Day 50 — Sat 17 Oct 2026 — Mini Project + Recap (Phase 5)
 
-Guide: [`daily-guides/day-50.md`](../daily-guides/day-50.md)  
+Lab: [`days/day-50-mini-project-recap-phase-5/`](../days/day-50-mini-project-recap-phase-5/)  
 PDF: attach `days/day-50-mini-project-recap-phase-5/handout.pdf`.  
 **Document title:** `Day 50 — Phase 5 Mini Project & Recap`
 
@@ -1494,7 +1494,7 @@ Tomorrow: Docker fundamentals — images, layers, a hello Dockerfile.
 
 ## Day 51 — Sun 18 Oct 2026 — Docker Fundamentals
 
-Guide: [`daily-guides/day-51.md`](../daily-guides/day-51.md)  
+Lab: [`days/day-51-docker-fundamentals/`](../days/day-51-docker-fundamentals/)  
 PDF: attach `days/day-51-docker-fundamentals/handout.pdf`.  
 **Document title:** `Day 51 — Docker Fundamentals`
 

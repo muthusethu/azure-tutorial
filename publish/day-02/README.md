@@ -6,7 +6,7 @@
 
 | Platform | File | Priority |
 |----------|------|----------|
-| LinkedIn | [`../../daily-guides/day-02.md`](../../daily-guides/day-02.md) | P0 |
+| LinkedIn | [`../../days/day-02-portal-cli-powershell/`](../../days/day-02-portal-cli-powershell/) | P0 |
 | X + Threads | [`02-x-threads.md`](./02-x-threads.md) | **Paused** (X account read-only) |
 | Dev.to / Hashnode | optional later | P2 |
 

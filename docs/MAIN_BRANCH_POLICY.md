@@ -39,13 +39,6 @@ File: [`.github/CODEOWNERS`](../.github/CODEOWNERS)
 
 With “Require review from Code Owners”, other contributors’ PRs need your approval before merge.
 
-## Automated setup (optional)
-
-```powershell
-gh auth login
-# sign in as @muthusethu (muthusethu2@gmail.com)
-powershell -File scripts/configure_main_ruleset.ps1
-```
 
 ## How to verify
 

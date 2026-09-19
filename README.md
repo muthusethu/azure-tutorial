@@ -14,18 +14,17 @@ One Azure / DevOps topic per day. Personal labs. Personal LinkedIn. Not a course
 
 ---
 
-## Repo layout
+## What’s in this repo
 
 ```text
 days/day-NN-slug/
   README.md      ← lab notes
-  handout.pdf    ← architecture PDF (this is the LinkedIn document)
-daily-guides/    ← full learn + lab + LinkedIn draft
-publish/         ← copy-paste posts, titles, tracker
-scripts/         ← generators
+  handout.pdf    ← architecture PDF (attach this on LinkedIn)
+publish/         ← LinkedIn copy-paste, titles, tracker
+docs/            ← repo policy
 ```
 
-Index of all 100 days: [`days/README.md`](./days/README.md)
+Index: [`days/README.md`](./days/README.md)
 
 ---
 
