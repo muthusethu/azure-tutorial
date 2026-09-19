@@ -6,7 +6,7 @@ Style model: **Green pipeline. Red production. Why “Succeeded” is not enough
 
 ---
 
-**Pause 19 Sep–18 Oct 2026.** Do not publish the next extra post (Note 6). The ItsCloudHub 30-day personal posts replace this track for that window. Resume extras after 18 Oct if you still want a third voice besides 100-days.
+**Pause 19 Sep–18 Oct 2026.** Do not publish the next extra post (Note 6). The ItsCloudHub 30-day personal posts replace this track for that window. Resume extras after 18 Oct if you still want a third voice besides 100-days. Note 6 is still unposted. Notes 7–16 now fall inside the pause (Day 22–49). First aligned extra after the pause is Note 17 on Day 52 (19 Oct). Series ends Day 100 on 6 Dec.
 
 ---
 

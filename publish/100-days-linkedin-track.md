@@ -17,7 +17,7 @@ Next: **Day 23** Sunday 20 Sep 2026, 07:00 IST.
 
 This track resumed at Day 22 (Day 21 was 10 Sep). It does not jump to Day 31. Use the dates in this file, not older calendars.
 
-Window: **19 Sep → 18 Oct 2026** = Days **22–51** (30 posts). Then continue Day 52 on 19 Oct.
+Window: **19 Sep → 18 Oct 2026** = Days **22–51** (30 posts). Then continue Day 52 on 19 Oct through Day 100 on 6 Dec.
 
 Production-grade extras (`#ProductionGradeAzure`) stay paused in this window.
 
@@ -80,6 +80,58 @@ Weekday after that: Track B at 19:15 (and Track C at 19:40 if Mon/Wed/Fri). Do n
 **19 Oct = Day 52** (Azure Container Registry). Keep daily posting. Handout: `days/day-52-azure-container-registry-acr/handout.pdf`.
 
 Copy for Days **52–100** is in [`100-days-detailed-posts.md`](./100-days-detailed-posts.md). Same format as Days 22–51 below.
+
+| Date | Day | Topic | Lab |
+|------|----:|-------|-----|
+| Mon 19 Oct | Day 52 | Azure Container Registry (ACR) | [day-52-azure-container-registry-acr](../days/day-52-azure-container-registry-acr/) |
+| Tue 20 Oct | Day 53 | Build & Push Images in Pipelines | [day-53-build-push-images-in-pipelines](../days/day-53-build-push-images-in-pipelines/) |
+| Wed 21 Oct | Day 54 | Azure Container Instances (ACI) | [day-54-azure-container-instances-aci](../days/day-54-azure-container-instances-aci/) |
+| Thu 22 Oct | Day 55 | Kubernetes Fundamentals | [day-55-kubernetes-fundamentals](../days/day-55-kubernetes-fundamentals/) |
+| Fri 23 Oct | Day 56 | AKS Setup | [day-56-aks-setup](../days/day-56-aks-setup/) |
+| Sat 24 Oct | Day 57 | Deploying to AKS via Pipelines | [day-57-deploying-to-aks-via-pipelines](../days/day-57-deploying-to-aks-via-pipelines/) |
+| Sun 25 Oct | Day 58 | Helm Charts Basics | [day-58-helm-charts-basics](../days/day-58-helm-charts-basics/) |
+| Mon 26 Oct | Day 59 | AKS Scaling, Monitoring & Networking | [day-59-aks-scaling-monitoring-networking](../days/day-59-aks-scaling-monitoring-networking/) |
+| Tue 27 Oct | Day 60 | Mini Project + Recap (Phase 6) | [day-60-mini-project-recap-phase-6](../days/day-60-mini-project-recap-phase-6/) |
+| Wed 28 Oct | Day 61 | Azure AD (Entra ID) Fundamentals | [day-61-azure-ad-entra-id-fundamentals](../days/day-61-azure-ad-entra-id-fundamentals/) |
+| Thu 29 Oct | Day 62 | RBAC Deep Dive | [day-62-rbac-deep-dive](../days/day-62-rbac-deep-dive/) |
+| Fri 30 Oct | Day 63 | Service Connections & Service Principals | [day-63-service-connections-service-principals](../days/day-63-service-connections-service-principals/) |
+| Sat 31 Oct | Day 64 | Azure Key Vault | [day-64-azure-key-vault](../days/day-64-azure-key-vault/) |
+| Sun 1 Nov | Day 65 | Integrating Key Vault with Pipelines | [day-65-integrating-key-vault-with-pipelines](../days/day-65-integrating-key-vault-with-pipelines/) |
+| Mon 2 Nov | Day 66 | Azure Policy & Governance | [day-66-azure-policy-governance](../days/day-66-azure-policy-governance/) |
+| Tue 3 Nov | Day 67 | Compliance Scanning in Pipelines | [day-67-compliance-scanning-in-pipelines](../days/day-67-compliance-scanning-in-pipelines/) |
+| Wed 4 Nov | Day 68 | DevSecOps - Shift-left Security | [day-68-devsecops-shift-left-security](../days/day-68-devsecops-shift-left-security/) |
+| Thu 5 Nov | Day 69 | Secure Pipeline Design | [day-69-secure-pipeline-design](../days/day-69-secure-pipeline-design/) |
+| Fri 6 Nov | Day 70 | Mini Project + Recap (Phase 7) | [day-70-mini-project-recap-phase-7](../days/day-70-mini-project-recap-phase-7/) |
+| Sat 7 Nov | Day 71 | Azure Monitor Fundamentals | [day-71-azure-monitor-fundamentals](../days/day-71-azure-monitor-fundamentals/) |
+| Sun 8 Nov | Day 72 | Log Analytics Workspace & KQL | [day-72-log-analytics-workspace-kql](../days/day-72-log-analytics-workspace-kql/) |
+| Mon 9 Nov | Day 73 | Application Insights Integration | [day-73-application-insights-integration](../days/day-73-application-insights-integration/) |
+| Tue 10 Nov | Day 74 | Alerts & Action Groups | [day-74-alerts-action-groups](../days/day-74-alerts-action-groups/) |
+| Wed 11 Nov | Day 75 | Dashboards & Workbooks | [day-75-dashboards-workbooks](../days/day-75-dashboards-workbooks/) |
+| Thu 12 Nov | Day 76 | Pipeline Monitoring & Analytics | [day-76-pipeline-monitoring-analytics](../days/day-76-pipeline-monitoring-analytics/) |
+| Fri 13 Nov | Day 77 | Cost Management & Optimization | [day-77-cost-management-optimization](../days/day-77-cost-management-optimization/) |
+| Sat 14 Nov | Day 78 | Azure Advisor & Well-Architected Framework | [day-78-azure-advisor-well-architected-framework](../days/day-78-azure-advisor-well-architected-framework/) |
+| Sun 15 Nov | Day 79 | Incident Management Basics | [day-79-incident-management-basics](../days/day-79-incident-management-basics/) |
+| Mon 16 Nov | Day 80 | Mini Project + Recap (Phase 8) | [day-80-mini-project-recap-phase-8](../days/day-80-mini-project-recap-phase-8/) |
+| Tue 17 Nov | Day 81 | Multi-repo & Monorepo Strategies | [day-81-multi-repo-monorepo-strategies](../days/day-81-multi-repo-monorepo-strategies/) |
+| Wed 18 Nov | Day 82 | Pipeline Templates & Reusable YAML | [day-82-pipeline-templates-reusable-yaml](../days/day-82-pipeline-templates-reusable-yaml/) |
+| Thu 19 Nov | Day 83 | Azure DevOps Extensions & Marketplace | [day-83-azure-devops-extensions-marketplace](../days/day-83-azure-devops-extensions-marketplace/) |
+| Fri 20 Nov | Day 84 | Migrating Jenkins to Azure Pipelines | [day-84-migrating-jenkins-to-azure-pipelines](../days/day-84-migrating-jenkins-to-azure-pipelines/) |
+| Sat 21 Nov | Day 85 | Hybrid & Multi-cloud CI/CD | [day-85-hybrid-multi-cloud-ci-cd](../days/day-85-hybrid-multi-cloud-ci-cd/) |
+| Sun 22 Nov | Day 86 | Disaster Recovery & Backup | [day-86-disaster-recovery-backup](../days/day-86-disaster-recovery-backup/) |
+| Mon 23 Nov | Day 87 | Azure Landing Zones | [day-87-azure-landing-zones](../days/day-87-azure-landing-zones/) |
+| Tue 24 Nov | Day 88 | GitOps with Flux/Argo CD | [day-88-gitops-with-flux-argo-cd](../days/day-88-gitops-with-flux-argo-cd/) |
+| Wed 25 Nov | Day 89 | Scaling DevOps for Large Teams | [day-89-scaling-devops-for-large-teams](../days/day-89-scaling-devops-for-large-teams/) |
+| Thu 26 Nov | Day 90 | Mini Project + Recap (Phase 9) | [day-90-mini-project-recap-phase-9](../days/day-90-mini-project-recap-phase-9/) |
+| Fri 27 Nov | Day 91 | Capstone Project 1 - E2E App CI/CD | [day-91-capstone-project-1-e2e-app-ci-cd](../days/day-91-capstone-project-1-e2e-app-ci-cd/) |
+| Sat 28 Nov | Day 92 | Capstone Project 2 - Containers Path | [day-92-capstone-project-2-containers-path](../days/day-92-capstone-project-2-containers-path/) |
+| Sun 29 Nov | Day 93 | Capstone Project 3 - IaC Multi-env | [day-93-capstone-project-3-iac-multi-env](../days/day-93-capstone-project-3-iac-multi-env/) |
+| Mon 30 Nov | Day 94 | GitHub Portfolio Setup | [day-94-github-portfolio-setup](../days/day-94-github-portfolio-setup/) |
+| Tue 1 Dec | Day 95 | Personal Site / Blog for Case Studies | [day-95-personal-site-blog-for-case-studies](../days/day-95-personal-site-blog-for-case-studies/) |
+| Wed 2 Dec | Day 96 | AZ-400 Certification Review | [day-96-az-400-certification-review](../days/day-96-az-400-certification-review/) |
+| Thu 3 Dec | Day 97 | Mock Interview Prep | [day-97-mock-interview-prep](../days/day-97-mock-interview-prep/) |
+| Fri 4 Dec | Day 98 | Professional Profile Setup | [day-98-professional-profile-setup](../days/day-98-professional-profile-setup/) |
+| Sat 5 Dec | Day 99 | Outreach Templates & Pricing | [day-99-outreach-templates-pricing](../days/day-99-outreach-templates-pricing/) |
+| Sun 6 Dec | Day 100 | Launch Day + Next 100 Days | [day-100-launch-day-next-100-days](../days/day-100-launch-day-next-100-days/) |
 
 ---
 

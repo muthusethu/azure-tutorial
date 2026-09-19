@@ -28,7 +28,7 @@ Voice: ~10 years DevOps — engaging, technical, no meme tone, no “note N of 3
 
 ## When to post
 
-Rough guide while the 100-day plan runs (21 Aug – 28 Nov 2026):
+Rough guide while the 100-day plan runs (21 Aug – 6 Dec 2026). Extras paused 19 Sep–18 Oct:
 
 | Extra post | Target window | Status |
 |------------|---------------|--------|

@@ -6,7 +6,7 @@ First line of each post is the stand-alone hook. Hashtags stay exactly as writte
 
 ---
 
-## Day 22 — Microsoft-hosted vs Self-hosted Agents
+## Day 22 — Sat 19 Sep 2026 — Microsoft-hosted vs Self-hosted Agents
 
 **Document title:** `Day 22 — Hosted vs Self-hosted Agents`
 
@@ -54,7 +54,7 @@ Tomorrow: YAML pipeline basics — triggers, stages, jobs, steps, and a PR trigg
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 23 — YAML Pipeline Basics
+## Day 23 — Sun 20 Sep 2026 — YAML Pipeline Basics
 
 **Document title:** `Day 23 — YAML Pipeline Basics`
 
@@ -101,7 +101,7 @@ Tomorrow: CI pipeline for a .NET app — restore, build, test, publish, artifact
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 24 — CI Pipeline for a .NET App
+## Day 24 — Mon 21 Sep 2026 — CI Pipeline for a .NET App
 
 **Document title:** `Day 24 — CI Pipeline for a .NET App`
 
@@ -147,7 +147,7 @@ Tomorrow: CI for Node.js — npm ci, Cache@2, and stopping the paint-dry restore
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 25 — CI Pipeline for a Node.js App
+## Day 25 — Tue 22 Sep 2026 — CI Pipeline for a Node.js App
 
 **Document title:** `Day 25 — CI Pipeline for a Node.js App`
 
@@ -194,7 +194,7 @@ Tomorrow: CI for Python — pip, ruff, pytest on a tiny sample.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 26 — CI Pipeline for a Python App
+## Day 26 — Wed 23 Sep 2026 — CI Pipeline for a Python App
 
 **Document title:** `Day 26 — CI Pipeline for a Python App`
 
@@ -240,7 +240,7 @@ Tomorrow: CI for Java/Maven — lifecycle, tests, and not jumping off the train 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 27 — CI Pipeline for a Java/Maven App
+## Day 27 — Thu 24 Sep 2026 — CI Pipeline for a Java/Maven App
 
 **Document title:** `Day 27 — CI Pipeline for a Java App`
 
@@ -286,7 +286,7 @@ Tomorrow: Multi-stage YAML — dependsOn, matrix, conditions.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 28 — Multi-stage YAML Pipelines
+## Day 28 — Fri 25 Sep 2026 — Multi-stage YAML Pipelines
 
 **Document title:** `Day 28 — Multi-stage YAML Pipelines`
 
@@ -332,7 +332,7 @@ Tomorrow: Pipeline variables, groups, and secrets — envelopes, not postcards.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 29 — Pipeline Variables, Groups & Secrets
+## Day 29 — Sat 26 Sep 2026 — Pipeline Variables, Groups & Secrets
 
 **Document title:** `Day 29 — Variables, Groups & Secrets`
 
@@ -378,7 +378,7 @@ Tomorrow: Phase 3 mini project — one green CI run I can screenshot without sec
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 30 — Mini Project + Recap (Phase 3)
+## Day 30 — Sun 27 Sep 2026 — Mini Project + Recap (Phase 3)
 
 **Document title:** `Day 30 — Phase 3 Mini Project & Recap`
 
@@ -424,7 +424,7 @@ Tomorrow: Release pipelines overview — Classic vs YAML CD, and an environment 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 31 — Release Pipelines Overview
+## Day 31 — Mon 28 Sep 2026 — Release Pipelines Overview
 
 **Document title:** `Day 31 — Release Pipelines Overview`
 
@@ -470,7 +470,7 @@ Tomorrow: Deploy to Azure App Service — zip deploy from the pipeline.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 32 — Deploying to Azure App Service
+## Day 32 — Tue 29 Sep 2026 — Deploying to Azure App Service
 
 **Document title:** `Day 32 — Deploying to Azure App Service`
 
@@ -516,7 +516,7 @@ Tomorrow: Deploy to Azure Functions — Consumption vs Premium, timer or HTTP sa
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 33 — Deploying to Azure Functions
+## Day 33 — Wed 30 Sep 2026 — Deploying to Azure Functions
 
 **Document title:** `Day 33 — Deploying to Azure Functions`
 
@@ -562,7 +562,7 @@ Tomorrow: Deployment slots and swap — staging as a dressing room.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 34 — Deployment Slots & Swap Strategies
+## Day 34 — Thu 1 Oct 2026 — Deployment Slots & Swap Strategies
 
 **Document title:** `Day 34 — Deployment Slots & Swap`
 
@@ -608,7 +608,7 @@ Tomorrow: Blue-green deployments — two worlds, one traffic, a written rollback
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 35 — Blue-Green Deployments
+## Day 35 — Fri 2 Oct 2026 — Blue-Green Deployments
 
 **Document title:** `Day 35 — Blue-Green Deployments`
 
@@ -655,7 +655,7 @@ Tomorrow: Canary releases — 5% / 25% / 100% or abort.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 36 — Canary Releases
+## Day 36 — Sat 3 Oct 2026 — Canary Releases
 
 **Document title:** `Day 36 — Canary Releases`
 
@@ -703,7 +703,7 @@ Tomorrow: Rolling deployments — changing tires while the car is moving.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 37 — Rolling Deployments
+## Day 37 — Sun 4 Oct 2026 — Rolling Deployments
 
 **Document title:** `Day 37 — Rolling Deployments`
 
@@ -750,7 +750,7 @@ Tomorrow: Approval gates and environments — I am the approver on prod.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 38 — Approval Gates & Environments
+## Day 38 — Mon 5 Oct 2026 — Approval Gates & Environments
 
 **Document title:** `Day 38 — Approval Gates & Environments`
 
@@ -796,7 +796,7 @@ Tomorrow: Multi-environment pipeline — Dev → Staging → Prod, same artifact
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 39 — Multi-environment Pipeline
+## Day 39 — Tue 6 Oct 2026 — Multi-environment Pipeline
 
 **Document title:** `Day 39 — Multi-environment Pipeline`
 
@@ -843,7 +843,7 @@ Tomorrow: Phase 4 mini project — CI/CD with visible approvals.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 40 — Mini Project + Recap (Phase 4)
+## Day 40 — Wed 7 Oct 2026 — Mini Project + Recap (Phase 4)
 
 **Document title:** `Day 40 — Phase 4 Mini Project & Recap`
 
@@ -891,7 +891,7 @@ Tomorrow: IaC concepts — declarative vs imperative, drift, pick Bicep or Terra
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 41 — IaC Concepts
+## Day 41 — Thu 8 Oct 2026 — IaC Concepts
 
 **Document title:** `Day 41 — Infrastructure as Code Concepts`
 
@@ -938,7 +938,7 @@ Tomorrow: ARM templates basics — deploy a tiny Storage Account, then delete th
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 42 — ARM Templates Basics
+## Day 42 — Fri 9 Oct 2026 — ARM Templates Basics
 
 **Document title:** `Day 42 — ARM Templates Basics`
 
@@ -984,7 +984,7 @@ Tomorrow: ARM parameters and outputs — dials instead of hardcoded names.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 43 — ARM Parameters & Outputs
+## Day 43 — Sat 10 Oct 2026 — ARM Parameters & Outputs
 
 **Document title:** `Day 43 — ARM Parameters & Outputs`
 
@@ -1030,7 +1030,7 @@ Tomorrow: Bicep fundamentals — same control plane, less JSON horror.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 44 — Bicep Fundamentals
+## Day 44 — Sun 11 Oct 2026 — Bicep Fundamentals
 
 **Document title:** `Day 44 — Bicep Fundamentals`
 
@@ -1076,7 +1076,7 @@ Tomorrow: Bicep modules and what-if — dress rehearsal before prod.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 45 — Bicep Modules & Deployment
+## Day 45 — Mon 12 Oct 2026 — Bicep Modules & Deployment
 
 **Document title:** `Day 45 — Bicep Modules & Deployment`
 
@@ -1122,7 +1122,7 @@ Tomorrow: Terraform basics — init, plan, apply, destroy, and state as memory.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 46 — Terraform Basics
+## Day 46 — Tue 13 Oct 2026 — Terraform Basics
 
 **Document title:** `Day 46 — Terraform Basics`
 
@@ -1170,7 +1170,7 @@ Tomorrow: Terraform with Azure (azurerm) — CLI auth, RG + storage.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 47 — Terraform with Azure (azurerm)
+## Day 47 — Wed 14 Oct 2026 — Terraform with Azure (azurerm)
 
 **Document title:** `Day 47 — Terraform with Azure`
 
@@ -1216,7 +1216,7 @@ Tomorrow: Terraform modules and remote state — locking so two applies cannot t
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 48 — Terraform Modules & Remote State
+## Day 48 — Thu 15 Oct 2026 — Terraform Modules & Remote State
 
 **Document title:** `Day 48 — Terraform Modules & State`
 
@@ -1262,7 +1262,7 @@ Tomorrow: IaC in pipelines — plan in CI, apply behind an approval.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 49 — IaC in Pipelines
+## Day 49 — Fri 16 Oct 2026 — IaC in Pipelines
 
 **Document title:** `Day 49 — IaC in Pipelines`
 
@@ -1309,7 +1309,7 @@ Tomorrow: Phase 5 mini project — one plan+apply from a pipeline, then destroy.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 50 — Mini Project + Recap (Phase 5)
+## Day 50 — Sat 17 Oct 2026 — Mini Project + Recap (Phase 5)
 
 **Document title:** `Day 50 — Phase 5 Mini Project & Recap`
 
@@ -1355,7 +1355,7 @@ Tomorrow: Docker fundamentals — images, layers, a hello Dockerfile.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 51 — Docker Fundamentals
+## Day 51 — Sun 18 Oct 2026 — Docker Fundamentals
 
 **Document title:** `Day 51 — Docker Fundamentals`
 
@@ -1402,7 +1402,7 @@ Tomorrow: Azure Container Registry — private closet for images.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 52 — Azure Container Registry (ACR)
+## Day 52 — Mon 19 Oct 2026 — Azure Container Registry (ACR)
 
 **Document title:** `Day 52 — Azure Container Registry (ACR)`
 
@@ -1448,7 +1448,7 @@ Tomorrow: Build and push images in pipelines — humans will push the wrong Frid
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 53 — Build & Push Images in Pipelines
+## Day 53 — Tue 20 Oct 2026 — Build & Push Images in Pipelines
 
 **Document title:** `Day 53 — Build & Push Images in CI`
 
@@ -1494,7 +1494,7 @@ Tomorrow: Azure Container Instances — container fast-food, delete after the te
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 54 — Azure Container Instances (ACI)
+## Day 54 — Wed 21 Oct 2026 — Azure Container Instances (ACI)
 
 **Document title:** `Day 54 — Azure Container Instances`
 
@@ -1540,7 +1540,7 @@ Tomorrow: Kubernetes fundamentals — Pods, Deployments, Services, and a lemonad
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 55 — Kubernetes Fundamentals
+## Day 55 — Thu 22 Oct 2026 — Kubernetes Fundamentals
 
 **Document title:** `Day 55 — Kubernetes Fundamentals`
 
@@ -1586,7 +1586,7 @@ Tomorrow: AKS setup — smallest cluster or skip; destroy the same weekend if I 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 56 — AKS Setup
+## Day 56 — Fri 23 Oct 2026 — AKS Setup
 
 **Document title:** `Day 56 — AKS Setup`
 
@@ -1632,7 +1632,7 @@ Tomorrow: Deploy to AKS via pipelines — manifests, not sticky-note kubectl.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 57 — Deploying to AKS via Pipelines
+## Day 57 — Sat 24 Oct 2026 — Deploying to AKS via Pipelines
 
 **Document title:** `Day 57 — Deploying to AKS via Pipelines`
 
@@ -1678,7 +1678,7 @@ Tomorrow: Helm charts — values.yaml so environments stop being copy-paste crim
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 58 — Helm Charts Basics
+## Day 58 — Sun 25 Oct 2026 — Helm Charts Basics
 
 **Document title:** `Day 58 — Helm Charts Basics`
 
@@ -1724,7 +1724,7 @@ Tomorrow: AKS scaling, monitoring, networking — HPA vs fixed replicas.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 59 — AKS Scaling, Monitoring & Networking
+## Day 59 — Mon 26 Oct 2026 — AKS Scaling, Monitoring & Networking
 
 **Document title:** `Day 59 — AKS Scale, Monitor, Network`
 
@@ -1771,7 +1771,7 @@ Tomorrow: Phase 6 mini project — image in ACR plus one automated deploy path.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 60 — Mini Project + Recap (Phase 6)
+## Day 60 — Tue 27 Oct 2026 — Mini Project + Recap (Phase 6)
 
 **Document title:** `Day 60 — Phase 6 Mini Project & Recap`
 
@@ -1817,7 +1817,7 @@ Tomorrow: Entra ID fundamentals — tenants, app registrations, identity as the 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 61 — Azure AD (Entra ID) Fundamentals
+## Day 61 — Wed 28 Oct 2026 — Azure AD (Entra ID) Fundamentals
 
 **Document title:** `Day 61 — Entra ID Fundamentals`
 
@@ -1863,7 +1863,7 @@ Tomorrow: RBAC deep dive — Reader on a lab RG, Owner as a flamethrower.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 62 — RBAC Deep Dive
+## Day 62 — Thu 29 Oct 2026 — RBAC Deep Dive
 
 **Document title:** `Day 62 — Azure RBAC Deep Dive`
 
@@ -1910,7 +1910,7 @@ Tomorrow: Service connections and service principals — robot employees, scoped
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 63 — Service Connections & Service Principals
+## Day 63 — Fri 30 Oct 2026 — Service Connections & Service Principals
 
 **Document title:** `Day 63 — Service Connections & SPs`
 
@@ -1956,7 +1956,7 @@ Tomorrow: Azure Key Vault — hotel safe, not repo chat history.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 64 — Azure Key Vault
+## Day 64 — Sat 31 Oct 2026 — Azure Key Vault
 
 **Document title:** `Day 64 — Azure Key Vault`
 
@@ -2002,7 +2002,7 @@ Tomorrow: Key Vault in pipelines — print length, never the value.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 65 — Integrating Key Vault with Pipelines
+## Day 65 — Sun 1 Nov 2026 — Integrating Key Vault with Pipelines
 
 **Document title:** `Day 65 — Key Vault in Pipelines`
 
@@ -2048,7 +2048,7 @@ Tomorrow: Azure Policy — require a tag so Finance does not hunt with spreadshe
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 66 — Azure Policy & Governance
+## Day 66 — Mon 2 Nov 2026 — Azure Policy & Governance
 
 **Document title:** `Day 66 — Azure Policy & Governance`
 
@@ -2095,7 +2095,7 @@ Tomorrow: Compliance scanning in pipelines — SAST, deps, secrets.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 67 — Compliance Scanning in Pipelines
+## Day 67 — Tue 3 Nov 2026 — Compliance Scanning in Pipelines
 
 **Document title:** `Day 67 — Compliance Scanning in CI`
 
@@ -2141,7 +2141,7 @@ Tomorrow: DevSecOps shift-left — Security stage before Deploy.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 68 — DevSecOps - Shift-left Security
+## Day 68 — Wed 4 Nov 2026 — DevSecOps - Shift-left Security
 
 **Document title:** `Day 68 — DevSecOps Shift-left Security`
 
@@ -2188,7 +2188,7 @@ Tomorrow: Secure pipeline design — least privilege, locked main, no secret ech
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 69 — Secure Pipeline Design
+## Day 69 — Thu 5 Nov 2026 — Secure Pipeline Design
 
 **Document title:** `Day 69 — Secure Pipeline Design`
 
@@ -2234,7 +2234,7 @@ Tomorrow: Phase 7 mini project — secret not in YAML, policy visible, approvals
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 70 — Mini Project + Recap (Phase 7)
+## Day 70 — Fri 6 Nov 2026 — Mini Project + Recap (Phase 7)
 
 **Document title:** `Day 70 — Phase 7 Mini Project & Recap`
 
@@ -2280,7 +2280,7 @@ Tomorrow: Azure Monitor fundamentals — flashlight, not the fix.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 71 — Azure Monitor Fundamentals
+## Day 71 — Sat 7 Nov 2026 — Azure Monitor Fundamentals
 
 **Document title:** `Day 71 — Azure Monitor Fundamentals`
 
@@ -2327,7 +2327,7 @@ Tomorrow: Log Analytics and KQL — AzureActivity, top operations, a saved query
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 72 — Log Analytics Workspace & KQL
+## Day 72 — Sun 8 Nov 2026 — Log Analytics Workspace & KQL
 
 **Document title:** `Day 72 — Log Analytics & KQL`
 
@@ -2373,7 +2373,7 @@ Tomorrow: Application Insights — GoPro on the app, connection string not in gi
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 73 — Application Insights Integration
+## Day 73 — Mon 9 Nov 2026 — Application Insights Integration
 
 **Document title:** `Day 73 — Application Insights`
 
@@ -2419,7 +2419,7 @@ Tomorrow: Alerts and action groups — screams need a destination.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 74 — Alerts & Action Groups
+## Day 74 — Tue 10 Nov 2026 — Alerts & Action Groups
 
 **Document title:** `Day 74 — Alerts & Action Groups`
 
@@ -2465,7 +2465,7 @@ Tomorrow: Dashboards and workbooks — three tiles, not a novel.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 75 — Dashboards & Workbooks
+## Day 75 — Wed 11 Nov 2026 — Dashboards & Workbooks
 
 **Document title:** `Day 75 — Dashboards & Workbooks`
 
@@ -2512,7 +2512,7 @@ Tomorrow: Pipeline monitoring — a red build ignored for a week is culture, not
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 76 — Pipeline Monitoring & Analytics
+## Day 76 — Thu 12 Nov 2026 — Pipeline Monitoring & Analytics
 
 **Document title:** `Day 76 — Pipeline Monitoring`
 
@@ -2558,7 +2558,7 @@ Tomorrow: Cost management — delete orphan RGs, tighten the budget alert.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 77 — Cost Management & Optimization
+## Day 77 — Fri 13 Nov 2026 — Cost Management & Optimization
 
 **Document title:** `Day 77 — Cost Management`
 
@@ -2605,7 +2605,7 @@ Tomorrow: Azure Advisor and Well-Architected — five pillars, one recommendatio
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 78 — Azure Advisor & Well-Architected Framework
+## Day 78 — Sat 14 Nov 2026 — Azure Advisor & Well-Architected Framework
 
 **Document title:** `Day 78 — Advisor & Well-Architected`
 
@@ -2652,7 +2652,7 @@ Tomorrow: Incident management — runbook for webapp down, blameless postmortem 
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 79 — Incident Management Basics
+## Day 79 — Sun 15 Nov 2026 — Incident Management Basics
 
 **Document title:** `Day 79 — Incident Management Basics`
 
@@ -2698,7 +2698,7 @@ Tomorrow: Phase 8 mini project — App Insights + one alert + one dashboard.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 80 — Mini Project + Recap (Phase 8)
+## Day 80 — Mon 16 Nov 2026 — Mini Project + Recap (Phase 8)
 
 **Document title:** `Day 80 — Phase 8 Mini Project & Recap`
 
@@ -2744,7 +2744,7 @@ Tomorrow: Multi-repo vs monorepo — pick the drama I can afford.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 81 — Multi-repo & Monorepo Strategies
+## Day 81 — Tue 17 Nov 2026 — Multi-repo & Monorepo Strategies
 
 **Document title:** `Day 81 — Multi-repo & Monorepo`
 
@@ -2790,7 +2790,7 @@ Tomorrow: Pipeline templates — extract templates/build.yml and reuse it.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 82 — Pipeline Templates & Reusable YAML
+## Day 82 — Wed 18 Nov 2026 — Pipeline Templates & Reusable YAML
 
 **Document title:** `Day 82 — Pipeline Templates & YAML`
 
@@ -2836,7 +2836,7 @@ Tomorrow: Marketplace extensions — spices, not a handful in the stew.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 83 — Azure DevOps Extensions & Marketplace
+## Day 83 — Thu 19 Nov 2026 — Azure DevOps Extensions & Marketplace
 
 **Document title:** `Day 83 — Azure DevOps Extensions`
 
@@ -2882,7 +2882,7 @@ Tomorrow: Jenkins to Azure Pipelines — migrate pipelines, not nostalgia.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 84 — Migrating Jenkins to Azure Pipelines
+## Day 84 — Fri 20 Nov 2026 — Migrating Jenkins to Azure Pipelines
 
 **Document title:** `Day 84 — Jenkins to Azure Pipelines`
 
@@ -2928,7 +2928,7 @@ Tomorrow: Hybrid and multi-cloud CI/CD — insurance and complexity, survey only
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 85 — Hybrid & Multi-cloud CI/CD
+## Day 85 — Sat 21 Nov 2026 — Hybrid & Multi-cloud CI/CD
 
 **Document title:** `Day 85 — Hybrid & Multi-cloud CI/CD`
 
@@ -2974,7 +2974,7 @@ Tomorrow: Disaster recovery and backup — RPO, RTO, restore or it is fiction.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 86 — Disaster Recovery & Backup
+## Day 86 — Sun 22 Nov 2026 — Disaster Recovery & Backup
 
 **Document title:** `Day 86 — Disaster Recovery & Backup`
 
@@ -3020,7 +3020,7 @@ Tomorrow: Azure Landing Zones — city planning, hub-spoke on paper.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 87 — Azure Landing Zones
+## Day 87 — Mon 23 Nov 2026 — Azure Landing Zones
 
 **Document title:** `Day 87 — Azure Landing Zones`
 
@@ -3066,7 +3066,7 @@ Tomorrow: GitOps with Flux/Argo CD — the cluster is not a kubectl petting zoo.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 88 — GitOps with Flux/Argo CD
+## Day 88 — Tue 24 Nov 2026 — GitOps with Flux/Argo CD
 
 **Document title:** `Day 88 — GitOps with Flux / Argo CD`
 
@@ -3112,7 +3112,7 @@ Tomorrow: Scaling DevOps for large teams — five platform capabilities for a 50
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 89 — Scaling DevOps for Large Teams
+## Day 89 — Wed 25 Nov 2026 — Scaling DevOps for Large Teams
 
 **Document title:** `Day 89 — Scaling DevOps for Teams`
 
@@ -3160,7 +3160,7 @@ Tomorrow: Phase 9 mini project — one template, two consumers, two green runs.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 90 — Mini Project + Recap (Phase 9)
+## Day 90 — Thu 26 Nov 2026 — Mini Project + Recap (Phase 9)
 
 **Document title:** `Day 90 — Phase 9 Mini Project & Recap`
 
@@ -3206,7 +3206,7 @@ Tomorrow: Capstone 1 — thin vertical slice, not a fake ecommerce platform.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 91 — Capstone Project 1 - E2E App CI/CD
+## Day 91 — Fri 27 Nov 2026 — Capstone Project 1 - E2E App CI/CD
 
 **Document title:** `Day 91 — Capstone 1: E2E App CI/CD`
 
@@ -3252,7 +3252,7 @@ Tomorrow: Capstone 2 — same app in a container tuxedo.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 92 — Capstone Project 2 - Containers Path
+## Day 92 — Sat 28 Nov 2026 — Capstone Project 2 - Containers Path
 
 **Document title:** `Day 92 — Capstone 2: Containers Path`
 
@@ -3298,7 +3298,7 @@ Tomorrow: Capstone 3 — Bicep or Terraform for two environments, destroy non-pr
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 93 — Capstone Project 3 - IaC Multi-env
+## Day 93 — Sun 29 Nov 2026 — Capstone Project 3 - IaC Multi-env
 
 **Document title:** `Day 93 — Capstone 3: IaC Multi-env`
 
@@ -3344,7 +3344,7 @@ Tomorrow: GitHub portfolio — README that a stranger can run.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 94 — GitHub Portfolio Setup
+## Day 94 — Mon 30 Nov 2026 — GitHub Portfolio Setup
 
 **Document title:** `Day 94 — GitHub Portfolio Setup`
 
@@ -3391,7 +3391,7 @@ Tomorrow: Personal site or blog — YAML translated into a story.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 95 — Personal Site / Blog for Case Studies
+## Day 95 — Tue 1 Dec 2026 — Personal Site / Blog for Case Studies
 
 **Document title:** `Day 95 — Site / Blog for Case Studies`
 
@@ -3437,7 +3437,7 @@ Tomorrow: AZ-400 skills outline — map labs to objectives, gap list, no cram ni
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 96 — AZ-400 Certification Review
+## Day 96 — Wed 2 Dec 2026 — AZ-400 Certification Review
 
 **Document title:** `Day 96 — AZ-400 Certification Review`
 
@@ -3483,7 +3483,7 @@ Tomorrow: Mock interview — five questions out loud, happy path and failure pat
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 97 — Mock Interview Prep
+## Day 97 — Thu 3 Dec 2026 — Mock Interview Prep
 
 **Document title:** `Day 97 — Mock Interview Prep`
 
@@ -3529,7 +3529,7 @@ Tomorrow: Professional profile setup — policy first, draft offline.
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 98 — Professional Profile Setup
+## Day 98 — Fri 4 Dec 2026 — Professional Profile Setup
 
 **Document title:** `Day 98 — Professional Profile Setup`
 
@@ -3575,7 +3575,7 @@ Tomorrow: Outreach templates and pricing — solve a pain, keep rates private, s
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 99 — Outreach Templates & Pricing
+## Day 99 — Sat 5 Dec 2026 — Outreach Templates & Pricing
 
 **Document title:** `Day 99 — Outreach Templates & Pricing`
 
@@ -3621,7 +3621,7 @@ Tomorrow: Launch day — portfolio, recap, destroy leftovers, write the next 100
 #100DaysOfAzureDevOps #Azure #DevOps #CloudComputing #LearningInPublic
 ```
 
-## Day 100 — Launch Day + Next 100 Days
+## Day 100 — Sun 6 Dec 2026 — Launch Day + Next 100 Days
 
 **Document title:** `Day 100 — Launch Day + Next 100 Days`
 

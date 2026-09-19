@@ -353,7 +353,7 @@ It is a spare key. Spare keys get copied.
 
 ---
 
-## Note 7 — Day 22 (11 Sep 2026)
+## Note 7 — Day 22 (19 Sep 2026) — paused
 
 **Title:** Disk full at 2:14am on the only self-hosted agent
 
@@ -382,7 +382,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 8 — Day 25 (14 Sep 2026)
+## Note 8 — Day 25 (22 Sep 2026) — paused
 
 **Title:** npm install vs the lockfile — two different trees
 
@@ -411,7 +411,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 9 — Day 28 (17 Sep 2026)
+## Note 9 — Day 28 (25 Sep 2026) — paused
 
 **Title:** CI green on main. CD deployed hotfix/temp.
 
@@ -438,7 +438,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 10 — Day 31 (20 Sep 2026)
+## Note 10 — Day 31 (28 Sep 2026) — paused
 
 **Title:** Click-ops release at midnight because YAML was not ready
 
@@ -466,7 +466,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 11 — Day 34 (23 Sep 2026)
+## Note 11 — Day 34 (01 Oct 2026) — paused
 
 **Title:** Slot swap with the wrong sticky settings
 
@@ -493,7 +493,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 12 — Day 37 (26 Sep 2026)
+## Note 12 — Day 37 (04 Oct 2026) — paused
 
 **Title:** Half the farm on the old binary
 
@@ -520,7 +520,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 13 — Day 40 (29 Sep 2026)
+## Note 13 — Day 40 (07 Oct 2026) — paused
 
 **Title:** Approval gates that only proved someone was awake
 
@@ -550,7 +550,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 14 — Day 43 (02 Oct 2026)
+## Note 14 — Day 43 (10 Oct 2026) — paused
 
 **Title:** Prod parameter file pointed at the test Key Vault
 
@@ -576,7 +576,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 15 — Day 46 (05 Oct 2026)
+## Note 15 — Day 46 (13 Oct 2026) — paused
 
 **Title:** State in git, apply from a laptop, one lock
 
@@ -604,7 +604,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 16 — Day 49 (08 Oct 2026)
+## Note 16 — Day 49 (16 Oct 2026) — paused
 
 **Title:** Portal just this once vs the next pipeline run
 
@@ -633,7 +633,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 17 — Day 52 (11 Oct 2026)
+## Note 17 — Day 52 (19 Oct 2026)
 
 **Title:** Tag latest and a rollback that was not yesterday
 
@@ -659,7 +659,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 18 — Day 55 (14 Oct 2026)
+## Note 18 — Day 55 (22 Oct 2026)
 
 **Title:** CrashLoopBackOff and the ritual restart
 
@@ -687,7 +687,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 19 — Day 58 (17 Oct 2026)
+## Note 19 — Day 58 (25 Oct 2026)
 
 **Title:** values-prod.yaml with a connection string in git history
 
@@ -712,7 +712,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 20 — Day 61 (20 Oct 2026)
+## Note 20 — Day 61 (28 Oct 2026)
 
 **Title:** Guest account with Owner for the vendor, temporary
 
@@ -740,7 +740,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 21 — Day 64 (23 Oct 2026)
+## Note 21 — Day 64 (31 Oct 2026)
 
 **Title:** Pipeline variables that were secrets for two years
 
@@ -768,7 +768,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 22 — Day 67 (26 Oct 2026)
+## Note 22 — Day 67 (03 Nov 2026)
 
 **Title:** continueOnError on the only gate that mattered
 
@@ -796,7 +796,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 23 — Day 70 (29 Oct 2026)
+## Note 23 — Day 70 (06 Nov 2026)
 
 **Title:** Service principal with Contributor on the subscription
 
@@ -827,7 +827,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 24 — Day 73 (01 Nov 2026)
+## Note 24 — Day 73 (09 Nov 2026)
 
 **Title:** Sampling hid the outage; the dashboard said 200 OK
 
@@ -856,7 +856,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 25 — Day 76 (04 Nov 2026)
+## Note 25 — Day 76 (12 Nov 2026)
 
 **Title:** A 41-minute pipeline nobody had timed on purpose
 
@@ -884,7 +884,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 26 — Day 79 (07 Nov 2026)
+## Note 26 — Day 79 (15 Nov 2026)
 
 **Title:** A war room with twelve people and no incident commander
 
@@ -913,7 +913,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 27 — Day 82 (10 Nov 2026)
+## Note 27 — Day 82 (18 Nov 2026)
 
 **Title:** Thirty YAML files, one bug, thirty copy-paste fixes
 
@@ -940,7 +940,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 28 — Day 85 (13 Nov 2026)
+## Note 28 — Day 85 (21 Nov 2026)
 
 **Title:** Agent online, Azure unreachable, firewall unchanged
 
@@ -966,7 +966,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 29 — Day 88 (16 Nov 2026)
+## Note 29 — Day 88 (24 Nov 2026)
 
 **Title:** kubectl apply then GitOps politely undeployed you
 
@@ -990,7 +990,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 30 — Day 91 (19 Nov 2026)
+## Note 30 — Day 91 (27 Nov 2026)
 
 **Title:** The simple pipeline that took checkout down
 
@@ -1017,7 +1017,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 31 — Day 94 (22 Nov 2026)
+## Note 31 — Day 94 (30 Nov 2026)
 
 **Title:** Ten years of work vs a green contribution graph
 
@@ -1046,7 +1046,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 32 — Day 97 (25 Nov 2026)
+## Note 32 — Day 97 (03 Dec 2026)
 
 **Title:** The question they ask vs the outage they should ask about
 
@@ -1074,7 +1074,7 @@ Best practice: name the guardrail you would add so this class of failure cannot 
 
 ---
 
-## Note 33 — Day 100 (28 Nov 2026)
+## Note 33 — Day 100 (06 Dec 2026)
 
 **Title:** What 10 years taught me that 100 days made say out loud
 
